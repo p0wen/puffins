@@ -1,21 +1,85 @@
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    background: url('/media/index_background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: calc(100vh - 164px);
-    color: #000000;
-    font-family: 'Open Sans';
+  background: url("/media/index_background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: calc(100vh - 164px);
+  color: #000000;
+  font-family: "Open Sans";
 }
 
 .nav-item {
-    font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
 }
 
+/* Dropbar wide */
+.dropdown-menu {
+  border-radius: 0rem;
+}
 
+.button-size {
+  width: 70%;
+  height: 25%;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 125%;
+  line-height: 125%;
+}
 
+.button-white {
+  border: 0.1875em solid #fff;
+  color: #ffffff;
+}
+
+.button-dark {
+  border: 0.1875em solid #294b93;
+  color: #294b93;
+}
+
+.feat-nav-drop-text {
+  text-align: center;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.feat-nav-drop-img {
+  width: 100%;
+  min-height: 375px;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+
+.categorie-header {
+  text-transform: capitalize;
+  font-family: Fredericka the Great;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: #000000;
+}
+
+.categorie-separator {
+  width: 33%;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  margin-left: 1.5rem;
+  border: 1.15879px solid #f9a829;
+  filter: blur(1.15879px);
+}
 
 /* Reference to fonts for styling Process
 font-family: 'Fredericka the Great', cursive;
