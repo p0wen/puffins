@@ -110,3 +110,6 @@ This site is deployed to heroku and the versioning was done with git and the Rep
 ### Acknowledgements
 
 ### References 
+* read up on making drop down full width https://stackoverflow.com/questions/49659305/how-to-make-a-bootstrap-4-full-width-dropdown-in-navbar
+* horzizontal line readup https://stackoverflow.com/questions/16073323/horizontal-rule-line-beneath-each-h1-heading-in-css
+* tutorial on how to animate scrollbar https://www.youtube.com/watch?v=vE4UuSzR5T0
