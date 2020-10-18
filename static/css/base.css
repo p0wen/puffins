@@ -3,40 +3,49 @@ html {
 }
 
 body {
-
   color: #000000;
   font-family: "Open Sans";
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: Fredericka the Great;
 }
 /* individual nav styling */
 
 nav {
-    background-color: rgba(255, 255, 255, 0);
-    transition: background-color .5s ease;
+  background-color: rgba(255, 255, 255, 0);
+  transition: background-color 0.5s ease;
 }
 
-.nav-item, .nav-link {
-    color: #fff!important;
-    font-weight: bold;
-    font-family: Oswald;
-    text-transform: uppercase;
-    font-size: 1em;
+.nav-item,
+.nav-link {
+  color: #fff !important;
+  font-weight: bold;
+  font-family: Oswald;
+  text-transform: uppercase;
+  font-size: 1em;
 }
 
+.dropdown-menu {
+  margin: 0 0 0;
+  background-clip: none;
+  border: 0px;
+  border-radius: 0;
+}
 
 /* Navbar Scrolling */
 
 .scrolling-active {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .scrolling-active .nav-item .nav-link {
-    color: #000000!important;
+  color: #000000 !important;
 }
 
-.scrolling-active .nav-link::after{
-    background-color: #313131;
+.scrolling-active .nav-link::after {
+  background-color: #313131;
 }
-
 
 /* Dropbar wide */
 .dropdown-menu {
@@ -51,6 +60,7 @@ nav {
   font-weight: bold;
   font-size: 125%;
   line-height: 125%;
+  border-radius: 0%;
 }
 
 .button-white {
@@ -61,6 +71,22 @@ nav {
 .button-dark {
   border: 0.1875em solid #294b93;
   color: #294b93;
+}
+
+.button-blue {
+  background: #294b93;
+  color: #ffffff;
+}
+
+.button-blue:hover {
+  color: #294b93;
+  text-decoration: none;
+  background: #fff;
+}
+
+.button-blue:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.1rem #294b93;
 }
 
 .feat-nav-drop-text {
@@ -96,22 +122,19 @@ nav {
 }
 
 .categorie-separator {
-  width: 33%;
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   margin-left: 1.5rem;
-  border: 1.15879px solid #f9a829;
-  filter: blur(1.15879px);
 }
 
 /* Landing Page Caroussel */
 
 .behind-nav-carousel {
-    margin-top: -76px;
+  margin-top: -76px;
 }
 
 .carousel-item {
-  height: 85vh;
+  height: 95vh;
   min-height: 350px;
   background: no-repeat center center scroll;
   -webkit-background-size: cover;
@@ -120,7 +143,27 @@ nav {
   background-size: cover;
 }
 
+.carousel-indicators li {
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  opacity: 1;
+  background-color: #fff;
+}
 
+.carousel-indicators .active {
+  opacity: 1;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background-color: #f9a829;
+}
+
+.separator {
+  width: 33%;
+  border: 1.15879px solid #f9a829;
+  filter: blur(1.15879px);
+}
 
 /* Reference to fonts for styling Process
 font-family: 'Fredericka the Great', cursive;
