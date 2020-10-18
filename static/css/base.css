@@ -3,17 +3,40 @@ html {
 }
 
 body {
-  background: url("/media/index_background.jpg") no-repeat center center fixed;
-  background-size: cover;
-  height: calc(100vh - 164px);
+
   color: #000000;
   font-family: "Open Sans";
 }
+/* individual nav styling */
 
-.nav-item {
-  font-family: "Oswald", sans-serif;
-  text-transform: uppercase;
+nav {
+    background-color: rgba(255, 255, 255, 0);
+    transition: background-color .5s ease;
 }
+
+.nav-item, .nav-link {
+    color: #fff!important;
+    font-weight: bold;
+    font-family: Oswald;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+
+/* Navbar Scrolling */
+
+.scrolling-active {
+    background-color: #fff;
+}
+
+.scrolling-active .nav-item .nav-link {
+    color: #000000!important;
+}
+
+.scrolling-active .nav-link::after{
+    background-color: #313131;
+}
+
 
 /* Dropbar wide */
 .dropdown-menu {
@@ -80,6 +103,24 @@ body {
   border: 1.15879px solid #f9a829;
   filter: blur(1.15879px);
 }
+
+/* Landing Page Caroussel */
+
+.behind-nav-carousel {
+    margin-top: -76px;
+}
+
+.carousel-item {
+  height: 85vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
 
 /* Reference to fonts for styling Process
 font-family: 'Fredericka the Great', cursive;

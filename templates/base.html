@@ -42,169 +42,198 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-transparent">
-      <img
-        src="/media/puffin_icon.svg"
-        width="40,55"
-        height="50px"
-        class="d-inline-block align-middle"
-        alt=""
-        loading="lazy"
-      />
-      <a class="navbar-brand" href="#">
+      <nav
+        class="navbar navbar-expand-lg fixed-top"
+      >
         <img
-          src="/media/puffins_logo_light.svg"
-          width="115,9"
+          src="/media/puffin_icon.svg"
+          width="40,55"
           height="50px"
-          class="d-inline-block align-top"
+          class="d-inline-block align-middle"
           alt=""
           loading="lazy"
         />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <a class="navbar-brand" href="#">
+          <img
+            src="/media/puffins_logo_light.svg"
+            width="115,9"
+            height="50px"
+            class="d-inline-block align-top"
+            alt=""
+            loading="lazy"
+            id="puffinName"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown position-static">
-            <a
-              class="nav-link"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              SHOP
-            </a>
-            <div class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
-              <div class="row w-100">
-                <div class="col">
-                  <a class="dropdown-item categorie-header" href="#">Action</a>
-                  <hr class="categorie-separator" />
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                </div>
-                <div class="col">
-                  <a class="dropdown-item categorie-header" href="#">Action</a>
-                  <hr class="categorie-separator" />
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                </div>
-                <div class="col">
-                  <a class="dropdown-item categorie-header" href="#">Action</a>
-                  <hr class="categorie-separator" />
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                </div>
-                <div class="col col d-none d-lg-block">
-                  <img
-                    src="/media/featured_nav_dropdown.jpg"
-                    class="feat-nav-drop-img"
-                  />
-                  <div class="feat-nav-drop-text">
-                    <span>
-                      GET THE LOOK FOR THE WHOLE FAMILY
-                    </span>
-                    <button class="btn button-size button-white">
-                      SHOP
-                    </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown position-static">
+              <a
+                class="nav-link"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                SHOP
+              </a>
+              <div class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
+                <div class="row w-100">
+                  <div class="col">
+                    <a class="dropdown-item categorie-header" href="#"
+                      >Action</a
+                    >
+                    <hr class="categorie-separator" />
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                  </div>
+                  <div class="col">
+                    <a class="dropdown-item categorie-header" href="#"
+                      >Action</a
+                    >
+                    <hr class="categorie-separator" />
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                  </div>
+                  <div class="col">
+                    <a class="dropdown-item categorie-header" href="#"
+                      >Action</a
+                    >
+                    <hr class="categorie-separator" />
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                  </div>
+                  <div class="col col d-none d-lg-block">
+                    <img
+                      src="/media/featured_nav_dropdown.jpg"
+                      class="feat-nav-drop-img"
+                    />
+                    <div class="feat-nav-drop-text">
+                      <span>
+                        GET THE LOOK FOR THE WHOLE FAMILY
+                      </span>
+                      <button class="btn button-size button-white">
+                        SHOP
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">HIGHTLIGHT</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">BLOG</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#"
-              >ABOUT <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">HELP</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <svg
-                width="1em"
-                height="1em"
-                viewBox="0 0 16 16"
-                class="bi bi-heart"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">HIGHTLIGHT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">BLOG</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                >ABOUT <span class="sr-only">(current)</span></a
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
-                />
-              </svg>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <svg
-                width="1em"
-                height="1em"
-                viewBox="0 0 16 16"
-                class="bi bi-cart3"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
-                />
-              </svg>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <svg
-                width="1em"
-                height="1em"
-                viewBox="0 0 16 16"
-                class="bi bi-search"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"
-                />
-                <path
-                  fill-rule="evenodd"
-                  d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"
-                />
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">HELP</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <svg
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  class="bi bi-heart"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <svg
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  class="bi bi-cart3"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <svg
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  class="bi bi-search"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
     {% if messages %}
     <div class="message-container"></div>
-    {% endif %} {% block page_header %} {% endblock %}
-    <div class="container-fluid">
-      {% block content %} {% endblock %}
-    </div>
-    {% block postloadjs %} {% endblock %}
+    {% endif %} 
+    {% block page_header %} 
+    {% endblock %}
+
+    {% block content %} 
+    {% endblock %}
+ 
+    {% block postloadjs %} 
+    {% endblock %}
+
+    <script>
+    // Scroll Animation based on 2 sources https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_lightbulb , https://www.youtube.com/watch?v=vE4UuSzR5T0
+      window.addEventListener("scroll", function () {
+        let navbar = document.querySelector("nav");
+        document.getElementById("#puffinName");
+        let scrollPosition = window.scrollY > 0;
+        navbar.classList.toggle("scrolling-active", scrollPosition);
+        if (scrollPosition) {
+            document.getElementById("puffinName").src='/media/puffins_logo_dark.svg';
+        } else {
+            document.getElementById("puffinName").src='/media/puffins_logo_light.svg'
+        };
+      });
+    </script>
+
   </body>
 </html>
