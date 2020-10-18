@@ -17,6 +17,11 @@ nav {
   transition: background-color 0.5s ease;
 }
 
+nav button:focus {
+    color: #f9a829;
+    outline: none;
+}
+
 .nav-item,
 .nav-link {
   color: #fff !important;
@@ -33,6 +38,13 @@ nav {
   border-radius: 0;
 }
 
+.navbar-toggler {
+    color: white;
+}
+
+.nav-bar-toggler {
+
+}
 /* Navbar Scrolling */
 
 .scrolling-active {
@@ -46,6 +58,10 @@ nav {
 .scrolling-active .nav-link::after {
   background-color: #313131;
 }
+
+.scrolling-active button {
+  color: #000000;
+  }
 
 /* Dropbar wide */
 .dropdown-menu {
