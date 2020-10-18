@@ -115,3 +115,4 @@ This site is deployed to heroku and the versioning was done with git and the Rep
 * tutorial on how to animate scrollbar https://www.youtube.com/watch?v=vE4UuSzR5T0
 * hear animation https://designmodo.com/shopping-cart-ui/
 * how to custome style navbar https://medium.com/coder-grrl/the-guide-to-customising-the-bootstrap-4-navbar-i-wish-id-had-6-months-ago-7bc6ce0e3c71
+* starting point for carousel https://startbootstrap.com/snippets/full-slider/
