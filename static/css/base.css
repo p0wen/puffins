@@ -5,6 +5,7 @@ html {
 body {
   color: #000000;
   font-family: "Open Sans";
+  height:100
 }
 
 h1,
@@ -184,6 +185,22 @@ nav button:focus {
   filter: blur(1.15879px);
 }
 
+/* Header for Subpages */
+
+.header-title {
+    width: 100%;
+    height: 264px; 
+    background: url("/media/placeholder_categories.jpg") no-repeat center center;
+    background-size: 100%;
+    margin-bottom: 2rem;
+}
+
+.header-title h1,h2 {
+    color: #fff;
+}
+.header-text {
+    padding-top: 7rem;
+}
 /* Footer Styling */
 
 footer {
@@ -250,6 +267,24 @@ footer .separator {
   border-color: #f9a829;
   outline: 0;
   box-shadow: 0 0 0 0.01rem #d39e00;
+}
+
+/* Product Card */
+.card-product-name {
+    font-family: 'Oswald';
+    font-size: 1.5rem;
+}
+
+.card-product-price, .card-product-sale, .card-product-preorder  {
+    font-family: 'Oswald';
+    font-size: 1.25rem;
+}
+.card-product-sale {
+ color: #DF101D;
+}
+
+.card-product-preorder {
+ color: #22396F;
 }
 
 /* Reference to fonts for styling Process
