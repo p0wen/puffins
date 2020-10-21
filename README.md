@@ -83,8 +83,20 @@
 
 ### Validator Checks, Audits & Tools
 
-
 ### Known Bugs & Issues
+
+### Issues handled via development
+
+- Templates not pulled from apps folder
+-> make sure to have the following in settings.py
+```
+import os
+DIRNAME = os.path.abspath(os.path.dirname(__file__))
+
+TEMPLATE_DIRS = (
+    os.path.join(DIRNAME, 'site-templates/'),
+)
+```
 
 ## Deployment
 
