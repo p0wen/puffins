@@ -129,3 +129,4 @@ This site is deployed to heroku and the versioning was done with git and the Rep
 * how to custome style navbar https://medium.com/coder-grrl/the-guide-to-customising-the-bootstrap-4-navbar-i-wish-id-had-6-months-ago-7bc6ce0e3c71
 * starting point for carousel https://startbootstrap.com/snippets/full-slider/
 * inspiration for a mega menu https://www.w3schools.com/howto/howto_css_mega_menu.asp
+* inspiration for product names https://magoosh.com/english-speaking/english-vocab/positive-adjectives-the-ultimate-list
