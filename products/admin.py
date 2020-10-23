@@ -33,6 +33,11 @@ class ProductAdmin(admin.ModelAdmin):
         'discontinued',
         'image',
         'image_url',
+        'description',
+        'date_of_dispatch',
+        'color',
+        'material_1',
+        'material_2',
         )
 
 class ProductSizeAdmin(admin.ModelAdmin):

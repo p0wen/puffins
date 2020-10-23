@@ -39,9 +39,14 @@ class Product(models.Model):
                                             blank=True)
     is_on_sale = models.BooleanField(default=False)
     avail_for_pre_order = models.BooleanField(default=False)
+    date_of_dispatch = models.CharField(max_length=10, blank=True)
     discontinued = models.BooleanField(default=False)
     image = models.ImageField(null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
+    description = models.CharField(max_length=500, null=True, blank=True)
+    color = models.CharField(max_length=10, null=True)
+    material_1 = models.CharField(max_length=10, null=True, blank=True)
+    material_2 = models.CharField(max_length=10, null=True, blank=True)
 
     class Meta:
         ordering = ["pk"]
