@@ -270,6 +270,18 @@ footer .separator {
 }
 
 /* Product Card */
+.card-custom {
+  object-fit: cover;
+  object-position: center center;
+}
+
+.card-custom img {
+  width: 100%;
+  height: 29rem;
+  object-fit: cover;
+  object-position: center center;
+}
+
 .card-product-name {
     font-family: 'Oswald';
     font-size: 1.5rem;
@@ -285,6 +297,100 @@ footer .separator {
 
 .card-product-preorder {
  color: #22396F;
+}
+
+/* Styling for Hero on Product Sites */
+
+.collection-hero {
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+    margin-top: -55px;
+    margin-bottom: 20px;
+}
+
+.collection-hero__image {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    opacity: 1;
+}
+
+.collection-hero-container {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #3d4246;
+    opacity: 0.14;
+}
+
+.collection-hero-title {
+    bottom: 8vh;
+    transform: none;
+    position: absolute;
+    color: #fff;
+    text-align: center;
+}
+
+/* Filter Row for "Sort by" */
+
+
+.filters-toolbar-label {
+    margin-right: 10px;
+    margin-bottom: 0rem;
+}
+
+.select-label {
+    font-size: 0.75em;
+    text-transform: uppercase;
+}
+
+.filters-toolbar-input {
+    border: 0 solid transparent;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    opacity: 1;
+    position: relative;
+    font-size: 0.75em;
+}
+
+.select-group .icon {
+    height: calc(8em / 16);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(8em / 16);
+    z-index: -1;
+}
+
+.icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    fill: currentColor;
+}
+
+.select-group {
+    position: relative;
+    z-index: 2;
+}
+
+.select-group select {
+    background-image: none;
+    background-color: transparent;
+}
+
+.shadow-for-nav {
+    height: 90px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0));
 }
 
 /* Reference to fonts for styling Process

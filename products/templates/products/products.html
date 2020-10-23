@@ -1,74 +1,106 @@
-{% extends "base.html" %}
-{% load static %}
-{% block extra-title %}- Products{% endblock %}
-
+{% extends "base.html" %} {% load static %} 
+{% block extra-title %}- Products
+{% endblock %} 
 {% block content %}
 
 {# @TODO: add background from backend with style="background: url({{ url_for ... }}) no-repeat center center" #}
-
-<div class="container-fluid header-title behind-nav-bar">
-	<div class="container text-center header-text">
-		<h1>Category Name</h1>
-		<hr class="separator">
-		<h3>Product Line</h3>
-	</div>
-</div>
-
-
-<div class="container-fluid">
-	<div class="container">
-		<div class="row">
-			{% for product in products %}
-			<div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-				<div class="card h-100 border-0">
-					<a href="{% url 'product_detail' product.id %}">
-						<img class="card-img-top img-fluid" src="../media/noimage.jpg" alt="">
-                                </a>
-						<div class="card-body pb-0">
-							<p class="mb-0 card-product-name">Terrific Puffin</p>
-						</div>
-						<div class="card-footer bg-white pt-0 border-0 text-left">
-							<div class="row">
-								{% if product.is_on_sale %}
-								<div class="col">
-									<p class="lead mb-0 text-left font-weight-bold card-product-price">
-										{{ product.discount_price }}€</p>
-								</div>
-								<div class="col">
-									<p class="lead mb-0 text-left text-muted card-product-price">
-										<s>{{ product.price }}€</s></p>
-								</div>
-								<div class="col">
-									<p class="lead mb-0 text-left card-product-sale"><small>Sale</small></p>
-								</div>
-
-								{% elif product.avail_for_pre_order %}
-								<div class="col">
-									<p class="lead mb-0 text-left font-weight-bold card-product-price">
-										{{ product.discount_price }}€</p>
-								</div>
-								<div class="col">
-									<p class="mb-0 text-left text-muted card-product-price"><s>{{ product.price }}€</s>
-									</p>
-								</div>
-								<div class="col">
-									<p class="mb-0 text-left card-product-preorder">Pre-Order</p>
-								</div>
-								{% else %}
-								<div class="col">
-									<p class="lead mb-0 text-left font-weight-bold card-product-price">
-										{{ product.price }}€</p>
-								</div>
-								{% endif %}
-							</div>
-						</div>
-				</div>
-			</div>
+<div class="collection-header">
+	<div class="collection-hero">
+		<div class="collection-hero__image"></div>
+		<div class="collection-hero-container">
+			<h1 class="collection-hero-title container-fluid">
+				<span role="text">
+                    <span>Collection: </span>
+				</span>
+			</h1>
 		</div>
-		{% endfor %}
 	</div>
 </div>
 
+  <div class="container">
+    <div class="row mb-3">
+    <div class="col">
+		<div class="form-inline justify-content-end text-right">
+			<label class="filters-toolbar__label select-label">Sort by: </label>
+			<select class="filters-toolbar__input" id="SortBy" name="sort_by" data-default-sortby="manual">
+		          <option value="manual" selected="selected">Featured</option>
+		          <option value="price-ascending">Price, low to high</option>
+		          <option value="price-descending">Price, high to low</option>
+		          <option value="created-descending">Date, new to old</option>
+		  </select>
+		</div>
+      </div>
+    </div>
+  </div>
+</div>
 
+  <div class="container">
+    <div class="row">
+      {% for product in products %}
+      <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+        <div class="card card-custom h-100 border-0">
+          <a href="{% url 'product_detail' product.id %}">
+            <img
+              class=""
+              src="../media/noimage.jpg"
+              alt=""
+            />
+          </a>
+          <div class="pb-0">
+            <p class="mb-0 card-product-name">{{ product.display_text }}</p>
+          </div>
+          <div class="bg-white pt-0 border-0 text-left">
+            <div class="row">
+              {% if product.is_on_sale %}
+              <div class="col">
+                <p
+                  class="lead mb-0 text-left font-weight-bold card-product-price"
+                >
+                  {{ product.discount_price }}€
+                </p>
+              </div>
+              <div class="col">
+                <p class="lead mb-0 text-left text-muted card-product-price">
+                  <s>{{ product.price }}€</s>
+                </p>
+              </div>
+              <div class="col">
+                <p class="lead mb-0 text-left card-product-sale">
+                  <small>Sale</small>
+                </p>
+              </div>
+
+              {% elif product.avail_for_pre_order %}
+              <div class="col">
+                <p
+                  class="lead mb-0 text-left font-weight-bold card-product-price"
+                >
+                  {{ product.discount_price }}€
+                </p>
+              </div>
+              <div class="col">
+                <p class="mb-0 text-left text-muted card-product-price">
+                  <s>{{ product.price }}€</s>
+                </p>
+              </div>
+              <div class="col">
+                <p class="mb-0 text-left card-product-preorder">Pre-Order</p>
+              </div>
+              {% else %}
+              <div class="col">
+                <p
+                  class="lead mb-0 text-left font-weight-bold card-product-price"
+                >
+                  {{ product.price }}€
+                </p>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
 
 {% endblock %}
