@@ -212,18 +212,38 @@
 	{% endblock %}
 
 	<script>
+    let collapsedNav = false;
 		// Scroll Animation based on 2 sources https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_lightbulb , https://www.youtube.com/watch?v=vE4UuSzR5T0
       window.addEventListener("scroll", function () {
-        let navbar = document.querySelector("nav");
-        document.getElementById("#puffinName");
-        let scrollPosition = window.scrollY > 0;
-        navbar.classList.toggle("scrolling-active", scrollPosition);
-        if (scrollPosition) {
-            document.getElementById("puffinName").src='/media/puffins_logo_dark.svg';
-        } else {
-            document.getElementById("puffinName").src='/media/puffins_logo_light.svg'
-        };
+        if (!collapsedNav) { 
+            let navbar = document.querySelector("nav");
+            document.getElementById("#puffinName");
+            let scrollPosition = window.scrollY > 0;
+            navbar.classList.toggle("scrolling-active", scrollPosition);
+            if (scrollPosition) {
+                document.getElementById("puffinName").src='/media/puffins_logo_dark.svg';
+            } else {
+                document.getElementById("puffinName").src='/media/puffins_logo_light.svg'
+            };
+        }  
       });
+
+
+    // Takes Care of Navigation when collapsed and not scrolled adapted form here : https://stackoverflow.com/questions/32147082/changing-collapsed-navbar-list-background-color
+
+
+    $(".navbar-toggler").click(function () {
+    $("nav").toggleClass("scrolling-active");
+    if (!collapsedNav) {
+        $("#puffinName").attr('src',"/media/puffins_logo_dark.svg");
+        collapsedNav = true;
+    }
+    else {
+        $("#puffinName").attr('src',"/media/puffins_logo_light.svg");
+        collapsedNav = false;
+    };
+    });
+     
 	</script>
 
 </body>
