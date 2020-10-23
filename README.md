@@ -130,3 +130,4 @@ This site is deployed to heroku and the versioning was done with git and the Rep
 * starting point for carousel https://startbootstrap.com/snippets/full-slider/
 * inspiration for a mega menu https://www.w3schools.com/howto/howto_css_mega_menu.asp
 * inspiration for product names https://magoosh.com/english-speaking/english-vocab/positive-adjectives-the-ultimate-list
+* bases for toggling colappsed navbar background: https://stackoverflow.com/questions/32147082/changing-collapsed-navbar-list-background-color
