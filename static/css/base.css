@@ -338,7 +338,6 @@ footer .separator {
 
 /* Filter Row for "Sort by" */
 
-
 .filters-toolbar-label {
     margin-right: 10px;
     margin-bottom: 0rem;
@@ -360,33 +359,7 @@ footer .separator {
     font-size: 0.75em;
 }
 
-.select-group .icon {
-    height: calc(8em / 16);
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: calc(8em / 16);
-    z-index: -1;
-}
-
-.icon {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-    fill: currentColor;
-}
-
-.select-group {
-    position: relative;
-    z-index: 2;
-}
-
-.select-group select {
-    background-image: none;
-    background-color: transparent;
-}
+/* Nav on white background */
 
 .shadow-for-nav {
     height: 90px;
