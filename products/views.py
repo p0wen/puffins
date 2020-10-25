@@ -11,8 +11,9 @@ def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
     products = Product.objects.all()
+    active_products = products.filter(discontinued=False)
     context = {
-        'products': products,
+        'products': active_products,
     }
 
     print(products)
