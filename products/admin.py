@@ -38,6 +38,7 @@ class ProductAdmin(admin.ModelAdmin):
         'color',
         'material_1',
         'material_2',
+        'is_featured',
         )
 
 class ProductSizeAdmin(admin.ModelAdmin):
