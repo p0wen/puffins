@@ -46,7 +46,7 @@
             />
           </a>
           <div class="pb-0">
-            <p class="mb-0 card-product-name">{{ product.display_text }}</p>
+            <p class="mb-0 card-product-name">{{ product.display_text | title }}</p>
           </div>
           <div class="bg-white pt-0 border-0 text-left">
             <div class="row">
@@ -59,13 +59,13 @@
                 </p>
               </div>
               <div class="col">
-                <p class="lead mb-0 text-left text-muted card-product-price">
+                <p class="lead mb-0 text-left original-price card-product-price">
                   <s>{{ product.price }}€</s>
                 </p>
               </div>
               <div class="col">
                 <p class="lead mb-0 text-left card-product-sale">
-                  <small>Sale</small>
+                  Sale
                 </p>
               </div>
 
@@ -78,7 +78,7 @@
                 </p>
               </div>
               <div class="col">
-                <p class="mb-0 text-left text-muted card-product-price">
+                <p class="mb-0 text-left original-price card-product-price">
                   <s>{{ product.price }}€</s>
                 </p>
               </div>
