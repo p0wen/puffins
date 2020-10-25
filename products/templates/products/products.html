@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% load static %} 
+{% extends "base.html" %} {% load static %}
 {% block extra-title %}- Products
 {% endblock %} 
 {% block content %}
@@ -32,18 +32,17 @@
       </div>
     </div>
   </div>
-</div>
 
   <div class="container">
     <div class="row">
       {% for product in products %}
-      <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+             <div class="mb-5 col-sm-6 col-md-6 col-lg-4 col-xl-4">
         <div class="card card-custom h-100 border-0">
           <a href="{% url 'product_detail' product.id %}">
             <img
               class=""
-              src="../media/noimage.jpg"
-              alt=""
+              src="{{ product.image.url }}"
+              alt="{{ product.display_text }}"
             />
           </a>
           <div class="pb-0">
@@ -99,8 +98,8 @@
           </div>
         </div>
       </div>
-    </div>
     {% endfor %}
-  </div>
+    </div>
+ </div>
 
 {% endblock %}
