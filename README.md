@@ -115,11 +115,25 @@ This site is deployed to heroku and the versioning was done with git and the Rep
 
 ## Credits
 
+- Logo & Template for T-Shirt, Sweatshirt & Bodysuite Design created by Simone Brauner from https://www.polardots.studio/
+
 ### Content
+
+- Written by me - inspired by twothirds.com
 
 ### Media
 
+Category Images: 
+Grown Ups: https://images.unsplash.com/photo-1490718687940-0ecadf414600?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80
+Kids: https://images.unsplash.com/photo-1490826153516-b55d176cdb9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80
+
 ### Acknowledgements
+
+Special Thanks to...
+
+... Simone Brauner from https://www.polardots.studio/
+... my Code-Institute Mentor
+... Tutors and Fellow Students of CI 
 
 ### References 
 * read up on making drop down full width https://stackoverflow.com/questions/49659305/how-to-make-a-bootstrap-4-full-width-dropdown-in-navbar
