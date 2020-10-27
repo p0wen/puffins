@@ -81,16 +81,18 @@
 						<div class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
 							<div class="row w-100">
 								<div class="col">
-									<a class="{% url 'products' %}?category=kids" href="#">Kids</a>
+									<a class="dropdown-item categorie-header" href="{% url 'products' %}?category=kids">Kids</a>
 									<hr class="separator categorie-separator" />
-									<a class="dropdown-item" href="#">Action</a>
-									<a class="dropdown-item" href="#">Another action</a>
+									<a class="dropdown-item" href="{% url 'products' %}?category=kids&productline=tshirt">T-Shirts</a>
+									<a class="dropdown-item" href="{% url 'products' %}?category=kids&productline=sweat">Sweatshirts</a>
+                                    <a class="dropdown-item" href="{% url 'products' %}?category=kids&productline=body">Bodysuit</a>
 								</div>
 								<div class="col">
-									<a class="{% url 'products' %}?category=grown_ups" href="#">Grown Ups</a>
+									<a class="dropdown-item categorie-header" href="{% url 'products' %}?category=grown_ups">Grown Ups</a>
 									<hr class="separator categorie-separator" />
-									<a class="dropdown-item" href="#">Action</a>
-									<a class="dropdown-item" href="#">Another action</a>
+									<a class="dropdown-item" href="{% url 'products' %}?category=grown_ups&productline=tshirt">T-Shirts</a>
+									<a class="dropdown-item" href="{% url 'products' %}?category=grown_ups&productline=sweat">Sweatshirts</a>
+                                    <a class="dropdown-item" href="{% url 'products' %}?category=grown_ups&productline=accessory">Accessories</a>
 								</div>
 								<div class="col">
 									<a class="dropdown-item categorie-header" href="#">Action</a>
@@ -156,10 +158,10 @@
 							</svg>
 						</a>
 						<div class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
-							<form method="POST" action="/">
+							<form method="GET" action="{% url 'products' %}">
 								<div class="form-row col-xl-4 col-lg-6 col-sm mx-auto align-items-center">
-									<div class="input-group  input-group-sm">
-											<input class="form-control py-2 border-right-0 border" type="search" value="" name="search" id="search" placeholder="Search">
+									<div class="input-group  input-group">
+											<input class="form-control py-2 border-right-0 border" type="search" value="" name="q" id="search" placeholder="Search our products...">
 											<span class="input-group-append">
                                                 <button class="btn border-left-0 border" type="submit" id="searchbtn">
                                                     <svg width="1em" height="1em" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
