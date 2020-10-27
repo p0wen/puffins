@@ -50,7 +50,7 @@ class Product(models.Model):
     material_2 = models.CharField(max_length=10, null=True, blank=True)
 
     class Meta:
-        ordering = ["pk"]
+        ordering = ["-avail_for_pre_order"]
 
     def __str__(self):
         return self.name
