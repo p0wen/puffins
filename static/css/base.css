@@ -376,6 +376,30 @@ footer .separator {
  color: #AFAFAF;
 }
 
+.design-feedback {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.product-details-container {
+    font-family: 'Oswald';
+}
+
+.product-details-container hr {
+    border-top: 1px solid #294B93;
+}
+
+.delivery-return-collpase {
+    color: #000000;
+    text-decoration: none;
+    background-color: transparent;
+}
+ .delivery-return-collpase:hover{
+    color: #22386f;
+    text-decoration: underline;
+ }
+
+
 /* Reference to fonts for styling Process
 font-family: 'Fredericka the Great', cursive;
 font-family: 'Open Sans', sans-serif;
