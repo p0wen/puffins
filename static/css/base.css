@@ -307,12 +307,13 @@ footer .separator {
     overflow: hidden;
     margin-top: -55px;
     margin-bottom: 20px;
+    background-color: #BEBCBB;
 }
 
-.collection-hero__image {
+.collection-hero-image {
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: fill;
     height: 300px;
     opacity: 1;
 }
@@ -324,12 +325,10 @@ footer .separator {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: #3d4246;
-    opacity: 0.14;
 }
 
 .collection-hero-title {
-    bottom: 8vh;
+    bottom: 2vh;
     transform: none;
     position: absolute;
     color: #fff;
