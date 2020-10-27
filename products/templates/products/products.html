@@ -3,17 +3,21 @@
 {% endblock %} 
 {% block content %}
 
-{# @TODO: add background from backend with style="background: url({{ url_for ... }}) no-repeat center center" #}
+{# @TODO: add background from backend with  #}
 <div class="collection-header">
 	<div class="collection-hero">
-		<div class="collection-hero__image"></div>
-		<div class="collection-hero-container">
-			<h1 class="collection-hero-title container-fluid">
-				<span role="text">
-                    <span>Collection: </span>
-				</span>
-			</h1>
-		</div>
+		<div class="collection-hero-image" style="background: url({{ category.image.url }}) no-repeat center center"></div>
+            <div class="collection-hero-container">
+                <h1 class="collection-hero-title container-fluid">
+                    <span role="text">
+                    <span>{{ category.display_text }}</span>
+                    <hr class="separator w-25">
+                    {% if productline %}
+                    <span>{{ productline.display_text }}</span>
+                    </span>
+                    {% endif %}
+                </h1>
+            </div>
 	</div>
 </div>
 
@@ -22,11 +26,14 @@
     <div class="col">
 		<div class="form-inline justify-content-end text-right">
 			<label class="filters-toolbar-label select-label">Sort by: </label>
-			<select class="filters-toolbar-input" id="SortBy" name="sort_by" data-default-sortby="manual">
-		          <option value="manual" selected="selected">Featured</option>
-		          <option value="price-ascending">Price, low to high</option>
-		          <option value="price-descending">Price, high to low</option>
-		          <option value="created-descending">Date, new to old</option>
+			<select class="filters-toolbar-input" id="SortBy" name="SortBy" data-default-sortby="manual">
+                <option value="reset" {% if current_sorting == "None_None"%}selected{% endif %}>Featured</option>
+                <option value="price_asc" {% if current_sorting == "price_asc"%}selected{% endif %}>Price low to high</option>
+                <option value="price_desc" {% if current_sorting == "price_desc"%}selected{% endif %}>Price high to low</option>
+                <option value="color_asc" {% if current_sorting == "color_asc"%}selected{% endif %}>Color A to Z</option>
+                <option value="color_desc" {% if current_sorting == "color_desc"%}selected{% endif %}>Color Z to A</option>
+                <option value="name_asc" {% if current_sorting == "name_asc"%}selected{% endif %}>Name A to Z</option>
+                <option value="name_desc" {% if current_sorting == "name_desc"%}selected{% endif %}>Name Z to A</option>
 		  </select>
 		</div>
       </div>
@@ -101,5 +108,31 @@
     {% endfor %}
     </div>
  </div>
+
+{% endblock %}
+
+{% block postloadjs %}
+
+<script>
+ //** Based on CI-Boutique Addo Project **// 
+    $('#SortBy').change(function(){
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
+
+        var selectedVal = selector.val();
+        if(selectedVal != "reset"){
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+        }else{
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+        }
+    })
+    </script>
 
 {% endblock %}

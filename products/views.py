@@ -14,20 +14,38 @@ def all_products(request):
     query = None
     category = None
     productline = None
+    sort = None
+    direction = None
 
     if request.GET:
-        if 'category' and not 'productline' in request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == "name":
+                sortkey = 'lower_name'
+                products = products.annotate(lower_name=Lower("name"))
+            if sortkey == 'category':
+                sortkey = 'category__name'
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == "desc":
+                    sortkey = f'-{sortkey}'
+                products = products.order_by(sortkey)
+
+        if 'category' and 'productline' not in request.GET:
             category = request.GET['category']
             products = products.filter(category__name__icontains=category)
-        elif 'productline' and not 'category' in request.GET:
+            category = Category.objects.get(name=category)
+        elif 'productline' and 'category' not in request.GET:
             productline = request.GET['productline']
             products = products.filter(productline__name__icontains=productline)
+            productline = ProductLine.objects.get(name=productline)
         elif 'category' and 'productline' in request.GET:
             category = request.GET['category']
             productline = request.GET['productline']
             products = products.filter(category__name__contains=category).filter(productline__name__contains=productline)
-            print(category, productline, products)
-
+            category = Category.objects.get(name=category)
+            productline = ProductLine.objects.get(name=productline)
 
     if request.GET:
         if 'q' in request.GET:
@@ -40,38 +58,24 @@ def all_products(request):
             queries = Q(name__icontains=query) | Q(productline__name__icontains=query) | Q(category__name__icontains=query) 
             products = products.filter(queries)
 
+    current_sorting = f'{sort}_{direction}'
+
     context = {
         'products': products,
         'search_term': query,
         'category': category,
         'productline': productline,
-    }
-
-    print(products)
-    return render(request, 'products/products.html', context)
-
-"""
-def product_category(request, category_id):
-
-    products = Product.objects.all().filter(discontinued=False).filter(Product.category==category_id)
-    category = get_object_or_404(Category, pk=category_id)
-
-    context = {
-        'products': products,
-        'current_category': category,
+        'current_sorting': current_sorting
     }
 
     return render(request, 'products/products.html', context)
 
-"""
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
     product_variants = ProductVariant.objects.all().filter(product_id=product_id)
-    
-    print(product_variants)
     context = {
         'product': product,
         'product_variants': product_variants,
