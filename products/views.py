@@ -24,28 +24,29 @@ def all_products(request):
             if sortkey == "name":
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower("name"))
-            if sortkey == 'category':
-                sortkey = 'category__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == "desc":
                     sortkey = f'-{sortkey}'
                 products = products.order_by(sortkey)
 
-        if 'category' and 'productline' not in request.GET:
+    if request.GET:
+        if 'category' in request.GET and 'productline' not in request.GET:
             category = request.GET['category']
             products = products.filter(category__name__icontains=category)
             category = Category.objects.get(name=category)
-        elif 'productline' and 'category' not in request.GET:
+        elif 'productline' in request.GET and 'category' not in request.GET:
             productline = request.GET['productline']
             products = products.filter(productline__name__icontains=productline)
             productline = ProductLine.objects.get(name=productline)
-        elif 'category' and 'productline' in request.GET:
+        elif 'category' in request.GET and 'productline' in request.GET:
             category = request.GET['category']
             productline = request.GET['productline']
             products = products.filter(category__name__contains=category).filter(productline__name__contains=productline)
             category = Category.objects.get(name=category)
             productline = ProductLine.objects.get(name=productline)
+        else:
+            products = Product.objects.all().filter(discontinued=False)
 
     if request.GET:
         if 'q' in request.GET:
@@ -55,7 +56,7 @@ def all_products(request):
                     request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(productline__name__icontains=query) | Q(category__name__icontains=query) 
+            queries = Q(name__icontains=query) | Q(productline__name__icontains=query) | Q(category__name__icontains=query) | Q(description__contains=query) 
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
