@@ -8,9 +8,19 @@
 	<div class="row">
 		<div class="col-md-7 col-lg-7 col-sm">
 			<div class="image-container my-5">
-				<a href="">
-					<img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.display_text }}">
-                        </a>
+            {% if product.image %}
+            <img
+              class="card-img-top img-fluid"
+              src="{{ product.image.url }}"
+              alt="{{ product.display_text }}"
+            />
+        {% else %}
+           <img
+              class=""
+              src="{MEDIA_URL }}noimage.png"
+              alt="{{ product.display_text }}"
+            />
+        {% endif %}
 			</div>
 		</div>
 		<div class="col-md-5 col-lg-5 col-sm">
