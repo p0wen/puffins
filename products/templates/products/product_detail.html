@@ -35,20 +35,29 @@
 					{% endif %}
 				</div>
 				<div class="order-container">
+
+               <form action="{% url 'add_to_cart' %}" method="POST">
+               {% csrf_token %}
 					{% if product_variants.count > 1 %}
 					<div class="size-container">
+                    <div class="form-group">
+                        <select class="form-control" id="ddlproductvariants" name="productvariant">
 						{% for variant in product_variants %}
-						{% if variant.quantity == 0 %}
-						<button type="button" class="btn btn-primary" disabeld>{{ variant.size }}</button>
-						{% else %}
-						<button type="button" class="btn btn-primary">{{ variant.size }}</button>
-						{% endif %}
+                            {% if variant.quantity == 0 %}
+                                <option value="{{ variant.id }}" disabeld>{{ variant.size }}</option>
+                            {% else %}
+                                <option value="{{ variant.id }}">{{ variant.size }}</option>
+                            {% endif %}
 						{% endfor %}
+                        </select>
 					</div>
 					{% endif %}
 					<div class="add-2-cart-container">
-						<button type="button" class="btn btn-primary">ADD TO CART</button>
+						<button type="submit" class="btn btn-primary">ADD TO CART</button>
 					</div>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                </form>
+
 					<hr>
 					<div class="product-description">{{ product.description }}</div>
 					<hr>
@@ -83,7 +92,7 @@
 							</p>
 							<div class="collapse" id="deliveryInfo">
 								<div class="">
-									We offer free delivery for all orders over 30€ within Europe.<br>
+									We offer free delivery for all orders over {{ free_delivery_threshold }}€ within Europe.<br>
                                     Delivery time 1-10 working days.<br>
 
                                     In case of pre-order items, calculate delivery time from dispatch date.
