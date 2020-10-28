@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra-title %}- Shopping Bag{% endblock %}
+{% block content %}
+<div class="shadow-for-nav"></div>
+
+<div class="container">
+    <div class="row header my-5 text-center">
+        <div class="col">
+            <h1>Shopping Bag</h1>
+            <hr class="separator w-25">
+        </div>
+    </div>
+    <div class="row cart-items-container">
+        <div class="col">
+            {% if cart_items %}
+            <div class="table-responsive rounded"></div>
+            {% else %}
+            <p class="lead mb-5">Your bag is empty.</p>
+            <a href="#" onclick="goBack()">Go Back</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
