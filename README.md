@@ -146,3 +146,4 @@ Special Thanks to...
 * inspiration for a mega menu https://www.w3schools.com/howto/howto_css_mega_menu.asp
 * inspiration for product names https://magoosh.com/english-speaking/english-vocab/positive-adjectives-the-ultimate-list
 * bases for toggling colappsed navbar background: https://stackoverflow.com/questions/32147082/changing-collapsed-navbar-list-background-color
+* how to go back to previous page https://stackoverflow.com/questions/2968425/get-back-to-previous-page
