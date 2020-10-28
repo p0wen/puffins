@@ -1,7 +1,7 @@
 from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
-from products.models import Product, ProductVariant
+from products.models import ProductVariant
 
 
 def cart_content(request):
@@ -18,16 +18,14 @@ def cart_content(request):
             price = lineitem.product.discount_price
         else:
             price = lineitem.product.price
-        print(price)
-        print(quantity)
         total += price * quantity
-        print(total)
         product_count += quantity
-        print(product_count)
+        subtotal = price * quantity
         cart_items.append({
             'productvariant': productvariant,
             'quantity': quantity,
-            'product': lineitem,
+            'lineitem': lineitem,
+            'subtotal': subtotal,
         })
 
 

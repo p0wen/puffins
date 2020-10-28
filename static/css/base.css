@@ -398,6 +398,11 @@ footer .separator {
     text-decoration: underline;
  }
 
+/* Cart Styling */
+
+.cart-subtitle {
+    font-size: 0.8rem;
+}
 
 /* Reference to fonts for styling Process
 font-family: 'Fredericka the Great', cursive;
