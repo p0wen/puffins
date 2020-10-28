@@ -41,9 +41,9 @@
 					{% if product_variants.count > 1 %}
 					<div class="size-container">
                     <div class="form-group">
-                    {% for variant in product_variants %}
-                        {% if variant.quantity == 0 %}
                         <select class="form-control" id="ddlproductvariants" name="productvariant">
+						{% for variant in product_variants %}
+                            {% if variant.quantity == 0 %}
                                 <option value="{{ variant.id }}" disabeld>{{ variant.size }}</option>
                             {% else %}
                                 <option value="{{ variant.id }}">{{ variant.size }}</option>
