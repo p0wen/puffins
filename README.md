@@ -132,7 +132,7 @@ Partnerlook: https://images.unsplash.com/photo-1528686355953-c65738cb43ea?ixlib=
 
 Special Thanks to...
 
-... Simone Brauner from https://www.polardots.studio/
+... Simone from https://www.polardots.studio/
 ... my Code-Institute Mentor
 ... Tutors and Fellow Students of CI 
 
