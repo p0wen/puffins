@@ -1,5 +1,7 @@
 from decimal import Decimal
 from django.conf import settings
+from django.shortcuts import get_object_or_404
+from products.models import Product, ProductVariant
 
 
 def cart_content(request):
@@ -7,6 +9,27 @@ def cart_content(request):
     cart_items = []
     total = 0
     product_count = 0
+    cart = request.session.get('cart', {})
+
+    for productvariant, quantity in cart.items():
+        lineitem = get_object_or_404(ProductVariant, pk=productvariant)
+        print(lineitem.product.is_on_sale)
+        if lineitem.product.is_on_sale or lineitem.product.avail_for_pre_order:
+            price = lineitem.product.discount_price
+        else:
+            price = lineitem.product.price
+        print(price)
+        print(quantity)
+        total += price * quantity
+        print(total)
+        product_count += quantity
+        print(product_count)
+        cart_items.append({
+            'productvariant': productvariant,
+            'quantity': quantity,
+            'product': lineitem,
+        })
+
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
