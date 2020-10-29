@@ -85,6 +85,8 @@
 
 ### Known Bugs & Issues
 
+[ ] Update form for more than 1 item in cart
+
 ### Issues handled via development
 
 - Templates not pulled from apps folder
