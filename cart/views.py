@@ -26,13 +26,25 @@ def add_to_cart(request):
     return redirect(redirect_url)
 
 
-def update_cart(request, productvariant):
-    """Adjust the quantity of the specified product to the specified amount"""
+def increase_quantity_by_one(request, productvariant):
+    """ Increase Quanity by 1 """
 
-    quantity = int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
-    if quantity > 0:
-        cart[productvariant] = quantity
+
+    if productvariant in list(cart.keys()):
+        cart[productvariant] += 1
+
+    request.session['cart'] = cart
+    return redirect(reverse('view_cart'))
+
+
+def decrease_quantity_by_one(request, productvariant):
+    """ Increase Quanity by 1 """
+
+    cart = request.session.get('cart', {})
+
+    if cart[productvariant] > 1:
+        cart[productvariant] -= 1
     else:
         cart.pop(productvariant)
 

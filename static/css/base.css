@@ -15,6 +15,12 @@ h4,
 h5 {
   font-family: Fredericka the Great;
 }
+
+svg {
+    overflow: hidden;
+    vertical-align: baseline;
+}
+
 /* individual nav styling */
 
 nav {
@@ -404,6 +410,9 @@ footer .separator {
     font-size: 0.8rem;
 }
 
+.quantity-control {
+    height: 1.5rem;;
+}
 /* Reference to fonts for styling Process
 font-family: 'Fredericka the Great', cursive;
 font-family: 'Open Sans', sans-serif;

@@ -50,39 +50,26 @@
                                         <p class="my-0">{{ item.lineitem.product.price }}€</p>
                                     {% endif %}
                                     </td>
-                                    <td class="py-3 w-25">
-                                        <form class="form update-form" method="POST" action="{% url 'update_cart' item.productvariant %}">
-                                            {% csrf_token %}
-                                               <div class="form-group">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <button class="decrement-qty btn btn-sm btn-black rounded-0" 
-                                                            data-item_id="{{ item.productvariant }}" id="decrement-qty_{{ item.productvariant }}">
-                                                           <span>
-                                                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-                                                                </svg>
-                                                            </span>
-                                                        </button>
-                                                    </div>
-                                                    <input class="form-control form-control-sm qty_input" type="number"
-                                                        name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                                        data-item_id="{{ item.productvariant }}"
-                                                        id="id_qty_{{ item.productvariant }}">
-                                                    <div class="input-group-append">
-                                                        <button class="increment-qty btn btn-sm btn-black rounded-0"
-                                                            data-item_id="{{ item.productvariant }}" id="increment-qty_{{ item.productvariant }}">
-                                                                <span>
-                                                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                                <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                                                </svg>
-                                                            </span>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                        <a class="update-link text-info"><small>Update</small></a>
+                                    <td class="py-3">
+                                        <div class="quantity-control">
+                                            <form class="d-inline" method="POST" action="{% url 'decrease_quantity_by_one' item.productvariant %}">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-sm">
+                                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                                                    </svg>
+                                                </button>
+                                            </form>
+                                            <span>{{ item.quantity }}</span>
+                                            <form class="d-inline" method="POST" action="{% url 'increase_quantity_by_one' item.productvariant %}">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-sm">
+                                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                                    </svg>
+                                                </button>
+                                            </form>
+                                        </div>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">{{ item.subtotal }}€</p>
@@ -90,7 +77,7 @@
                                     <td class="py-3">
                                     <form method="POST" action="{% url 'remove_from_cart' item.productvariant %}">
                                         {% csrf_token %}
-                                        <button type="submit" class="btn">
+                                        <button type="submit" class="btn btn-sm">
                                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"></path>
                                             </svg>
@@ -143,18 +130,4 @@
         </div>
     </div>
 
-{% endblock %}
-{% block postloadjs %}
-{{ block.super }}
-
-{% include 'products/includes/qty_input_script.html' %}
-
-<script type="text/javascript">
-    // Taken from Botique Addo Project
-    // Update quantity on click
-    $('.update-link').click(function(e) {
-        var form = $(this).prev('.update-form');
-        form.submit();
-    })
-</script>
 {% endblock %}
