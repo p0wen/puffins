@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'home',
     'products',
     'cart',
+    'checkout',
 ]
 
 MIDDLEWARE = [
@@ -154,4 +155,5 @@ LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = ''
 
 FREE_DELIVERY_THRESHOLD = 30
-STANDARD_DELIVERY_PERCENTAGE = 10
+STANDARD_DELIVERY_FEE = 4.99
+TAX_RATE_PERCANTAGE = 16
