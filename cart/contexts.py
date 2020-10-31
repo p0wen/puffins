@@ -13,7 +13,6 @@ def cart_content(request):
 
     for productvariant, quantity in cart.items():
         lineitem = get_object_or_404(ProductVariant, pk=productvariant)
-        print(lineitem.product.is_on_sale)
         if lineitem.product.is_on_sale or lineitem.product.avail_for_pre_order:
             price = lineitem.product.discount_price
         else:
@@ -37,7 +36,7 @@ def cart_content(request):
 
     grand_total = delivery + total
 
-    total_tax = grand_total * Decimal(settings.TAX_RATE_PERCANTAGE / 100)
+    total_tax = Decimal(grand_total) * Decimal(settings.TAX_RATE_PERCENTAGE / 100)
 
     context = {
         'cart_items': cart_items,
@@ -48,7 +47,7 @@ def cart_content(request):
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
         'grand_total': grand_total,
         'total_tax': total_tax,
-        'tax_rate': settings.TAX_RATE_PERCANTAGE,
+        'tax_rate': settings.TAX_RATE_PERCENTAGE,
     }
 
     return context
