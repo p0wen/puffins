@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block extra-title %}- Check Out{% endblock %}
+{% block content %}
+<div class="shadow-for-nav"></div>
+
+<div class="container">
+	<div class="row header my-5 text-center">
+		<div class="col">
+			<h1>Secure Checkout</h1>
+			<hr class="separator w-25">
+		</div>
+	</div>
+
+    <div class="row">
+        <div class="col-12 col-lg-6 order-lg-last mb-5">
+            <p class="text-muted">Order Summary ({{ product_count }})</p>
+            <div class="row">
+                <div class="col-7 offset-2">
+                    <p class="mb-1 mt-0 small text-muted">Item</p>
+                </div>
+                <div class="col-3 text-right">
+                    <p class="mb-1 mt-0 small text-muted">Subtotal</p>
+                </div>
+            </div>
+            {% for item in cart_items %}
+            <div class="row">
+                <div class="col-2 mb-1">
+                    <a href="{% url 'product_detail' item.lineitem.id %}">
+                        {% if item.lineitem.product.image %}
+                        <img class="w-100" src="{{ item.lineitem.product.image.url }}" alt="{{ item.lineitem.product.display_text | title }}">
+                        {% else %}
+                        <img class="w-100" src="{{ MEDIA_URL }}/noimage.png" alt="{{ item.lineitem.product.display_text | title }}">
+                        {% endif %}
+                    </a>
+                </div>
+                <div class="col-7">
+                    <p class="my-0"><strong>{{ item.lineitem.product.display_text | title }}</strong></p>
+                    <p class="my-0 small">Size: {{ item.lineitem.size }}
+                    <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                </div>
+                <div class="col-3 text-right">
+                    <p class="my-0 small text-muted">{{ item.subtotal }}€</p>
+                </div>
+            </div>
+            {% endfor %}
+            <hr class="my-0">
+            <div class="row text-black text-right">
+                <div class="col-7 offset-2">
+                    <p class="my-0">Order Total:</p>
+                    <p class="my-0">Delivery:</p>
+                    <p class="my-0">Grand Total:</p>
+                </div>
+                <div class="col-3">
+                    <p class="my-0">{{ total | floatformat:2 }}€</p>
+                    <p class="my-0">{{ delivery | floatformat:2 }}€</p>
+                    <p class="my-0"><strong>{{ grand_total | floatformat:2 }}€</strong></p>
+                    <p class="my-0 text-muted"><small>incl. {{ tax_rate }}% Tax: {{ total_tax | floatformat:2 }}€</small></p>
+                </div>
+            </div>
+        </div>
+		<div class="col-12 col-lg-6">
+			<p class="text-muted">Please fill out the form below to complete your order</p>
+			<form action="{% url 'checkout' %}" method="POST" id="payment-form">
+				{% csrf_token %}
+				<h3>Contact Information</h3>
+				{% if not user.is_authenticated %}
+				<div class="text-muted form-subtitle"><small>Already have an account? <a href="#">Log in</a></small>
+				</div>
+				{% endif %}
+				{{ order_form.email | as_crispy_field }}
+				<h3 class="mt-5">Shipping Details</h3>
+				<div class="form-row">
+					<div class="form-group col-md-6 mb-0">
+						{{ order_form.first_name | as_crispy_field }}
+					</div>
+					<div class="form-group col-md-6 mb-0">
+						{{ order_form.last_name | as_crispy_field }}
+					</div>
+				</div>
+				{{ order_form.street_address1 | as_crispy_field }}
+				{{ order_form.street_address2 | as_crispy_field }}
+				<div class="form-row">
+					<div class="form-group col-md-4 mb-0">
+						{{ order_form.zipcode | as_crispy_field }}
+					</div>
+					<div class="form-group col-md-8 mb-0">
+						{{ order_form.town_or_city | as_crispy_field }}
+					</div>
+				</div>
+				{{ order_form.country | as_crispy_field }}
+				{{ order_form.phone_number | as_crispy_field }}
+				<div class="form-check form-check-inline float-right mr-0">
+					{% if user.is_authenticated %}
+					<label class="form-check-label" for="id-save-info">Save this information for next time</label>
+					<input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
+                    {% endif %}
+            </div>
+					<h3 class="mt-5">Payment</h3>
+					<!-- A Stripe card element will go here -->
+					<div class="mb-3" id="card-element"></div>
+					<!-- Used to display form errors -->
+					<div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+					<!-- Pass the client secret to the view so we can get the payment intent id -->
+					<input type="hidden" value="{{ client_secret }}" name="client_secret">
+
+					<!-- Submit Button -->
+					<div class="submit-button text-right mt-5 mb-2">
+						<a href="{% url 'view_cart' %}" class="btn rounded-0">
+							<span class="icon">
+								<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                                </svg>
+							</span>
+							<span class="font-weight-bold">Adjust Cart</span>
+						</a>
+						<button id="submit-button" class="btn button-blue rounded-0">
+							<span class="font-weight-bold">Complete Order</span>
+							<span>
+								<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                                <path fill-rule="evenodd" d="M11.354 5.646a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                                </svg>
+							</span>
+						</button>
+						<p class="small text-danger my-0">
+							<span class="icon">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-exclamation-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                                </svg>
+							</span>
+							<span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+						</p>
+					</div>
+			</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
