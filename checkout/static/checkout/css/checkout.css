@@ -2,3 +2,46 @@
 .form-subtitle {
     margin-bottom: 0.5rem;
 }
+
+.StripeElement,
+.stripe-style-input {
+  box-sizing: border-box;
+  height: 40px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  background-color: white;
+  box-shadow: none;
+  -webkit-transition: none;
+  transition: border 150ms ease;
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+  border: 1 px solid #000;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+    color: #bebcbb;
+}
+
+.fieldset-label {
+    position: relative;
+    right: .5rem;
+}
+
+#payment-form .form-control,
+#card-element {
+    color: #bebcbb;
+    border: 1px solid #bebcbb;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border: 1 px solid #000;
+}
