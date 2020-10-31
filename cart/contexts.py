@@ -37,6 +37,8 @@ def cart_content(request):
 
     grand_total = delivery + total
 
+    total_tax = grand_total * Decimal(settings.TAX_RATE_PERCANTAGE / 100)
+
     context = {
         'cart_items': cart_items,
         'total': total,
@@ -44,7 +46,9 @@ def cart_content(request):
         'delivery': delivery,
         'free_delivery_delta': free_delivery_delta,
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
-        'grand_total': grand_total
+        'grand_total': grand_total,
+        'total_tax': total_tax,
+        'tax_rate': settings.TAX_RATE_PERCANTAGE,
     }
 
     return context
