@@ -1,6 +1,7 @@
 import uuid
 from django.db import models
 from django.db.models import Sum
+from decimal import Decimal
 from django.conf import settings
 from django_countries.fields import CountryField
 
@@ -32,14 +33,14 @@ class Order(models.Model):
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
-        self.order_total = self.lineitems.aggregate(Sum('lineitems'))['lineitem_total__sum']
-        if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
-            self.delivery_cost = settings.FREE_DELIVERY_FEE
+        self.total_order = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        if self.total_order < settings.FREE_DELIVERY_THRESHOLD:
+            self.delivery_cost = settings.STANDARD_DELIVERY_FEE
         else:
             self.delivery_cost = 0
-        self.grand_total = self.order_total + self.delivery_cost
+        self.grand_total = self.total_order + self.delivery_cost
         self.tax_rate = settings.TAX_RATE_PERCENTAGE
-        self.included_tax = self.grand_total * (self.tax_rate / 100)
+        self.total_tax = Decimal(self.grand_total) * Decimal(self.tax_rate / 100)
         self.save()
 
     def save(self, *args, **kwargs):
@@ -57,7 +58,10 @@ class OrderLineItem(models.Model):
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0, editable=False)
 
     def save(self, *args, **kwargs):
-        self.lineitem_total = self.product.price * self.quantity
+        if self.productvariant.product.is_on_sale or self.productvariant.product.avail_for_pre_order:
+            self.lineitem_total = self.productvariant.product.discount_price * self.quantity
+        else:
+            self.lineitem_total = self.productvariant.product.price * self.quantity
         super().save(*args, **kwargs)
 
     def __str__(self):
