@@ -45,3 +45,80 @@
     box-shadow: none;
     border: 1 px solid #000;
 }
+
+/* Loading Heart base taken from : https://loading.io/css/ */
+
+#loading-overlay {
+	display: none;
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(190, 187, 184, .85);
+    z-index: 9999;
+}
+
+.loading-spinner {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100%;
+}
+
+.lds-heart {
+  display: inline-block;
+  position: relative;
+  width: 160px;
+  height: 160px;
+  transform: rotate(45deg);
+  transform-origin: 80px 80px;
+}
+.lds-heart div {
+    top: 64px;
+    left: 64px;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background: #df0f1e;
+    animation: lds-heart 1.5s infinite cubic-bezier(0.2, 0.4, 0.655, 1);
+}
+
+.lds-heart div:after,
+.lds-heart div:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 64px;
+  height: 64px;
+  background: #df0f1e;
+}
+.lds-heart div:before {
+  left: -48px;
+  border-radius: 50% 0 0 50%;
+}
+.lds-heart div:after {
+  top: -48px;
+  border-radius: 50% 50% 0 0;
+}
+@keyframes lds-heart {
+  0% {
+    transform: scale(0.95);
+  }
+  5% {
+    transform: scale(1.1);
+  }
+  39% {
+    transform: scale(0.85);
+  }
+  45% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
