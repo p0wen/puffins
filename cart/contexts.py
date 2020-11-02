@@ -11,7 +11,6 @@ def cart_content(request):
     total = 0
     product_count = 0
     cart = request.session.get('cart', {})
-    print(cart)
     for item_id, item_data in cart.items():
         lineitem = get_object_or_404(ProductVariant, pk=item_id)
         for item_id, item_data in cart[item_id].items():
