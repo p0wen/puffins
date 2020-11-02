@@ -1,5 +1,9 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.template.loader import render_to_string
+from collections import OrderedDict 
+from operator import getitem 
+from datetime import datetime
+import time
 import json
 # Create your views here.
 
@@ -15,14 +19,16 @@ def add_to_cart(request):
     if request.method == 'POST':
         productvariant = request.POST.get('productvariant')
         cart = request.session.get('cart', {})
-
+        now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         if productvariant in list(cart.keys()):
-            cart[productvariant] += 1
+            cart[productvariant]['qty'] += 1
+            cart[productvariant]['date_created'] = now
         else:
-            cart[productvariant] = 1
-
-        request.session['cart'] = cart
-        render_cart = render_to_string('cart/includes/sideDrawerContent.html', request=request)
+            cart[productvariant] = {'qty': 1, 'date_created': now}
+        orderd_cart = OrderedDict(sorted(cart.items(), key = lambda x: x[1]['date_created'], reverse=True))
+        request.session['cart'] = orderd_cart
+        render_cart = render_to_string('cart/includes/sideDrawerContent.html',
+                                       request=request)
         return HttpResponse(
             render_cart,
             content_type="text/html"

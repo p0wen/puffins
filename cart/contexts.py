@@ -2,26 +2,32 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import ProductVariant
+from datetime import datetime
+import time
 
 
 def cart_content(request):
-
     cart_items = []
     total = 0
     product_count = 0
     cart = request.session.get('cart', {})
+    print(cart)
+    for item_id, item_data in cart.items():
+        lineitem = get_object_or_404(ProductVariant, pk=item_id)
+        for item_id, item_data in cart[item_id].items():
+            if item_id == 'qty':
+                quantity = item_data
 
-    for productvariant, quantity in cart.items():
-        lineitem = get_object_or_404(ProductVariant, pk=productvariant)
         if lineitem.product.is_on_sale or lineitem.product.avail_for_pre_order:
             price = lineitem.product.discount_price
         else:
             price = lineitem.product.price
+
         total += price * quantity
         product_count += quantity
         subtotal = price * quantity
         cart_items.append({
-            'productvariant': productvariant,
+            'productvariant': item_id,
             'quantity': quantity,
             'lineitem': lineitem,
             'subtotal': subtotal,
@@ -36,7 +42,8 @@ def cart_content(request):
 
     grand_total = Decimal(delivery) + Decimal(total)
 
-    total_tax = Decimal(grand_total) * Decimal(settings.TAX_RATE_PERCENTAGE / 100)
+    total_tax = Decimal(grand_total) * \
+        Decimal(settings.TAX_RATE_PERCENTAGE / 100)
 
     context = {
         'cart_items': cart_items,
