@@ -23,6 +23,7 @@
         {% endif %}
 			</div>
 		</div>
+        
 		<div class="col-md-5 col-lg-5 col-sm">
 			<div class="product-details-container mb-5 mt-md-5">
 				<h1 class="product-details-title">{{ product.display_text | title }}</h1>
@@ -36,12 +37,12 @@
 				</div>
 				<div class="order-container">
 
-               <form action="{% url 'add_to_cart' %}" method="POST">
+               <form id="add_to_cart"  method="POST">
                {% csrf_token %}
 					{% if product_variants.count > 1 %}
 					<div class="size-container">
                     <div class="form-group">
-                        <select class="form-control" id="ddlproductvariants" name="productvariant">
+                        <select class="form-control" id="order_item" name="productvariant">
 						{% for variant in product_variants %}
                             {% if variant.quantity == 0 %}
                                 <option value="{{ variant.id }}" disabeld>{{ variant.size }}</option>
@@ -57,11 +58,10 @@
                     {% else %}
                         {% for variant in product_variants %}
                     <div class="add-2-cart-container">
-						<button type="submit" class="btn btn-primary" name="productvariant"value="{{ variant.id }}">ADD TO CART</button>
+						<button type="submit" class="btn btn-primary" id="order_item" name="productvariant" value="{{ variant.id }}">ADD TO CART</button>
 					</div>
                         {% endfor %}
                     {% endif %}
-                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </form>
 
 					<hr>
@@ -134,5 +134,42 @@
 	</div>
 
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+
+<script>
+
+
+$('#add_to_cart').on('submit', function(event){
+    event.preventDefault();
+    addToCart();
+    console.log($('#order_item').val());
+    openSideCart();
+
+});
+
+function addToCart() {
+    console.log("create post is working!") // sanity check
+    productvariant_value = $('#order_item').val()
+$.ajax({
+        url : "{% url 'add_to_cart' %}", // the endpoint
+        type : "POST", // http method
+        data : { productvariant : productvariant_value }, // data sent with the post request
+        // handle a successful response
+        success : function(html) {
+            $('#sideDrawerContent').html(html)
+        },
+
+        // handle a non-successful response
+        error : function(xhr,errmsg,err) {
+            console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+        }
+    });
+};
+
+</script>
+
+
 
 {% endblock %}

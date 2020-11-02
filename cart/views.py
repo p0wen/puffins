@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
-
+from django.template.loader import render_to_string
+import json
 # Create your views here.
 
 
@@ -11,18 +12,26 @@ def view_cart(request):
 
 def add_to_cart(request):
     """ Add a productvariant to cart """
+    if request.method == 'POST':
+        productvariant = request.POST.get('productvariant')
+        cart = request.session.get('cart', {})
 
-    productvariant = request.POST.get('productvariant')
-    redirect_url = request.POST.get('redirect_url')
-    cart = request.session.get('cart', {})
+        if productvariant in list(cart.keys()):
+            cart[productvariant] += 1
+        else:
+            cart[productvariant] = 1
 
-    if productvariant in list(cart.keys()):
-        cart[productvariant] += 1
+        request.session['cart'] = cart
+        render_cart = render_to_string('cart/includes/sideDrawerContent.html', request=request)
+        return HttpResponse(
+            render_cart,
+            content_type="text/html"
+        )
     else:
-        cart[productvariant] = 1
-
-    request.session['cart'] = cart
-    return redirect(redirect_url)
+        return HttpResponse(
+            json.dumps({"nothing to see": "this isn't happening"}),
+            content_type="application/json"
+        )
 
 
 def increase_quantity_by_one(request, productvariant):
