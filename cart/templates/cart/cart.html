@@ -22,7 +22,7 @@
                                     <th scope="col">Item</th>
                                     <th scope="col"></th>
                                     <th scope="col">Price</th>
-                                    <th scope="col">Qty</th>
+                                    <th scope="col">Quantity</th>
                                     <th scope="col">Subtotal</th>
                                     <th scope="col"></th>
                                 </tr>
@@ -88,7 +88,7 @@
                             {% endfor %}
 
                             <tr>
-                                <td colspan="5" class="pt-5 text-right">
+                                <td colspan="6" class="pt-5 text-right">
                                     <h6><strong>Cart Total: {{ total|floatformat:2 }}€</strong></h6>
                                     <h6>Delivery: {{ delivery|floatformat:2 }}€</h6>
                                     <h4 class="mt-4"><strong>Grand Total: {{ grand_total|floatformat:2 }}€</strong></h4>
@@ -100,7 +100,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="5" class="text-right">
+                                <td colspan="6" class="text-right">
                                     <a href="{% url 'products' %}" class="btn rounded-0 btn-lg">
                                         <span class="icon">
                                             <i class="fas fa-chevron-left"></i>
@@ -113,6 +113,8 @@
                                             <i class="fas fa-lock"></i>
                                         </span>
                                     </a>
+                                </td>
+                                <td>
                                 </td>
                             </tr>
                         </table>
