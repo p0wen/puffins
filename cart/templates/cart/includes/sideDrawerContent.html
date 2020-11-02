@@ -1,0 +1,58 @@
+<!--- Shopping Cart Drawer -->
+
+		<!-- IF CART EMPTY -->
+		<div class="no-items">
+			<p>It appears that your cart is currently empty!</p>
+			<img src="" class="lazyload" alt="">
+			<a href="" class="btn btn-primary" rel="nofollow">Continue Shopping</a>
+		</div>
+
+		<!-- IF CART FILLED -->
+
+		<div class="has-items">
+			<div class="top-cart-items">
+				{% for item in cart_items %}
+				<div class="product-box">
+
+					<a class="img-link" href="{% url 'product_detail' item.lineitem.id %}">
+						{% if item.lineitem.product.image %}
+						<img class="w-100" src="{{ item.lineitem.product.image.url }}" alt="{{ item.lineitem.product.display_text | title }}">
+										                                    {% else %}
+						<img class="w-100" src="{{ MEDIA_URL }}/noimage.png" alt="{{ item.lineitem.product.display_text | title }}">
+										                                    {% endif %}
+						<div class="product-description">
+							<p class="item-title"><a
+									href="{% url 'product_detail' item.lineitem.id %}">{{ item.lineitem.product.display_text | title }}</a>
+							</p>
+							<ul class="item-specs">
+								<li>{{ date.time_now }}{{ item.lineitem.product.color | title }} /
+									{{ item.lineitem.size }}</li>
+								<li class="preorder">
+									<span>Status:</span> Pre-order
+								</li>
+								<li>
+									<span>Dispatch date:</span> December 15th
+								</li>
+							</ul>
+							<div class="qty-wrap">
+							</div>
+						</div>
+						<div class="price-column">
+							<span>268.80€</span>
+							<a href="#" class="cart__remove">
+								x
+							</a>
+						</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="cart-footer">
+			<div class="subtotal">
+				<span>Subtotal <small>Inc. VAT</small></span>
+				<span id="cart-pop-price" >268.80€</span>
+			</div>
+            <div class="actions">
+                <a href="" class="btn btn-primary btn-buy">Checkout</a>
+                <a href="" class="back-shopping">← Go to cart</a>
+            </div>
