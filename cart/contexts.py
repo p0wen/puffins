@@ -34,7 +34,7 @@ def cart_content(request):
         delivery = 0
         free_delivery_delta = 0
 
-    grand_total = delivery + total
+    grand_total = Decimal(delivery) + Decimal(total)
 
     total_tax = Decimal(grand_total) * Decimal(settings.TAX_RATE_PERCENTAGE / 100)
 
