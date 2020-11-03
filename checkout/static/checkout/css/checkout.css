@@ -37,7 +37,7 @@
 
 #payment-form .form-control,
 #card-element {
-    color: #bebcbb;
+    color: #000;
     border: 1px solid #bebcbb;
 }
 
@@ -46,7 +46,7 @@
     border: 1 px solid #000;
 }
 
-/* Loading Heart base taken from : https://loading.io/css/ */
+/* Loading Puffin base taken from : https://loading.io/css/ */
 
 #loading-overlay {
 	display: none;
