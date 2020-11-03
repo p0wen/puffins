@@ -7,9 +7,19 @@ from django_countries.fields import CountryField
 
 from products.models import ProductVariant
 
+STATUS_OPTIONS = [
+    ('0', 'Order Received'),
+    ('1', 'Order Accepted'),
+    ('2', 'Preparing for delivery'),
+    ('3', 'Dispatched'),
+    ('4', 'Order Received'),
+    ('C', 'Order Canceld'),
+]
+
 
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
+    order_status = models.CharField(max_length=1, choices=STATUS_OPTIONS, default='0')
     first_name = models.CharField(max_length=50, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
@@ -66,19 +76,3 @@ class OrderLineItem(models.Model):
 
     def __str__(self):
         return f'ProductID {self.productvariant.product.name} on order {self.order.order_number}'
-
-
-class OrderStatus(models.Model):
-    order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name="order_status")
-    STATUS_OPTIONS = [
-        ('0', 'Order Received'),
-        ('1', 'Order Accepted'),
-        ('2', 'Preparing for delivery'),
-        ('3', 'Dispatched'),
-        ('4', 'Order Received'),
-        ('C', 'Order Canceld'),
-    ]
-    status = models.CharField(max_length=1, choices=STATUS_OPTIONS)
-
-    def __str__(self):
-        return self.status
