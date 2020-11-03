@@ -1,6 +1,4 @@
-from django.shortcuts import render, redirect,\
-                                reverse, get_object_or_404,\
-                                HttpResponse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.conf import settings
 
@@ -10,7 +8,6 @@ from .models import Order, OrderLineItem
 from cart.contexts import cart_content
 
 import stripe
-import json
 
 
 def checkout(request):
@@ -37,12 +34,15 @@ def checkout(request):
             order = order_form.save()
             for item_id, item_data in cart.items():
                 try:
-                    productvariant = get_object_or_404(ProductVariant,
-                                                       pk=item_id)
+                    productvariant = get_object_or_404(ProductVariant, pk=item_id)
+                    for item_id, item_data in cart[item_id].items():
+                        if item_id == 'qty':
+                            quantity = item_data
+
                     order_line_item = OrderLineItem(
                         order=order,
                         productvariant=productvariant,
-                        quantity=item_data,
+                        quantity=quantity,
                     )
                     order_line_item.save()
                 except ProductVariant.DoesNotExist:
