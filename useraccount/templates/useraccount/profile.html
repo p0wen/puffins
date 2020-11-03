@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'useraccount/css/useraccount.css' %}">
+{% endblock %}
+
+{% block extra-title %}- Your Profile {% endblock %}
+{% block content %}
+<div class="shadow-for-nav"></div>
+
+<div class="container">
+	<div class="row header my-5 text-center">
+		<div class="col">
+			<h1>Your Profile</h1>
+			<hr class="separator w-25">
+		</div>
+	</div>
+
+    <div class="row">
+        <div class="col-12 col-lg-6 order-lg-last mb-5">
+            <p class="text-muted">Your Orders</p>
+            <hr class="my-0">
+        </div>
+		<div class="col-12 col-lg-6">
+            <p class="text-muted">Your Details</p>
+            <hr class="my-0">
+			
+		</div>
+	</div>
+</div>
+
+{% endblock %}
