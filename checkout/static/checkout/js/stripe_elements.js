@@ -72,7 +72,7 @@ form.addEventListener('submit', function(ev) {
             payment_method: {
                 card: card,
                 billing_details: {
-                    name: $.trim(form.first_name.value)+" "+$.trim(form.last_name.value),
+                    name: $.trim(form.first_name.value)+" - "+$.trim(form.last_name.value),
                     email: $.trim(form.email.value),
                     address:{
                         line1: $.trim(form.street_address1.value),
@@ -83,7 +83,7 @@ form.addEventListener('submit', function(ev) {
                 }
             },
             shipping: {
-                name: $.trim(form.first_name.value)+" "+$.trim(form.last_name.value),
+                name: $.trim(form.first_name.value)+" - "+$.trim(form.last_name.value),
                 phone: $.trim(form.phone_number.value),
                     address:{
                         line1: $.trim(form.street_address1.value),
@@ -111,7 +111,7 @@ form.addEventListener('submit', function(ev) {
                 $('#submit-button').attr('disabled', false);
             } else {
                 if (result.paymentIntent.status === 'succeeded') {
-                    form.submit();
+                    // form.submit();
                 }
             }
         });
