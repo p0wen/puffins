@@ -13,12 +13,12 @@ class Order(models.Model):
     first_name = models.CharField(max_length=50, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
-    phone_number = models.CharField(max_length=20, null=True, blank=True)
+    phone_number = models.CharField(max_length=20, blank=True)
     country = CountryField(blank_label='Country *', null=False, blank=False)
     zipcode = models.CharField(max_length=20, null=True, blank=False)
     town_or_city = models.CharField(max_length=40, null=False, blank=False)
     street_address1 = models.CharField(max_length=80, null=False, blank=False)
-    street_address2 = models.CharField(max_length=80, null=True, blank=True)
+    street_address2 = models.CharField(max_length=80, blank=True)
     total_order = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     total_tax = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     tax_rate = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
@@ -35,7 +35,7 @@ class Order(models.Model):
     def update_total(self):
         self.total_order = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         if self.total_order < settings.FREE_DELIVERY_THRESHOLD:
-            self.delivery_cost = settings.STANDARD_DELIVERY_FEE
+            self.delivery_cost = Decimal(settings.STANDARD_DELIVERY_FEE)
         else:
             self.delivery_cost = 0
         self.grand_total = self.total_order + self.delivery_cost
