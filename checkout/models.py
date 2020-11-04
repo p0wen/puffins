@@ -21,8 +21,10 @@ STATUS_OPTIONS = [
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(UserAccount, on_delete=models.SET_NULL,
-                                       null=True, blank=True, related_name='orders')
-    order_status = models.CharField(max_length=1, choices=STATUS_OPTIONS, default='0')
+                                     null=True, blank=True,
+                                     related_name='orders')
+    order_status = models.CharField(max_length=1, choices=STATUS_OPTIONS,
+                                    default='0')
     first_name = models.CharField(max_length=50, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
@@ -40,7 +42,7 @@ class Order(models.Model):
     date_order_placed = models.DateTimeField(auto_now_add=True)
     original_cart = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
-    
+
     def _generate_order_number(self):
         """
         Generate a random, unique order number using UUID
