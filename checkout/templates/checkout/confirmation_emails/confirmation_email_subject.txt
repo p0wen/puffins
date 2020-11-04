@@ -1,0 +1,1 @@
+Congratulations - We received your Order {{ order.order_number }}!

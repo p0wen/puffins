@@ -153,6 +153,9 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# E-MAIL SET UP
+DEFAULT_FROM_EMAIL = 'awesomepuffins@gmail.com'
+
 # Logs Confirmation Email to Console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
