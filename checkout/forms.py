@@ -3,7 +3,6 @@ from .models import Order
 
 
 class OrderForm(forms.ModelForm):
-
     class Meta:
         model = Order
         fields = ('first_name',
@@ -24,17 +23,18 @@ class OrderForm(forms.ModelForm):
             'phone_number': 'Phone Number',
             'street_address1': 'Street',
             'street_address2': 'Apartment, suite, etc.',
-            'zipcode': 'Postal Code',
+            'zipcode': 'Zip Code',
             'town_or_city': 'City',
             'country': 'Country',
         }
 
         self.fields['email'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if not self.fields[field].required:
-                placeholder = f'{placeholders[field]} (Optional)'
-            else:
-                placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
+            if field != 'default_country':
+                if not self.fields[field].required:
+                    placeholder = f'{placeholders[field]} (Optional)'
+                else:
+                    placeholder = placeholders[field]
+                self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
