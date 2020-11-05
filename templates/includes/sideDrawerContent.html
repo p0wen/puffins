@@ -4,7 +4,7 @@
     
 
     <!-- IF CART FILLED -->
-     {% if cart_items %}
+    {% if cart_items %}
     <div class="has-items">
         <div class="top-cart-items">
             {% for item in cart_items %}
@@ -55,6 +55,7 @@
                         </div>
                 </div>
             {% endfor %}
+
         {% else %}
         <div class="no-items">
             <p>It appears that your cart is currently empty!</p>
@@ -67,7 +68,7 @@
     <div class="cart-footer">
         <div class="subtotal">
             <span>Total <small>Inc. VAT</small></span>
-            <span id="cart-pop-price" >Grand Total: {{ grand_total|floatformat:2 }}€</span>
+            <span id="cart-pop-price" >Grand Total: {{ grand_total|floatformat:2 }}€ </span>
         </div>
         <div class="actions">
             <a href="{% url 'checkout' %}" class="btn btn-primary btn-buy">Checkout</a>
