@@ -35,7 +35,7 @@
 </head>
 
 <body class="d-flex flex-column">
-
+<div class="flex-fill">
 	{% if messages %}
 	<div class="message-container"></div>
 	{% endif %}
@@ -211,7 +211,7 @@
 							</svg>
 			                Shopping Cart
                         </span>
-			<button onClick="closeSideCart()" class="close-button close-cart">
+			<button onclick="closeSideCart()" class="close-button close-cart">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                             </svg>
@@ -228,7 +228,7 @@
 
 	{% block content %}
 	{% endblock %}
-
+</div>
 	<footer>
 		<div class="container">
 			<div class="row">
