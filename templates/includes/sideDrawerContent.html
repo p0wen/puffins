@@ -1,7 +1,6 @@
 <!--- Shopping Cart Drawer -->
 
-    <!-- IF CART EMPTY -->
-    
+ 
 
     <!-- IF CART FILLED -->
     {% if cart_items %}
@@ -55,7 +54,7 @@
                         </div>
                 </div>
             {% endfor %}
-
+    <!-- IF CART EMPTY -->
         {% else %}
         <div class="no-items">
             <p>It appears that your cart is currently empty!</p>
@@ -74,3 +73,4 @@
             <a href="{% url 'checkout' %}" class="btn btn-primary btn-buy">Checkout</a>
             <a href="{% url 'view_cart' %}" class="back-shopping">← Go to cart</a>
         </div>
+    </div>
