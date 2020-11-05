@@ -154,3 +154,4 @@ Special Thanks to...
 - https://simpleisbetterthancomplex.com/tutorial/2016/08/29/how-to-work-with-ajax-request-with-django.html
 - https://realpython.com/django-and-ajax-form-submissions/
 * how to avoid duplicates in database of productvariant (product & size) https://stackoverflow.com/questions/3052975/django-models-avoid-duplicates
+* how to handle names https://stackoverflow.com/questions/12340789/split-first-name-and-last-name-using-javascript
