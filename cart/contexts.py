@@ -12,6 +12,7 @@ def cart_content(request):
     product_count = 0
     cart = request.session.get('cart', {})
     for item_id, item_data in cart.items():
+        productvariant_id = item_id
         lineitem = get_object_or_404(ProductVariant, pk=item_id)
         for item_id, item_data in cart[item_id].items():
             if item_id == 'qty':
@@ -26,7 +27,7 @@ def cart_content(request):
         product_count += quantity
         subtotal = price * quantity
         cart_items.append({
-            'productvariant': item_id,
+            'productvariant': productvariant_id,
             'quantity': quantity,
             'lineitem': lineitem,
             'subtotal': subtotal,
