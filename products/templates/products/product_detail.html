@@ -42,7 +42,7 @@
 					{% if product_variants.count > 1 %}
 					<div class="size-container">
                     <div class="form-group">
-                        <select class="form-control" id="order_item" name="productvariant">
+                        <select class="form-control rounded-0" id="order_item" name="productvariant">
 						{% for variant in product_variants %}
                             {% if variant.quantity == 0 %}
                                 <option value="{{ variant.id }}" disabeld>{{ variant.size }}</option>
@@ -53,12 +53,12 @@
                         </select>
 					</div>
 					<div class="add-2-cart-container">
-						<button type="submit" class="btn btn-primary">ADD TO CART</button>
+						<button type="submit" class="btn btn button-blue rounded-0">ADD TO CART</button>
 					</div>
                     {% else %}
                         {% for variant in product_variants %}
                     <div class="add-2-cart-container">
-						<button type="submit" class="btn btn-primary" id="order_item" name="productvariant" value="{{ variant.id }}">ADD TO CART</button>
+						<button type="submit" class="btn button-blue rounded-0" id="order_item" name="productvariant" value="{{ variant.id }}">ADD TO CART</button>
 					</div>
                         {% endfor %}
                     {% endif %}
