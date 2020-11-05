@@ -74,7 +74,7 @@
                                     <td class="py-3">
                                         <p class="my-0">{{ item.subtotal }}€</p>
                                     </td>
-                                    <td class="py-3">
+                                    <td class="py-3 text-right">
                                         <form method="POST" action="{% url 'remove_from_cart' item.productvariant %}">
                                             {% csrf_token %}
                                             <button type="submit" class="btn btn-sm">
