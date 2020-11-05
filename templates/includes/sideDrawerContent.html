@@ -53,6 +53,15 @@
                         {% endif %}</span>
                         </div>
                 </div>
+                <div class="cart-footer">
+                    <div class="d-flex justify-content-between">
+                        <span>Total <small>Inc. VAT</small></span>
+                        <span id="cart-pop-price" >{{ order_total|floatformat:2 }}€ </span>
+                    </div>
+                    <div class="actions">
+                        <a href="{% url 'checkout' %}" class="btn btn-primary btn-buy">Checkout</a>
+                        <a href="{% url 'view_cart' %}" class="back-shopping">← Go to cart</a>
+                </div>
             {% endfor %}
     <!-- IF CART EMPTY -->
         {% else %}
@@ -64,13 +73,5 @@
         {% endif %}    
         </div>
     </div>
-    <div class="cart-footer">
-        <div class="subtotal">
-            <span>Total <small>Inc. VAT</small></span>
-            <span id="cart-pop-price" >Grand Total: {{ grand_total|floatformat:2 }}€ </span>
-        </div>
-        <div class="actions">
-            <a href="{% url 'checkout' %}" class="btn btn-primary btn-buy">Checkout</a>
-            <a href="{% url 'view_cart' %}" class="back-shopping">← Go to cart</a>
-        </div>
+
     </div>
