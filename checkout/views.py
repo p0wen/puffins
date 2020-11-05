@@ -90,7 +90,7 @@ def checkout(request):
             messages.error(request,
                            "There's nothing in your \
                            shopping cart at the moment")
-            return redirect(reverse('cart'))
+            return redirect(reverse('view_cart'))
         current_cart = cart_content(request)
         total = current_cart['grand_total']
         stripe_total = round(total * 100)
