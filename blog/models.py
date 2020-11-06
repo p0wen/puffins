@@ -9,6 +9,7 @@ class BlogPost(models.Model):
     title = models.CharField(max_length=120, null=True, blank=False)
     subtitle = models.CharField(max_length=180, null=True, blank=False)
     body = models.TextField()
+    slug = models.SlugField(unique=True, max_length=250, default=None)
     created_at = models.DateTimeField(auto_now_add=True, null=False)
     updated_at = models.DateTimeField(auto_now=True, null=False)
     title_image = models.ImageField(null=True, blank=True)

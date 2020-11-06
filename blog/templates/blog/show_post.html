@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% load static %}
+{% block extra-title %}- object.title {% endblock %} 
+{% block content %}
+
+{# @TODO: add background from backend with  #}
+<div class="shadow-for-nav"></div>
+
+<div class="container flex-fill">
+    <div class="row mt-4 mb-1">
+        <div class="col-lg-8 col-sm mx-auto">
+            <a href="{% url 'blog' %}"><small>← Go back</small></a>
+        </div>
+    </div>
+	<div class="row mb-5 text-center">
+		<div class="col">
+			<h1>{{blogpost.title}}</h1>
+			<hr class="separator w-25">
+            {% if blogpost.subtitle %}
+            <h3>{{blogpost.subtitle}}</h3>
+            {% endif %}
+		</div>
+	</div>
+    <div class="row">
+        <div class="col-lg-8 col-sm mx-auto text-justify">
+            <!-- Post Content -->
+            <p class="lead">{{blogpost.body}}</p>
+            <hr>
+            <!-- Authe/Date -->
+            <p>Author: {{blogpost.author.user.first_name}}</p>
+            <p>Published on: {{blogpost.created_at|date:'d. M Y'}}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

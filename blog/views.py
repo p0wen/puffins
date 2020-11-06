@@ -14,7 +14,7 @@ def display_blogcontent(request):
 
 def show_post(request, slug):
     blogpost = get_object_or_404(BlogPost, slug=slug)
-    template = 'show_post.html'
+    template = 'blog/show_post.html'
     context = {
         'blogpost': blogpost
         }

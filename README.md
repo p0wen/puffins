@@ -155,3 +155,4 @@ Special Thanks to...
 - https://realpython.com/django-and-ajax-form-submissions/
 * how to avoid duplicates in database of productvariant (product & size) https://stackoverflow.com/questions/3052975/django-models-avoid-duplicates
 * how to handle names https://stackoverflow.com/questions/12340789/split-first-name-and-last-name-using-javascript
+* how to control dates in template: https://ourcodeworld.com/articles/read/555/how-to-format-datetime-objects-in-the-view-and-template-in-django
