@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block extra-title %}- {{ product.display_text  }}{% endblock %}
+{% block extra-title %}- {{ product.display_text| title  }}{% endblock %}
 {% block content %}
 <div class="shadow-for-nav"></div>
 
