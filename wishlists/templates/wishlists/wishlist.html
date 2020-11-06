@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra-title %}- Wishlist{% endblock %}
+{% block content %}
+<div class="shadow-for-nav"></div>
+
+<div class="container flex-fill">
+    <div class="row header my-5 text-center">
+        <div class="col">
+            <h1>Wishlist</h1>
+            <hr class="separator w-25">
+        </div>
+    </div>
+    <div class="row cart-items-container">
+        <div class="col">
+            {% if wishlist %}
+            <div class="table-responsive rounded">
+                        <table class="table table-sm">
+                            <thead class="text-black">
+                                <tr>
+                                    <th scope="col">Item</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            {% for item in wishlist %}
+                                 {{item.product.name}}
+                            {% endfor %}
+                        </table>
+                    </div>
+                {% else %}
+                <div class="text-center">
+                    <p class="lead mb-5 text-center">Your Wishlist is empty.</p>
+                    <a href="{% url 'products' %}?productline=tshirt&sort=name&direction=asc" class="btn rounded-0 btn-lg">
+                        <span class="text-uppercase text-center">Keep Shopping</span>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
