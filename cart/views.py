@@ -1,11 +1,9 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.template.loader import render_to_string
-from collections import OrderedDict 
-from operator import getitem 
+from collections import OrderedDict
 from datetime import datetime
-import time
+
 import json
-# Create your views here.
 
 
 def view_cart(request):
