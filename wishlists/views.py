@@ -10,12 +10,12 @@ from useraccount.models import UserAccount
 def view_wishlist(request):
     """ A view to return the shopping cart """
     user = UserAccount.objects.get(user=request.user)
-    profile = user
-    wishlist = Product.objects.filter(userwishlists__user_profile=profile)
+    wishlist = Product.objects.filter(userwishlists__user_profile=user)
     context = {
         'wishlist': wishlist,
-    }
+        }
     return render(request, 'wishlists/wishlist.html', context)
+
 
 @login_required
 def add_to_wishlist(request, product_id):
