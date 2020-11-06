@@ -18,7 +18,7 @@ def view_wishlist(request):
 
 
 @login_required
-def add_to_wishlist(request, product_id):
+def add_wish(request, product_id):
     wish = get_object_or_404(Product, pk=product_id)
     user = UserAccount.objects.get(user=request.user)
     wishlist = Product.objects.filter(userwishlists__user_profile=user)
