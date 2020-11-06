@@ -9,29 +9,23 @@ from useraccount.models import UserAccount
 @login_required
 def view_wishlist(request):
     """ A view to return the shopping cart """
-    profile = get_object_or_404(UserAccount, user=request.user)
-    wishlist = UserWishlist.objects.all().filter(user_profile=profile)
-    print(wishlist)
+    user = UserAccount.objects.get(user=request.user)
+    profile = user
+    wishlist = Product.objects.filter(userwishlists__user_profile=profile)
     context = {
         'wishlist': wishlist,
     }
     return render(request, 'wishlists/wishlist.html', context)
 
-
+@login_required
 def add_to_wishlist(request, product_id):
     wish = get_object_or_404(Product, pk=product_id)
-    profile = get_object_or_404(UserAccount, user=request.user)
-    wished_product, created = UserWishlist.objects.get_or_create(
-                                                        wished_products=wish,
-                                                        user_profile=profile)
+    user = UserAccount.objects.get(user=request.user)
+    wishlist = Product.objects.filter(userwishlists__user_profile=user)
 
-    for item in wished_product:
-        print(item)
-        if wish in wished_product:
-            print("i found ", wish, " and removed it")
-            wished_product.remove(wish)
-        else:
-            wished_product.add(wish)
-            print("i found your wish", wish)
+    if wish in wishlist:
+        wish.userwishlists.remove(user.id)
+    else:
+        wish.userwishlists.add(user.id)
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
