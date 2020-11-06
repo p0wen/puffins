@@ -46,7 +46,7 @@
                                             {{ order.order_number|truncatechars:6 }}
                                         </a>
                                     </td>
-                                    <td>{{ order.date_order_placed }}</td>
+                                    <td>{{ order.date_order_placed|date:'d/m/y'}}</td>
                                     <td>
                                         <ul class="list-unstyled">
                                             {% for item in order.lineitems.all %}
