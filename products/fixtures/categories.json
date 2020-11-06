@@ -1,0 +1,22 @@
+[
+{
+  "model": "products.category",
+  "pk": 1,
+  "fields": {
+    "name": "grown_ups",
+    "display_text": "Grown Ups",
+    "image": "grownup_puffin.png",
+    "image_url": null
+  }
+},
+{
+  "model": "products.category",
+  "pk": 2,
+  "fields": {
+    "name": "kids",
+    "display_text": "Kids",
+    "image": "kids_puffin.png",
+    "image_url": null
+  }
+}
+]

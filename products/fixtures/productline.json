@@ -1,0 +1,34 @@
+[
+{
+  "model": "products.productline",
+  "pk": 1,
+  "fields": {
+    "name": "tshirt",
+    "display_text": "T-Shirt"
+  }
+},
+{
+  "model": "products.productline",
+  "pk": 2,
+  "fields": {
+    "name": "sweat",
+    "display_text": "Sweatshirt"
+  }
+},
+{
+  "model": "products.productline",
+  "pk": 3,
+  "fields": {
+    "name": "accessory",
+    "display_text": "Accessories"
+  }
+},
+{
+  "model": "products.productline",
+  "pk": 4,
+  "fields": {
+    "name": "body",
+    "display_text": "Bodysuit"
+  }
+}
+]
