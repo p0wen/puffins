@@ -75,10 +75,10 @@ def all_products(request):
 def product_detail(request, product_id):
     """ A view to show individual product details """
     product = get_object_or_404(Product, pk=product_id)
-    product_variants = ProductVariant.objects.all().filter(product_id=product_id)
-
+    product_variants = ProductVariant.objects.all().filter(
+                                                        product_id=product_id)
+    on_wishlist = False
     if request.user.is_authenticated:
-        on_wishlist = False
         user = UserAccount.objects.get(user=request.user)
         wishlist = Product.objects.filter(userwishlists__user_profile=user)
         if product in wishlist:
@@ -89,5 +89,5 @@ def product_detail(request, product_id):
         'product_variants': product_variants,
         'on_wishlist': on_wishlist
     }
-
+    
     return render(request, 'products/product_detail.html', context)
