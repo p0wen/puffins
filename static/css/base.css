@@ -473,6 +473,10 @@ footer .separator {
  color: #22396F;
 }
 
+.wishlist-button svg {
+    display: inline-block;
+    vertical-align: middle;
+}
 
 /* Styling for Hero on Product Sites */
 

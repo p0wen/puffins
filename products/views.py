@@ -3,6 +3,8 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category, ProductVariant, ProductLine
+from wishlists.models import UserWishlist
+from useraccount.models import UserAccount
 
 
 def all_products(request):
@@ -72,12 +74,20 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
-
     product = get_object_or_404(Product, pk=product_id)
     product_variants = ProductVariant.objects.all().filter(product_id=product_id)
+
+    if request.user.is_authenticated:
+        on_wishlist = False
+        user = UserAccount.objects.get(user=request.user)
+        wishlist = Product.objects.filter(userwishlists__user_profile=user)
+        if product in wishlist:
+            on_wishlist = True
+
     context = {
         'product': product,
         'product_variants': product_variants,
+        'on_wishlist': on_wishlist
     }
 
     return render(request, 'products/product_detail.html', context)
