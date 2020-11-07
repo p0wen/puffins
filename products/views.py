@@ -3,7 +3,6 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category, ProductVariant, ProductLine
-from wishlists.models import UserWishlist
 from useraccount.models import UserAccount
 
 
@@ -56,7 +55,7 @@ def all_products(request):
                     request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(productline__name__icontains=query) | Q(category__name__icontains=query) | Q(description__contains=query) 
+            queries = Q(name__icontains=query) | Q(productline__name__icontains=query) | Q(category__name__icontains=query) | Q(description__contains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -89,5 +88,5 @@ def product_detail(request, product_id):
         'product_variants': product_variants,
         'on_wishlist': on_wishlist
     }
-    
+
     return render(request, 'products/product_detail.html', context)
