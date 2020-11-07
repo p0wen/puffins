@@ -16,5 +16,8 @@ class FAQ(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, null=False)
     updated_at = models.DateTimeField(auto_now=True, null=False)
 
+    class Meta:
+        ordering = ["category"]
+
     def __str__(self):
         return self.title
