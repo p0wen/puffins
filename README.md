@@ -156,3 +156,5 @@ Special Thanks to...
 * how to avoid duplicates in database of productvariant (product & size) https://stackoverflow.com/questions/3052975/django-models-avoid-duplicates
 * how to handle names https://stackoverflow.com/questions/12340789/split-first-name-and-last-name-using-javascript
 * how to control dates in template: https://ourcodeworld.com/articles/read/555/how-to-format-datetime-objects-in-the-view-and-template-in-django
+* work with many to many fields https://www.revsys.com/tidbits/tips-using-djangos-manytomanyfield/
+* how to build your own blog https://medium.com/swlh/building-your-own-django-blog-part-2-78adbc516992
