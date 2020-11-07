@@ -390,6 +390,10 @@ footer {
   font-family: "Open Sans";
 }
 
+.footer-text a {
+  color: #fff!important;
+}
+
 .footer-header {
   font-size: 0.8rem;
   color: #fff;
