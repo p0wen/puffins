@@ -140,10 +140,10 @@
 					</ul>
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item">
-							<a class="nav-link" href="{% url 'about' %}">ABOUTs</a>
+							<a class="nav-link" href="{% url 'about' %}">ABOUT</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">HELP</a>
+							<a class="nav-link" href="{% url 'contact' %}">HELP</a>
 						</li>
 						{% if request.user.is_authenticated %}
 						<li class="nav-item">
@@ -281,6 +281,15 @@
 				</div>
 				<div class="col text-left d-block mt-3 mb-2">
 					<span class="footer-header">Quick Links</span>
+                    <ul class="footer-text"> 
+							<li><a href="{% url 'products' %}?category=kids&productline=tshirt">Kids - Shirts</a></li> 
+							<li><a href="{% url 'products' %}?category=kids&productline=sweat">Kids - Sweats</a></li> 
+							<li><a href="{% url 'products' %}?category=grown_ups&productline=tshirt">Grown Ups - Shirts</a></li> 
+							<li><a href="{% url 'products' %}?category=grown_ups&productline=sweat">Grown Ups - Sweat</a></li> 
+							<li><a href="{% url 'products' %}?productline=tshirt&sort=name&direction=asc">Partnerlook - Shirts</a></li> 
+							<li><a href="{% url 'products' %}?productline=sweat&sort=name&direction=asc">Partnerlook - Sweats</a></li>
+							<li><a href="{% url 'products' %}?category=grown_ups&productline=accessory">Accessories</a></li> 
+                    </ul>
 				</div>
 				<div class="col text-center d-block mt-3 mb-2">
 					<span class="footer-header">Contact us</span>
