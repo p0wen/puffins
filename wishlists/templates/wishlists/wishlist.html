@@ -15,7 +15,7 @@
     <div class="row cart-items-container">
         <div class="col">
             {% if wishlist %}
-            <div class="table-responsive rounded">
+            <div class="table-responsive rounded-0">
                         <table class="table table-sm">
                             <thead class="text-black">
                                 <tr>
@@ -28,7 +28,9 @@
                            {% for item in wishlist %}
                                 <tr>
                                     <td class="p-3 w-25">
-                                        <img class="img-fluid rounded" src="{{ item.image.url }}">
+                                    <a href="{% url 'product_detail' item.id %}">
+                                        <img class="img-fluid rounded-0" src="{{ item.image.url }}">
+                                        </a>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0"><strong>{{ item.display_text | title }}</strong></p>
