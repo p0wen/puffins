@@ -292,10 +292,16 @@
                     </ul>
 				</div>
 				<div class="col text-center d-block mt-3 mb-2">
-					<span class="footer-header">Contact us</span>
+					<span class="footer-header"><a href="{% url 'contact' %}">Contact us</a></span>
+                    <ul class="footer-text"> 
+                            <li>Send us an email:</li> 
+							<li><a href="mailto: awesomepuffins@gmail.com">awesomepuffins@puffins.com</a></li> 
+                            <li class="mt-2">Call us (Mo-Fr 9am-5pm)</li> 
+							<li> <a href="tel:+49123-456-789">+49 123 456-789</a></li> 
+                    </ul>
 				</div>
 				<div class="col text-right d-block mt-3 mb-2">
-					<span class="footer-header">About us</span>
+					<span class="footer-header"><a href="{% url 'about' %}">About us</a></span>
 				</div>
 			</div>
 			<div class="row">
@@ -304,8 +310,7 @@
 				</div>
 			</div>
 			<div class="row mt-1">
-				<div class="col text-left footer-copyright">Copyright</div>
-				<div class="col text-right footer-copyright">Social Media Icons</div>
+				<div class="col text-left footer-copyright">© 2020 Philipp E. | For educational purposes only</div>
 			</div>
 		</div>
 	</footer>

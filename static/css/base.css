@@ -404,6 +404,13 @@ footer {
   text-transform: uppercase;
 }
 
+.footer-header a {
+  font-size: 0.8rem;
+  color: #fff;
+  font-family: "Oswald";
+  text-transform: uppercase;
+}
+
 .footer-copyright {
   font-size: 0.6rem;
   color: #9d9d9c;
