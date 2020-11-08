@@ -1,0 +1,143 @@
+{% extends "base.html" %} {% load static %}
+{% block extra-title %}- Products
+{% endblock %} 
+{% block content %}
+
+{# @TODO: add background from backend with  #}
+<div class="collection-header">
+	<div class="collection-hero">
+		<div class="collection-hero-image" style="background: {% if category.image %}url({{ category.image.url }}){% else %}url('../media/partnerlook_puffin.png'){% endif %} no-repeat center center"></div>
+            <div class="collection-hero-container">
+                <h1 class="collection-hero-title container-fluid">
+                    <span>Highlights</span>
+                    <hr class="separator w-25">
+                </h1>
+            </div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row mb-3">
+        <div class="col">
+            <div class="form-inline justify-content-end text-right">
+                <label class="filters-toolbar-label select-label">Sort by: </label>
+                <select class="filters-toolbar-input" id="SortBy" name="SortBy" data-default-sortby="manual">
+                    <option value="reset" {% if current_sorting == "None_None" %}selected{% endif %}>Featured</option>
+                    <option value="price_asc" {% if current_sorting == "price_asc"%}selected{% endif %}>Price low to high</option>
+                    <option value="price_desc" {% if current_sorting == "price_desc"%}selected{% endif %}>Price high to low</option>
+                    <option value="color_asc" {% if current_sorting == "color_asc"%}selected{% endif %}>Color A to Z</option>
+                    <option value="color_desc" {% if current_sorting == "color_desc"%}selected{% endif %}>Color Z to A</option>
+                    <option value="category_asc" {% if current_sorting == "category_asc"%}selected{% endif %}>Category A to Z</option>
+                    <option value="category_desc" {% if current_sorting == "category_desc"%}selected{% endif %}>Category Z to A</option>
+            </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+    {% for product in featured %}
+      <div class="mb-5 col-12">
+        <div class="card card-custom h-100 border-0">
+          <a href="{% url 'product_detail' product.id %}">
+          {% if product.image %}
+            <img
+              class="h-100"
+              src="{{ product.image.url }}"
+              alt="{{ product.display_text }}"
+            />
+        {% else %}
+           <img
+              class=""
+              src="{MEDIA_URL }}noimage.png"
+              alt="{{ product.display_text }}"
+            />
+        {% endif %}
+          </a>
+          <div class="pb-0">
+            <p class="mb-0 card-product-name">{{ product.display_text | title }} - <small>{{ product.category.display_text }}<span class="text-muted"> {{product.color}}</span></small></p>
+          </div>
+          <div class="bg-white pt-0 border-0 text-left">
+            <div class="row">
+              {% if product.is_on_sale %}
+              <div class="col">
+                <p
+                  class="lead mb-0 text-left font-weight-bold card-product-price"
+                >
+                  {{ product.discount_price }}€
+                </p>
+              </div>
+              <div class="col">
+                <p class="lead mb-0 text-left original-price card-product-price">
+                  <s>{{ product.price }}€</s>
+                </p>
+              </div>
+              <div class="col">
+                <p class="lead mb-0 text-left card-product-sale">
+                  Sale
+                </p>
+              </div>
+
+              {% elif product.avail_for_pre_order %}
+              <div class="col">
+                <p
+                  class="lead mb-0 text-left font-weight-bold card-product-price"
+                >
+                  {{ product.discount_price }}€
+                </p>
+              </div>
+              <div class="col">
+                <p class="mb-0 text-left original-price card-product-price">
+                  <s>{{ product.price }}€</s>
+                </p>
+              </div>
+              <div class="col">
+                <p class="mb-0 text-left card-product-preorder">Pre-Order</p>
+              </div>
+              {% else %}
+              <div class="col">
+                <p
+                  class="lead mb-0 text-left font-weight-bold card-product-price"
+                >
+                  {{ product.price }}€
+                </p>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block postloadjs %}
+
+<script>
+ //** Based on CI-Boutique Addo Project **// 
+    $('#SortBy').change(function(){
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
+
+        var selectedVal = selector.val();
+        if(selectedVal != "reset"){
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+        }else{
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+        }
+    })
+    </script>
+
+{% endblock %}
