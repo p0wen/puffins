@@ -1,8 +1,21 @@
 from django.shortcuts import render
+from products.models import Product
+import random
 
 # Create your views here.
 
+
 def index(request):
     """ A view to return the index page """
-    
-    return render(request, 'home/index.html')
+
+    req_no_of_random_items = 4
+    qs = Product.objects.filter(is_featured=True)
+    possible_ids = list(qs.values_list('id', flat=True))
+    possible_ids = random.choices(possible_ids, k=req_no_of_random_items)
+    random_featured_product = qs.filter(pk__in=possible_ids)
+    print(random_featured_product)
+    context = {
+        'featured': random_featured_product,
+    }
+
+    return render(request, 'home/index.html', context)
