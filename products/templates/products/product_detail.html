@@ -12,13 +12,13 @@
 			<div class="image-container">
             {% if product.image %}
             <img
-              class="card-img-top img-fluid"
+              class="card-img-top img-fluid rounded-0"
               src="{{ product.image.url }}"
               alt="{{ product.display_text }}"
             />
         {% else %}
            <img
-              class=""
+              class="card-img-top img-fluid rounded-0"
               src="{MEDIA_URL }}noimage.png"
               alt="{{ product.display_text }}"
             />
