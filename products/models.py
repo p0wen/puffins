@@ -3,8 +3,8 @@ from django.core.validators import MinValueValidator
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=50)
-    display_text = models.CharField(max_length=255)
+    name = models.CharField(max_length=254)
+    display_text = models.CharField(max_length=254)
     image = models.ImageField(null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
 
@@ -18,7 +18,7 @@ class Category(models.Model):
 
 class ProductLine(models.Model):
     name = models.CharField(max_length=50)
-    display_text = models.CharField(max_length=255)
+    display_text = models.CharField(max_length=254)
 
     class Meta:
         ordering = ["name"]
@@ -28,10 +28,10 @@ class ProductLine(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    productline = models.ForeignKey(ProductLine, on_delete=models.CASCADE)
-    name = models.CharField(max_length=50)
-    display_text = models.CharField(max_length=255)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE)
+    productline = models.ForeignKey('ProductLine', on_delete=models.CASCADE)
+    name = models.CharField(max_length=254)
+    display_text = models.CharField(max_length=254)
     price = models.DecimalField(max_digits=6, decimal_places=2, validators=[
                                 MinValueValidator(0.01)])
     discount_price = models.DecimalField(max_digits=6, decimal_places=2,
@@ -39,15 +39,15 @@ class Product(models.Model):
                                             blank=True)
     is_on_sale = models.BooleanField(default=False)
     avail_for_pre_order = models.BooleanField(default=False)
-    date_of_dispatch = models.CharField(max_length=10, blank=True, null=True)
+    date_of_dispatch = models.CharField(max_length=254, blank=True, null=True)
     discontinued = models.BooleanField(default=False)
     image = models.ImageField(null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
-    description = models.CharField(max_length=500, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
     is_featured = models.BooleanField(default=False, null=True, blank=True)
-    color = models.CharField(max_length=10, null=True)
-    material_1 = models.CharField(max_length=10, null=True, blank=True)
-    material_2 = models.CharField(max_length=10, null=True, blank=True)
+    color = models.CharField(max_length=254, null=True)
+    material_1 = models.CharField(max_length=254, null=True, blank=True)
+    material_2 = models.CharField(max_length=254, null=True, blank=True)
 
     class Meta:
         ordering = ["-avail_for_pre_order"]
@@ -72,8 +72,8 @@ class ProductSize(models.Model):
 
 
 class ProductVariant(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    size = models.ForeignKey(ProductSize, on_delete=models.CASCADE)
+    product = models.ForeignKey('Product', on_delete=models.CASCADE)
+    size = models.ForeignKey('ProductSize', on_delete=models.CASCADE)
     quantity = models.IntegerField(validators=[MinValueValidator(0.0)])
 
     class Meta:
