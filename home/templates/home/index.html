@@ -38,10 +38,41 @@
 
 <section class="py-5">
 	<div class="container">
-		<h1 class="display-4">Full Page Image Slider</h1>
-		<p class="lead">The background images for the slider are set directly in the HTML using inline CSS. The images
-			in this snippet are from <a href="https://unsplash.com">Unsplash</a>, taken by <a
-				href="https://unsplash.com/@joannakosinska">Joanna Kosinska</a>!</p>
-	</div>
+		<div class="container text-center">
+		<h1 class="display-4">The Puffins</h1><hr class="my-5">
+		<p class="lead">We at Puffins are dedicated to provide beautiful, uniting and sustainable products to individuals, love birds and families.</p><hr class="text-center w-50 my-5">
+	    </div>
+        <div class="row mt-5">
+                <div class="col-md-6 col-sm-12">
+                    <a href=""><img src="media/promotion-1.png" class="img-fluid"></a>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <h4>Get matching shirts for your whole family and demonstrate your united spirt!</h4>
+                     <a href="{% url 'products' %}?productline=tshirt&sort=name&direction=asc" class="w-100 mt-5 btn button-blue rounded-0">T-Shirts</a>
+                </div>
+                <div class="d-md-none d-sm"><hr></div>
+    </div>
+<div class="row mt-5">
+        <div class="col-md-6 col-sm-12 order-md-2">
+                <img src="media/promotion-2.png" class="img-fluid">
+        </div>
+        <div class="col-md-6 col-sm-12 order-1">
+            <h4>Stay warm during the colder days with our matchign sweaters for your whole family.</h4>
+               <a href="{% url 'products' %}?productline=sweat&sort=name&direction=asc" class="w-100 mt-5 btn button-blue rounded-0">Sweatshirts</a>
+        </div>
+    </div>
+            <div class="row mt-5">
+                <div class="col-md-6 col-sm-12">
+                                   <img src="media/promotion-3.png" class="img-fluid">
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <h4>Update your morning or your your shopping trip with one of our super practical accesories!</h4>
+                       <a href="{% url 'products' %}?category=grown_ups&productline=accessory" class="w-100 mt-5 btn button-blue rounded-0">Accessories</a>
+                 
+        </div>
+    </div>
+</div>
+</div>
+
 </section>
 {% endblock %}
