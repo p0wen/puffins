@@ -13,7 +13,6 @@ def index(request):
     possible_ids = list(qs.values_list('id', flat=True))
     possible_ids = random.choices(possible_ids, k=req_no_of_random_items)
     random_featured_product = qs.filter(pk__in=possible_ids)
-    print(random_featured_product)
     context = {
         'featured': random_featured_product,
     }
