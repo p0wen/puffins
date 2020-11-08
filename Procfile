@@ -1,1 +1,1 @@
-web: gunicorn puffins.wsgi.application
+web: gunicorn puffins.wsgi:application
