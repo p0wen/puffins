@@ -41,7 +41,7 @@
 		{% endblock %}
 		<nav class="navbar navbar-expand-lg fixed-top">
 			<img
-          src="/media/puffin_icon.png"
+          src="{{ MEDIA_URL }}puffin_icon.png"
           class="d-inline-block align-middle"
           height="50px"
           alt=""
@@ -49,7 +49,7 @@
         />
 			<a class="navbar-brand" href="{% url 'home' %}">
 				<img
-            src="/media/puffins_logo_light.svg"
+            src="{{ MEDIA_URL }}puffins_logo_light.svg"
             width="115,9"
             height="50px"
             class="d-inline-block align-top"
@@ -116,16 +116,16 @@
 									</div>
 									<div class="col col d-none d-lg-block">
 										<img
-                      src="/media/featured_nav_dropdown.jpg"
+                      src="/{{ MEDIA_URL }}featured_nav_dropdown.jpg"
                       class="feat-nav-drop-img"
                     />
 										<div class="feat-nav-drop-text">
 											<span>
                         GET THE LOOK FOR THE WHOLE FAMILY
                       </span>
-											<button class="btn button-size button-white">
+											<a hre="{% url 'products' %}?productline=tshirt&sort=name&direction=asc" class="btn button-size button-white">
                         SHOP
-                      </button>
+                      </a>
 										</div>
 									</div>
 								</div>
@@ -266,7 +266,7 @@
 			<div class="row">
 				<div class="col-lg mb-2">
 					<span class="text-center d-block" style="">
-                        <img src="/media/puffins_logo_light.svg" width="115,9" height="50px" class="d-inline-block align-top" alt="" loading="lazy" id="puffinName"></span><span class="text-center d-block my-1 footer-text">Receive 20% of your first purchase</span>
+                        <img src="{{ MEDIA_URL }}puffins_logo_light.svg" width="115,9" height="50px" class="d-inline-block align-top" alt="" loading="lazy" id="puffinName"></span><span class="text-center d-block my-1 footer-text">Receive 20% of your first purchase</span>
 					<form>
 						<div class="input-group ">
 							<input type="text" class="form-control subscribe-field" placeholder="Subscribe to our Newsletter">
@@ -331,14 +331,14 @@
                 // do nothing
             } else {
                 $("nav").addClass("scrolling-active");
-                $("#puffinName").attr('src',"/media/puffins_logo_dark.svg");
+                $("#puffinName").attr('src',"{{ MEDIA_URL }}puffins_logo_dark.svg");
             }
         } else {
             if ($("nav").hasClass("scrolling-active") && menuExtended) {
                 // do nothing
             } else {
                 $("nav").removeClass("scrolling-active");
-                $("#puffinName").attr('src',"/media/puffins_logo_light.svg");
+                $("#puffinName").attr('src',"{{ MEDIA_URL }}puffins_logo_light.svg");
         }
         }
         });
@@ -350,17 +350,17 @@
 
     if (!scrollPosition & !menuExtended) {
         $("nav").addClass("scrolling-active");
-        $("#puffinName").attr('src',"/media/puffins_logo_dark.svg");
+        $("#puffinName").attr('src',"{{ MEDIA_URL }}puffins_logo_dark.svg");
         menuExtended = true;
     } else if (scrollPosition && menuExtended) {
                 menuExtended = false;
     } else if (scrollPosition && !menuExtended) {
          $("nav").addClass("scrolling-active");
-        $("#puffinName").attr('src',"/media/puffins_logo_dark.svg");
+        $("#puffinName").attr('src',"{{ MEDIA_URL }}puffins_logo_dark.svg");
         menuExtended = true;
     } else if (!scrollPosition && menuExtended) {
         $("nav").removeClass("scrolling-active", menuExtended);
-        $("#puffinName").attr('src',"/media/puffins_logo_light.svg");
+        $("#puffinName").attr('src',"{{ MEDIA_URL }}puffins_logo_light.svg");
         menuExtended = false;
     } else {
 
