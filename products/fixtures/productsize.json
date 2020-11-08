@@ -1,0 +1,44 @@
+[
+{
+  "model": "products.productsize",
+  "pk": 1,
+  "fields": {
+    "shirt_size": "NO"
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 2,
+  "fields": {
+    "shirt_size": "XS"
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 3,
+  "fields": {
+    "shirt_size": "S"
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 4,
+  "fields": {
+    "shirt_size": "M"
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 5,
+  "fields": {
+    "shirt_size": "L"
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 6,
+  "fields": {
+    "shirt_size": "XL"
+  }
+}
+]

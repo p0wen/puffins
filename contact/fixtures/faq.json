@@ -1,0 +1,98 @@
+[
+{
+  "model": "contact.faq",
+  "pk": 2,
+  "fields": {
+    "category": "2",
+    "name": "return-policy",
+    "title": "Can i return items if they don't fit or if i don't like ?",
+    "answer": "Yes, of course. If you want to return one or more items, please make sure to print and fill the return form with item(s), return reason and refund or Voucher instructions. You have 21 days to recall your order and send us the items back.",
+    "created_at": "2020-11-07T19:11:29.711Z",
+    "updated_at": "2020-11-07T19:11:29.711Z"
+  }
+},
+{
+  "model": "contact.faq",
+  "pk": 3,
+  "fields": {
+    "category": "2",
+    "name": "return-process",
+    "title": "How do i return one or more items?",
+    "answer": "Make sure to mark items (if damaged - please contact as soon as you see a damage on the received item) and add your name and order number in your parcel. Please be aware that you are responsible for your return until it reaches our warehouse.\r\n\r\nWe advise you to always keep the shipping receipt, until you received our confirmation about receiving your parcel. Keep in mind that you are held responsible for the parcel until the items have returned to our warehouse.\r\n\r\nALWAYS add your name and order number to the parcel before returning it.",
+    "created_at": "2020-11-07T19:12:52.463Z",
+    "updated_at": "2020-11-07T19:12:52.463Z"
+  }
+},
+{
+  "model": "contact.faq",
+  "pk": 4,
+  "fields": {
+    "category": "3",
+    "name": "preorder",
+    "title": "How does Pre-Order work?",
+    "answer": "Our Pre-Order items help to reduce one of the biggest sustainability problems in the fashion industry. Every year thousand of unsold and overproduced items go to waste - hence we want to takle this challenge and are trying to produce only as much as there is needed/wanted.\r\n\r\nBy doing this we can better calculate our product price and can offer you a discount. Due to this method of ordering and producing you might experience a wait up to 12 weeks, but you can be sure that when you get your item, it will amaze you!",
+    "created_at": "2020-11-07T19:18:30.423Z",
+    "updated_at": "2020-11-07T19:18:30.423Z"
+  }
+},
+{
+  "model": "contact.faq",
+  "pk": 5,
+  "fields": {
+    "category": "3",
+    "name": "preoder-dispatch",
+    "title": "When do i get my Pre-Order item?",
+    "answer": "Every Pre-Order Item in our store states the expected dispatch date. You can calculate delivery time from dispatch date. Normally you will need to wait a maximum of 10 days after dispatch date.",
+    "created_at": "2020-11-07T19:20:03.734Z",
+    "updated_at": "2020-11-07T19:20:03.734Z"
+  }
+},
+{
+  "model": "contact.faq",
+  "pk": 6,
+  "fields": {
+    "category": "2",
+    "name": "return-duration",
+    "title": "How long does the return process take?",
+    "answer": "If everything runs like clockwork, the entire process takes right around two weeks.\r\n\r\nOnce you send an item back, it will reach us typically within 3-7 business days. Up to 7 business days are required for us to process an exchange/return once receiving your item(s).",
+    "created_at": "2020-11-07T19:29:44.232Z",
+    "updated_at": "2020-11-07T19:29:44.232Z"
+  }
+},
+{
+  "model": "contact.faq",
+  "pk": 7,
+  "fields": {
+    "category": "5",
+    "name": "preorder-charge",
+    "title": "When am I actually billed for my Pre-Orde Item?",
+    "answer": "When you order a Pre-Order Item, your card is charged upon checkout. These pre-orders help us fund that particular product's production. We take your support very seriously, and communicate production and order status along the way to delivery.",
+    "created_at": "2020-11-07T19:31:13.224Z",
+    "updated_at": "2020-11-07T19:31:13.224Z"
+  }
+},
+{
+  "model": "contact.faq",
+  "pk": 8,
+  "fields": {
+    "category": "5",
+    "name": "payment options",
+    "title": "What payment methods do you accept?",
+    "answer": "We accept all major credit cards.",
+    "created_at": "2020-11-07T19:32:21.862Z",
+    "updated_at": "2020-11-07T19:32:21.862Z"
+  }
+},
+{
+  "model": "contact.faq",
+  "pk": 9,
+  "fields": {
+    "category": "4",
+    "name": "shipping",
+    "title": "How do you ship orders?",
+    "answer": "All orders shipping in europe for in-stock items ship free of charge with ground shipping, if order total is above 30€.\r\n\r\nFor in-stock items, please allow up to two business days to fulfill an order and issue a tracking number. Once you receive your tracking number via email, you should expect your package within 2-4 business days.\r\n\r\nOrders placed for Pre-Order Items are free of charge. These orders will ship during the estimated shipping period noted on the product page. If you pre-order an item from the page, your order confirmation email will include the estimated ship date for that item.\r\n\r\nIf your order contains both in-stock and Workshop items, we will ship your order once everything is there . This also reduces the CO2 footprint of your order and saves our planet.",
+    "created_at": "2020-11-07T19:36:06.362Z",
+    "updated_at": "2020-11-07T19:36:06.362Z"
+  }
+}
+]
