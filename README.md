@@ -48,38 +48,129 @@ To test the site incl. the checkout process please use the test credit card numb
     + [Acknowledgements](#acknowledgements)
       - [References](#references)
 
-## UX
+# UX
 
+## Purpose and Aim of the Project
 - ecommerce shop for sustainable clothing especially for families
--  
+- fullstack interactive website that allows customers to make purchases by credit card, manage a wishlist
+- provide a clean and easy to use design to support easy navigation and a low bounce rate
 
-## User Stories
+## Design process
+- before laying out the design research undertaken
+- how do other stores look
+- what design patterns are used across stores
+- which sites are appealing to me
+- which kind of stores fit to my business idea, e.g. amazon retailer vs. individual online shop
+- the final layout was influenced by the following stores:
+
+* [twothirds.com](https://twothirds.com/)
+* [taylorstich.com](https://www.taylorstitch.com/)
+* [manitober.de](https://www.manitober.de/)
+
+## Target group
+
+* women and men aged between 25 and 40 years 
+* who care about the environment,
+* especially coupls who may have 1 or 2 children in the age of 6 month to 12 years
+* mid-high income
+* with a passion for living outdoors and owning sustainable high quality products
+
+## Epics & User Stories
+Before the start of the Project the Epics and User Stories were defined and written out to have complete set of necessary features to get the site going. In total 6 Epics were defined and user stories were broken down into 3 user groups: regular site visitors, registered site visitors and the store manager/owner.
+
+### EPIC: Browse Site
+As a site visitor, i want to...
+* ... __access the website__ with any device (smartphone, tablet, desktop), so that i am able to visit the shop anytime and anywhere.
+* ... have __easy navigation__, to quickly solve the reason for my visit.
+* ... have __information about the brand__, to get to know the company and understand their mission and story.
+* ... be able to __contact the company__, so that i quickly can get in touch if i have a question or issue.
 
 ### Epic: Browse Products
-### Epic: Make Purchase
+As a site visitor, i want to...
+* ... browse products by __category and productline__, so that i quickly find what i am looking for.
+* ... __sort products__, to adjust the order according to my needs.
+* ... be able to __search for specific products__, to quickly get what i need.
+* ... to __access product details__, to get more information on an item.
+* ... be able to __choose a size__, to order the necessary items according to my needs.
+
+### Epic: Manage Cart & Make Purchase
+As a site visitor, i want to...
+* ... see all my __items in a cart__, so that i have an overview of my potential purchase.
+* ... be able to __reduce / increase quantity__, so that i can order my prefered amount.
+* ... be able to __remove an item from my cart__, so that i can manage my cart efficiently.
+* ... be able to __checkout from the cart__ view, so that i can quickly finish my purchase.
+* ... be able to __pay a order by credit card__, so that i don't have to deal with an invoice and money transfer.
+* ... __receive an order confirmation__, so that i know my order was received.
+
+As a registered user, i want to...
+* ... have my __details prefilled from my profile__, so that i quickly can finish my purchase
+
 ### Epic: Registration & Useraccount
+
+As a site visitor, i want to...
+* ... be able to __sign up to the store__, so that i can track orders and have my data prefilled in the order form.
+
+As a registered user, i want to...
+* ... be __able to login__, so that i can access my useraccount.
+* ... be able to __see my order history__, so that i know what i've purchased in the past.
+* ... __manage my personal details__, so that i can quickly update my data if something changes.
+
 ### Epic: Manage Wishlist
-### Epic: Manage Store
+As a registered user, i want to...
+* ... __add/remove items to my wishlist__, so that can save items for later purchase to my useraccount.
+* ... have an __overview of my wishlist__, to get an overview of my already added products.
+
+### Epic: Store Management
+As a store owner, i want to...
+* ... be able to __manage the products, categories, productlines and productvariants__, so that i have an overview of my inventory.
+* ... __manage blog entries__, to add new/edit posts on the blog to provide customers some additional value.
+* ... __manage FAQs__, so that i can quickly update often asked questions
 
 ## Layout, Styling & Wireframes
 
-The wireframes were created in Figma. Figma is a cloud based desing tool which allows you to rapidly create prototypes, wireframes and layouts (www.figma.com)
+The wireframes were created in Figma. Figma is a cloud based desing tool which allows you to rapidly create prototypes, wireframes and layouts [Figma](www.figma.com)
+
+The whole figma project can be accessed here:
+[Puffins - Wireframes](https://www.figma.com/file/MhxXXrKoRhGyWMhX1cug2U/puffins?node-id=0%3A1)
 
 #### Logo
 
-vector base Logo
-showing a puffin
-brand text logo created in figma
-google fonts used for
+The puffins logo was created by [polardots](https://www.polardots.studio/). It shows a vector style puffin stand upright and is signaling joy to the world!
+
+![Puffins Logo](https://thepuffins.s3.amazonaws.com/media/puffin_icon.png)
+
+The puffins text logo was created by me with [Figma](www.figma.com).
+
+![Puffins Textlogo](https://thepuffins.s3.amazonaws.com/media/puffins_logo_dark.svg)
+
+
+#### Color Scheme
+
+The color scheme was chosen with the goal to represent a lightweight modern website. The colors are taken from the base colors of the puffin bird.
+
+![Color Scheme](https://thepuffins.s3.eu-central-1.amazonaws.com/github-docs/puffins_colorscheme.png)
 
 #### Components
 
--->INSERT SCREENSHOT OF COMPONENTS
+Components were created in [Figma](www.figma.com):
 
+![Puffins - Components](https://thepuffins.s3.eu-central-1.amazonaws.com/github-docs/puffins_components.png)
 
 #### Wireframes
 
---> INSERT SCREENSHOT / LINK TO FIGMA FILE
+The whole figma project can be accessed here:
+[Puffins - Wireframes](https://www.figma.com/file/MhxXXrKoRhGyWMhX1cug2U/puffins?node-id=0%3A1)
+
+Mobile:
+
+![Puffins - Mobile](https://thepuffins.s3.eu-central-1.amazonaws.com/github-docs/puffins_mobile.png)
+
+Medium - width screen:
+
+![Puffins - Mobile](https://thepuffins.s3.eu-central-1.amazonaws.com/github-docs/puffins_medium.png)
+
+Desktop - large screen:
+![Puffins - Mobile](https://thepuffins.s3.eu-central-1.amazonaws.com/github-docs/puffins_large.png)
 
 ### Final Layout
 
@@ -91,11 +182,7 @@ google fonts used for
 
 ### Color Scheme
 
-The color scheme was chosen with the goal to represent a lightweight modern website. The colors are taken from the base colors of the puffin bird.
 
---> INSERT COLORSCHEME:
-
---> LIST COLOR CODES:
 
 ## Data Model
 
