@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from products.models import Product
+from .models import UserWishlist
 from useraccount.models import UserAccount
 
 
@@ -21,10 +22,15 @@ def add_wish(request, product_id):
     wish = get_object_or_404(Product, pk=product_id)
     user = UserAccount.objects.get(user=request.user)
     wishlist = Product.objects.filter(userwishlists__user_profile=user)
+    print(wishlist)
 
-    if wish in wishlist:
-        wish.userwishlists.remove(user.id)
+    if wishlist:
+        if wish in wishlist:
+            wish.userwishlists.remove(user.id)
+        else:
+            wish.userwishlists.add(user.id)
     else:
+        UserWishlist.objects.create(user_profile=user)
         wish.userwishlists.add(user.id)
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
