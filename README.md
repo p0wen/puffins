@@ -180,17 +180,53 @@ Desktop - large screen:
 
 
 
-### Color Scheme
+## Database structure
+
+During development the built-in SQLite3 database from django is used. However, for the deployment to Heroku a switch to postgressql was undertaken.
+[Django’s authentication system](https://docs.djangoproject.com/en/3.1/ref/contrib/auth/) in combination with [django-allauth](https://django-allauth.readthedocs.io/en/latest/overview.html) is used to manage users and permissions.
+The structure of the products and checkout app are based on the [Boutique Ado](https://github.com/ckz8780/boutique_ado_v1) project from Code Institute.
+
+### Categories
+
+### Productline
+
+### Products
+
+### Productsize
+
+### Productvariant
+
+### Order
+
+### Useraccount
+
+### Wishlist
+
+### FAQs
+
+## Features
 
 
 
-## Data Model
+:toolbox: = Future Development
 
---> INSERT DATABASE MODEL FOR PRODUCTS
+:white_check_mark: = Implemented
 
-### Features Left to Implement
+:x: = Feature removed
 
 ## Technologies Used
+* Django
+* Python
+* HTML5
+* CSS3
+* JavaScript
+* jQuery
+* Bootstrap 4.5.2
+* Gitpod
+* Git Version Control
+* GitHub
+* Heroku
+* S3 Cloudstorage from AWS 
 
 ## Testing
 
