@@ -37,45 +37,58 @@
 
 ## UX
 
+- ecommerce shop for sustainable clothing especially for families
+-  
 
 ## User Stories
 
-## Wireframes
+### Epic: Browse Products
+### Epic: Make Purchase
+### Epic: Registration & Useraccount
+### Epic: Manage Wishlist
+### Epic: Manage Store
 
-### Planned Layout
+## Layout, Styling & Wireframes
+
+The wireframes were created in Figma. Figma is a cloud based desing tool which allows you to rapidly create prototypes, wireframes and layouts (www.figma.com)
 
 #### Logo
 
+vector base Logo
+showing a puffin
+brand text logo created in figma
+google fonts used for
 
 #### Components
+
+-->INSERT SCREENSHOT OF COMPONENTS
 
 
 #### Wireframes
 
+--> INSERT SCREENSHOT / LINK TO FIGMA FILE
 
 ### Final Layout
 
-
-
+--> INSERT AM I RESPONSVIE SCREENSHOT
 
 ### Explanation for differences
 
 
+
 ### Color Scheme
 
+The color scheme was chosen with the goal to represent a lightweight modern website. The colors are taken from the base colors of the puffin bird.
+
+--> INSERT COLORSCHEME:
+
+--> LIST COLOR CODES:
 
 ## Data Model
- 
 
-## Features
-
-
-### Exisiting Features
-
-
+--> INSERT DATABASE MODEL FOR PRODUCTS
 
 ### Features Left to Implement
-
 
 ## Technologies Used
 
@@ -117,7 +130,7 @@ This site is deployed to heroku and the versioning was done with git and the Rep
 
 ## Credits
 
-- Logo & Template for T-Shirt, Sweatshirt & Bodysuite Design created by Simone Brauner from https://www.polardots.studio/
+- Logocreated by https://www.polardots.studio/
 
 ### Content
 
