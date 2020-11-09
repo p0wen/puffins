@@ -2,6 +2,19 @@
 
 # Milestone Project 4 with *Code Institute*
 
+---> INSERT AM I RESPONSIVE GIF
+
+_"Always be yourself. Unless you can be a puffin, then always be a puffin."_
+
+We at [__puffins__](https://thepuffins.herokuapp.com) are dedicated to provide beautiful, uniting and sustainable products to individuals, love birds and families. With our mehtod to only produce whats demanded by our customers and delivering longlasting, high quality products we want to counter the biggest problems of the western society. Our products are locally produced in Europe and we only use materials where we know the origin, to guarantee 100% ethical and sustainable products.
+
+This site is the final Milestone Projects that made up the Full Stack Web Development Course at Code Institute. The core requirements focus on bulding a fullstack site with the use of Django, Python, JavaScript, HTML, CSS and a relational database. The final result is hosted on Heroku, while storing static and media files on an S3 Cloudstorage from AWS. The store is connected to [Stripe](www.stripe.com).
+
+To test the site incl. the checkout process please use the test credit card number provided in the [Stripe Documentation](https://stripe.com/docs/testing):
+
++ Number: 4242 4242 4242 424 4242
++ Exp. Date: Anything (e.g. 02/24)
++ CVC: Anything (e.g. 007)
 
 # Table of Content
 
