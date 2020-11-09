@@ -8,3 +8,6 @@ class UserWishlist(models.Model):
                                         null=False, blank=False)
     wished_products = models.ManyToManyField(Product,
                                              related_name='userwishlists')
+
+    def __str__(self):
+        return super().__str__()
