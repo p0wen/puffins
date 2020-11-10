@@ -225,9 +225,22 @@ The structure of the products and checkout app are based on the [Boutique Ado](h
 
 ### Productsize
 
+| Name         | Type                                                | Example                                                                                                          |
+|--------------|-----------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| SIZE_CHOICES |                                                     | [('NO', 'None'), ('XS', 'Extra Small'), ('S', 'Small'), ('M', 'Medium'), ('L', 'Large'), ('XL', 'Extra Large'),] |
+| shirt_size   | CharField( max_length = 2 ,  choices =SIZE_CHOICES) | XS                                                                                                               |
+
 ### Productvariant
 
+| Name     | Type                                                  | Example |
+|----------|-------------------------------------------------------|---------|
+| product  | ForeignKey('Product', on_delete=models.CASCADE)       | 1       |
+| size     | ForeignKey('ProductSize', on_delete=models.CASCADE)   | XS      |
+| quantity | IntegerField( validators =[MinValueValidator( 0.0 )]) | 9       |
+
 ### Order
+
+
 
 ### Useraccount
 
@@ -338,3 +351,4 @@ Special Thanks to...
 * how to control dates in template: https://ourcodeworld.com/articles/read/555/how-to-format-datetime-objects-in-the-view-and-template-in-django
 * work with many to many fields https://www.revsys.com/tidbits/tips-using-djangos-manytomanyfield/
 * how to build your own blog https://medium.com/swlh/building-your-own-django-blog-part-2-78adbc516992
+* database tables in markdown created with: https://www.tablesgenerator.com/markdown_tables
