@@ -297,16 +297,28 @@ The structure of the products and checkout app are based on the [Boutique Ado](h
 |------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | CATEGORY_CHOICES | [         ( '1' ,  'General' ),         ( '2' ,  'Return' ),         ( '3' ,  'Pre Order' ),         ( '4' ,  'Delivery' ),         ( '5' ,  'Payment' ),     ] |
 | category         | CharField( max_length = 1 ,  choices =CATEGORY_CHOICES)                                                                                                         |
-| name             | CharField( max_length = 120 ,  null = True ,  blank = False )                                                                                                   |
-| title            | CharField( max_length = 120 ,  null = True ,  blank = False )                                                                                                   |
+| name             | CharField(max_length = 120 , null = True, blank = False )                                                                                                   |
+| title            | CharField(max_length = 120 ,  null = True ,  blank = False )                                                                                                   |
 | answer           | TextField()                                                                                                                                                     |
-| created_at       | DateTimeField( auto_now_add = True ,  null = False )                                                                                                            |
-| updated_at       | DateTimeField( auto_now = True ,  null = False )                                                                                                                |
-
-
+| created_at       | DateTimeField(auto_now_add = True ,null = False )                                                                                                          |
+| updated_at       | DateTimeField(auto_now = True ,  null = False)                                                                                                                |
 ### Blog 
 
-
+| Name                | Type                                                                                |
+|---------------------|-------------------------------------------------------------------------------------|
+| author              | ForeignKey(UserAccount,  on_delete =models.CASCADE,  null = False ,  blank = True ) |
+| title               | CharField(max_length=120, null=True, blank=False)                                   |
+| subtitle            | CharField(max_length=180, null=True, blank=False)                                   |
+| body                | TextField()                                                                         |
+| slug                | SlugField(unique=True, max_length=250, default=None)                                |
+| created_at          | DateTimeField(auto_now_add=True, null=False)                                        |
+| updated_at          | DateTimeField(auto_now=True, null=False)                                            |
+| title_image         | ImageField(null=True, blank=True)                                                   |
+| title_image_url_1   | URLField(max_length=1024, null=True, blank=True)                                    |
+| content_image_1     | ImageField(null=True, blank=True)                                                   |
+| content_image_url_1 | URLField(max_length=1024, null=True, blank=True)                                    |
+| content_image_2     | ImageField(null=True, blank=True)                                                   |
+| content_image_url_2 | URLField(max_length=1024, null=True, blank=True)                                    |
 
 ## Features
 
