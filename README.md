@@ -1,6 +1,6 @@
-# Milestone Project 4 with *Code Institute*
+# Puffins
 
-![Puffins](https://thepuffins.s3.eu-central-1.amazonaws.com/github-docs/puffins_amiresponsive.gif)
+[![Puffins](https://thepuffins.s3.eu-central-1.amazonaws.com/github-docs/puffins_amiresponsive.gif)](https://thepuffins.herokuapp.com)
 
 _"Always be yourself. Unless you can be a puffin, then always be a puffin."_
 
