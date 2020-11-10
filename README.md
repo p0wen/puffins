@@ -1,5 +1,3 @@
-# Work in Progress
-
 # Milestone Project 4 with *Code Institute*
 
 ![Puffins](https://thepuffins.s3.eu-central-1.amazonaws.com/github-docs/puffins_amiresponsive.gif)
