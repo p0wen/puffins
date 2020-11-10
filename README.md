@@ -240,9 +240,41 @@ The structure of the products and checkout app are based on the [Boutique Ado](h
 
 ### Order
 
+| Name              | Type                                                                                                                                                                                     |
+|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| order_number      | CharField( max_length = 32 ,  null = False ,  editable = False )                                                                                                                         |
+| user_profile      | ForeignKey(UserAccount,  on_delete =models.SET_NULL,                                       null = True ,  blank = True ,                                       related_name = 'orders' ) |
+| order_status      | CharField( max_length = 1 ,  choices =STATUS_OPTIONS,                                      default = '0' )                                                                               |
+| first_name        | CharField( max_length = 50 ,  null = False ,  blank = False )                                                                                                                            |
+| last_name         | CharField( max_length = 50 ,  null = False ,  blank = False )                                                                                                                            |
+| email             | EmailField( max_length = 254 ,  null = False ,  blank = False )                                                                                                                          |
+| phone_number      | CharField( max_length = 20 ,  blank = True )                                                                                                                                             |
+| country           | CountryField( blank_label = 'Country' ,  null = False ,  blank = False )                                                                                                                 |
+| zipcode           | CharField( max_length = 20 ,  null = True ,  blank = False )                                                                                                                             |
+| town_or_city      | CharField( max_length = 40 ,  null = False ,  blank = False )                                                                                                                            |
+| street_address1   | CharField( max_length = 80 ,  null = False ,  blank = False )                                                                                                                            |
+| street_address2   | CharField( max_length = 80 ,  blank = True )                                                                                                                                             |
+| total_order       | DecimalField( max_digits = 10 ,  decimal_places = 2 ,  null = False ,  default = 0 )                                                                                                     |
+| total_tax         | DecimalField( max_digits = 10 ,  decimal_places = 2 ,  null = False ,  default = 0 )                                                                                                     |
+| tax_rate          | DecimalField( max_digits = 6 ,  decimal_places = 2 ,  null = False ,  default = 0 )                                                                                                      |
+| delivery_cost     | DecimalField( max_digits = 10 ,  decimal_places = 2 ,  null = False ,  default = 0 )                                                                                                     |
+| grand_total       | DecimalField( max_digits = 10 ,  decimal_places = 2 ,  null = False ,  default = 0 )                                                                                                     |
+| date_order_placed | DateTimeField( auto_now_add = True )                                                                                                                                                     |
+| original_cart     | TextField( null = False ,  blank = False ,  default = '' )                                                                                                                               |
+| stripe_pid        | CharField( max_length = 254 ,  null = False ,  blank = False ,  default = '' )                                                                                                           |
 
+### OrderLineItem
+
+| Name           | Type                                                                                                         |
+|----------------|--------------------------------------------------------------------------------------------------------------|
+| order          | ForeignKey(Order,  null = False ,  blank = False ,  on_delete =models.CASCADE,  related_name = "lineitems" ) |
+| productvariant | ForeignKey(ProductVariant,  null = False ,  blank = False ,  on_delete =models.CASCADE)                      |
+| quantity       | IntegerField( blank = False ,  default = 0 )                                                                 |
+| lineitem_total | DecimalField( max_digits = 6 ,  decimal_places = 2 ,  null = False ,  default = 0 ,  editable = False )      |
 
 ### Useraccount
+
+
 
 ### Wishlist
 
