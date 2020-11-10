@@ -2,7 +2,7 @@
 
 # Milestone Project 4 with *Code Institute*
 
----> INSERT AM I RESPONSIVE GIF
+![Puffins](https://thepuffins.s3.eu-central-1.amazonaws.com/github-docs/puffins_amiresponsive.gif)
 
 _"Always be yourself. Unless you can be a puffin, then always be a puffin."_
 
@@ -12,9 +12,9 @@ This site is the final Milestone Projects that made up the Full Stack Web Develo
 
 To test the site incl. the checkout process please use the test credit card number provided in the [Stripe Documentation](https://stripe.com/docs/testing):
 
-+ Number: 4242 4242 4242 424 4242
-+ Exp. Date: Anything (e.g. 02/24)
-+ CVC: Anything (e.g. 007)
++ __Number__: 4242 4242 4242 424 4242
++ __Exp. Date__: Anything (e.g. 02/24)
++ __CVC__: Anything (e.g. 007)
 
 # Table of Content
 
@@ -79,14 +79,14 @@ To test the site incl. the checkout process please use the test credit card numb
 Before the start of the Project the Epics and User Stories were defined and written out to have complete set of necessary features to get the site going. In total 6 Epics were defined and user stories were broken down into 3 user groups: regular site visitors, registered site visitors and the store manager/owner.
 
 ### EPIC: Browse Site
-As a site visitor, i want to...
+As a __site visitor__, i want to...
 * ... __access the website__ with any device (smartphone, tablet, desktop), so that i am able to visit the shop anytime and anywhere.
 * ... have __easy navigation__, to quickly solve the reason for my visit.
 * ... have __information about the brand__, to get to know the company and understand their mission and story.
 * ... be able to __contact the company__, so that i quickly can get in touch if i have a question or issue.
 
 ### Epic: Browse Products
-As a site visitor, i want to...
+As a __site visitor__, i want to...
 * ... browse products by __category and productline__, so that i quickly find what i am looking for.
 * ... __sort products__, to adjust the order according to my needs.
 * ... be able to __search for specific products__, to quickly get what i need.
@@ -94,7 +94,7 @@ As a site visitor, i want to...
 * ... be able to __choose a size__, to order the necessary items according to my needs.
 
 ### Epic: Manage Cart & Make Purchase
-As a site visitor, i want to...
+As a __site visitor__, i want to...
 * ... see all my __items in a cart__, so that i have an overview of my potential purchase.
 * ... be able to __reduce / increase quantity__, so that i can order my prefered amount.
 * ... be able to __remove an item from my cart__, so that i can manage my cart efficiently.
@@ -102,26 +102,26 @@ As a site visitor, i want to...
 * ... be able to __pay a order by credit card__, so that i don't have to deal with an invoice and money transfer.
 * ... __receive an order confirmation__, so that i know my order was received.
 
-As a registered user, i want to...
+As a __registered user__, i want to...
 * ... have my __details prefilled from my profile__, so that i quickly can finish my purchase
 
 ### Epic: Registration & Useraccount
 
-As a site visitor, i want to...
+As a __site visitor__, i want to...
 * ... be able to __sign up to the store__, so that i can track orders and have my data prefilled in the order form.
 
-As a registered user, i want to...
+As a __registered user__, i want to...
 * ... be __able to login__, so that i can access my useraccount.
 * ... be able to __see my order history__, so that i know what i've purchased in the past.
 * ... __manage my personal details__, so that i can quickly update my data if something changes.
 
 ### Epic: Manage Wishlist
-As a registered user, i want to...
+As a __registered user__, i want to...
 * ... __add/remove items to my wishlist__, so that can save items for later purchase to my useraccount.
 * ... have an __overview of my wishlist__, to get an overview of my already added products.
 
 ### Epic: Store Management
-As a store owner, i want to...
+As a __store owner__, i want to...
 * ... be able to __manage the products, categories, productlines and productvariants__, so that i have an overview of my inventory.
 * ... __manage blog entries__, to add new/edit posts on the blog to provide customers some additional value.
 * ... __manage FAQs__, so that i can quickly update often asked questions
@@ -142,7 +142,6 @@ The puffins logo was created by [polardots](https://www.polardots.studio/). It s
 The puffins text logo was created by me with [Figma](www.figma.com).
 
 ![Puffins Textlogo](https://thepuffins.s3.amazonaws.com/media/puffins_logo_dark.svg)
-
 
 #### Color Scheme
 
@@ -203,25 +202,25 @@ The structure of the products and checkout app are based on the [Boutique Ado](h
 | display_text | CharField(max_length=254) | T-Shirt      |
 
 ### Products
-| Name                | Type                                                                                           | Example Data                                                                                                                                                                                                                                                                                                                                                                                         |
-|---------------------|------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| category            | ForeignKey( 'Category')                                                                        | 1                                                                                                                                                                                                                                                                                                                                                                                                    |
-| productline         | ForeignKey( 'ProductLine')                                                                     | 1                                                                                                                                                                                                                                                                                                                                                                                                    |
-| name                | CharField( max_length = 254 )                                                                  | passionate                                                                                                                                                                                                                                                                                                                                                                                           |
-| display_text        | CharField( max_length = 254 )                                                                  | Passionate Puffin                                                                                                                                                                                                                                                                                                                                                                                    |
-| price               | DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(0.01)], blank=True) | 49.95                                                                                                                                                                                                                                                                                                                                                                                                |
-| discount_price      | DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(0.01)], blank=True) | 39,96                                                                                                                                                                                                                                                                                                                                                                                                |
-| is_on_sale          | BooleanField(default=False)                                                                    | True                                                                                                                                                                                                                                                                                                                                                                                                 |
-| avail_for_pre_order | BooleanField( default = False )                                                                | False                                                                                                                                                                                                                                                                                                                                                                                                |
-| date_of_dispatch    | CharField( max_length = 254 ,  blank = True ,  null = True )                                   | null                                                                                                                                                                                                                                                                                                                                                                                                 |
-| discontinued        | BooleanField( default = False )                                                                | false                                                                                                                                                                                                                                                                                                                                                                                                |
-| image               | ImageField( null = True ,  blank = True )                                                      | passionatepuffin.png                                                                                                                                                                                                                                                                                                                                                                                 |
-| image_url           | URLField( max_length = 1024 ,  null = True ,  blank = True )                                   | https://thepuffins.s3.amazonaws.com/media/passionatepuffin.png                                                                                                                                                                                                                                                                                                                                       |
+| Name                | Type                                                                                           | Example Data    |
+|---------------------|------------------------------------------------------------------------------------------------|-----------------|
+| category            | ForeignKey( 'Category')                                                                        | 1               |
+| productline         | ForeignKey( 'ProductLine')                                                                     | 1               |
+| name                | CharField( max_length = 254 )                                                                  | passionate      |
+| display_text        | CharField( max_length = 254 )                                                                  | Passionate Puffin |
+| price               | DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(0.01)], blank=True) | 49.95     |
+| discount_price      | DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(0.01)], blank=True) | 39,96     |
+| is_on_sale          | BooleanField(default=False)                                                                    | True      |
+| avail_for_pre_order | BooleanField( default = False )                                                                | False     |
+| date_of_dispatch    | CharField( max_length = 254 ,  blank = True ,  null = True )                                   | null      |
+| discontinued        | BooleanField( default = False )                                                                | false     |
+| image               | ImageField( null = True ,  blank = True )                                                      | passionatepuffin.png |
+| image_url           | URLField( max_length = 1024 ,  null = True ,  blank = True )                                   | https://thepuffins.s3.amazonaws.com/media/passionatepuffin.png  |
 | description         | TextField( null = True ,  blank = True )                                                       | Made with love and passion: the passionate puffin with its super soft, lightweight cotton fabric and neps in contrast colour has the perfect fit. Wear it on its own or as a base layer under a cardigan. Made the Puffins way, from organic linen from the EU for a great sustainable tee. T-shirts made from linen make you stay cool in the summer . They are more durable and also feel lighter. |
-| is_featured         | BooleanField( default = False ,  null = True ,  blank = True )                                 | True                                                                                                                                                                                                                                                                                                                                                                                                 |
-| color               | CharField( max_length = 254 ,  null = True )                                                   | grey                                                                                                                                                                                                                                                                                                                                                                                                 |
-| material_1          | CharField( max_length = 254 ,  null = True ,  blank = True )                                   | linen                                                                                                                                                                                                                                                                                                                                                                                                |
-| material_2          | CharField( max_length = 254 ,  null = True ,  blank = True )                                   |                                                                                                                                                                                                                                                                                                                                                                                                      |
+| is_featured         | BooleanField( default = False ,  null = True ,  blank = True )                                 | True        |
+| color               | CharField( max_length = 254 ,  null = True )                                                   | grey        |
+| material_1          | CharField( max_length = 254 ,  null = True ,  blank = True )                                   | linen       |
+| material_2          | CharField( max_length = 254 ,  null = True ,  blank = True )                                   | ""          |
 
 ### Productsize
 
@@ -240,28 +239,28 @@ The structure of the products and checkout app are based on the [Boutique Ado](h
 
 ### Order
 
-| Name              | Type                                                                                                                                                                                     |
-|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| order_number      | CharField( max_length = 32 ,  null = False ,  editable = False )                                                                                                                         |
-| user_profile      | ForeignKey(UserAccount,  on_delete =models.SET_NULL,                                       null = True ,  blank = True ,                                       related_name = 'orders' ) |
-| order_status      | CharField( max_length = 1 ,  choices =STATUS_OPTIONS,                                      default = '0' )                                                                               |
-| first_name        | CharField( max_length = 50 ,  null = False ,  blank = False )                                                                                                                            |
-| last_name         | CharField( max_length = 50 ,  null = False ,  blank = False )                                                                                                                            |
-| email             | EmailField( max_length = 254 ,  null = False ,  blank = False )                                                                                                                          |
-| phone_number      | CharField( max_length = 20 ,  blank = True )                                                                                                                                             |
-| country           | CountryField( blank_label = 'Country' ,  null = False ,  blank = False )                                                                                                                 |
-| zipcode           | CharField( max_length = 20 ,  null = True ,  blank = False )                                                                                                                             |
-| town_or_city      | CharField( max_length = 40 ,  null = False ,  blank = False )                                                                                                                            |
-| street_address1   | CharField( max_length = 80 ,  null = False ,  blank = False )                                                                                                                            |
-| street_address2   | CharField( max_length = 80 ,  blank = True )                                                                                                                                             |
-| total_order       | DecimalField( max_digits = 10 ,  decimal_places = 2 ,  null = False ,  default = 0 )                                                                                                     |
-| total_tax         | DecimalField( max_digits = 10 ,  decimal_places = 2 ,  null = False ,  default = 0 )                                                                                                     |
-| tax_rate          | DecimalField( max_digits = 6 ,  decimal_places = 2 ,  null = False ,  default = 0 )                                                                                                      |
-| delivery_cost     | DecimalField( max_digits = 10 ,  decimal_places = 2 ,  null = False ,  default = 0 )                                                                                                     |
-| grand_total       | DecimalField( max_digits = 10 ,  decimal_places = 2 ,  null = False ,  default = 0 )                                                                                                     |
-| date_order_placed | DateTimeField( auto_now_add = True )                                                                                                                                                     |
-| original_cart     | TextField( null = False ,  blank = False ,  default = '' )                                                                                                                               |
-| stripe_pid        | CharField( max_length = 254 ,  null = False ,  blank = False ,  default = '' )                                                                                                           |
+| Name              | Type           |
+|-------------------|----------------|
+| order_number      | CharField( max_length = 32 ,  null = False ,  editable = False )    |
+| user_profile      | ForeignKey(UserAccount,  on_delete =models.SET_NULL,null = True ,  blank = True ,related_name = 'orders' ) |
+| order_status      | CharField( max_length = 1 ,  choices =STATUS_OPTIONS,                                      default = '0' )  |
+| first_name        | CharField( max_length = 50 ,  null = False ,  blank = False )                                                |
+| last_name         | CharField( max_length = 50 ,  null = False ,  blank = False )                                                |
+| email             | EmailField( max_length = 254 ,  null = False ,  blank = False )                                              |
+| phone_number      | CharField( max_length = 20 ,  blank = True )                                                                 |
+| country           | CountryField( blank_label = 'Country' ,  null = False ,  blank = False )                                     |
+| zipcode           | CharField( max_length = 20 ,  null = True ,  blank = False )                                                 |
+| town_or_city      | CharField( max_length = 40 ,  null = False ,  blank = False )                                                |
+| street_address1   | CharField( max_length = 80 ,  null = False ,  blank = False )                                                |
+| street_address2   | CharField( max_length = 80 ,  blank = True )                                                                 |
+| total_order       | DecimalField( max_digits = 10 ,  decimal_places = 2 ,  null = False ,  default = 0 )                         |
+| total_tax         | DecimalField( max_digits = 10 ,  decimal_places = 2 ,  null = False ,  default = 0 )                         |
+| tax_rate          | DecimalField( max_digits = 6 ,  decimal_places = 2 ,  null = False ,  default = 0 )                          |
+| delivery_cost     | DecimalField( max_digits = 10 ,  decimal_places = 2 ,  null = False ,  default = 0 )                         |
+| grand_total       | DecimalField( max_digits = 10 ,  decimal_places = 2 ,  null = False ,  default = 0 )                         |
+| date_order_placed | DateTimeField( auto_now_add = True )                                                                         |
+| original_cart     | TextField( null = False ,  blank = False ,  default = '' )                                                   |
+| stripe_pid        | CharField( max_length = 254 ,  null = False ,  blank = False ,  default = '' )                               |
 
 ### OrderLineItem
 
@@ -286,22 +285,22 @@ The structure of the products and checkout app are based on the [Boutique Ado](h
 
 ### Wishlist
 
-| Name            | Type                                                                                                                            |
-|-----------------|---------------------------------------------------------------------------------------------------------------------------------|
-| user_profile    | OneToOneField(UserAccount,  on_delete =models.CASCADE,                                          null = False ,  blank = False ) |
-| wished_products | ManyToManyField(Product,                                               related_name = 'userwishlists' )                         |
+| Name            | Type                                                                                    |
+|-----------------|-----------------------------------------------------------------------------------------|
+| user_profile    | OneToOneField(UserAccount,  on_delete =models.CASCADE, null = False ,  blank = False)   |
+| wished_products | ManyToManyField(Product, related_name = 'userwishlists' )                               |
 
 ### FAQs
 
-| Name             | Type                                                                                                                                                            |
-|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| CATEGORY_CHOICES | [         ( '1' ,  'General' ),         ( '2' ,  'Return' ),         ( '3' ,  'Pre Order' ),         ( '4' ,  'Delivery' ),         ( '5' ,  'Payment' ),     ] |
-| category         | CharField( max_length = 1 ,  choices =CATEGORY_CHOICES)                                                                                                         |
-| name             | CharField(max_length = 120 , null = True, blank = False )                                                                                                   |
-| title            | CharField(max_length = 120 ,  null = True ,  blank = False )                                                                                                   |
-| answer           | TextField()                                                                                                                                                     |
-| created_at       | DateTimeField(auto_now_add = True ,null = False )                                                                                                          |
-| updated_at       | DateTimeField(auto_now = True ,  null = False)                                                                                                                |
+| Name             | Type                                                                                                              |
+|------------------|-------------------------------------------------------------------------------------------------------------------|
+| CATEGORY_CHOICES | [( '1' ,  'General' ), ( '2' ,  'Return' ), ( '3' ,  'Pre Order' ), ( '4' ,  'Delivery' ), ( '5' ,  'Payment' ),] |
+| category         | CharField( max_length = 1 ,  choices =CATEGORY_CHOICES)                                                           |
+| name             | CharField(max_length = 120 , null = True, blank = False )                                                         |
+| title            | CharField(max_length = 120 ,  null = True ,  blank = False )                                                      |
+| answer           | TextField()                                                                                                       |
+| created_at       | DateTimeField(auto_now_add = True ,null = False )                                                                 |
+| updated_at       | DateTimeField(auto_now = True ,  null = False)                                                                    |
 ### Blog 
 
 | Name                | Type                                                                                |
@@ -384,24 +383,25 @@ This site is deployed to heroku and the versioning was done with git and the Rep
 
 - Logocreated by https://www.polardots.studio/
 
-### Content
+### Content & Products
 
 - Written by me - inspired by twothirds.com
+- All Products have been created by myself with Figma
 
 ### Media
 
 Category Images: 
-Grown Ups: https://images.unsplash.com/photo-1490718687940-0ecadf414600?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80
-Kids: https://images.unsplash.com/photo-1490826153516-b55d176cdb9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80
-Partnerlook: https://images.unsplash.com/photo-1528686355953-c65738cb43ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1242&q=80
+* Grown Ups: https://images.unsplash.com/photo-1490718687940-0ecadf414600?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80
+* Kids: https://images.unsplash.com/photo-1490826153516-b55d176cdb9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80
+* Partnerlook: https://images.unsplash.com/photo-1528686355953-c65738cb43ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1242&q=80
 
 ### Acknowledgements
 
 Special Thanks to...
 
-... Simone from https://www.polardots.studio/
-... my Code-Institute Mentor
-... Tutors and Fellow Students of CI 
+* ... https://www.polardots.studio/
+* ... my Code-Institute Mentor
+* ... Tutors and Fellow Students of CI 
 
 ### References 
 * read up on making drop down full width https://stackoverflow.com/questions/49659305/how-to-make-a-bootstrap-4-full-width-dropdown-in-navbar
