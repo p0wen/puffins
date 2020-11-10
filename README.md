@@ -55,13 +55,13 @@ To test the site incl. the checkout process please use the test credit card numb
 The aim of this project is to create an ecommerce shop for sustainable clothing especially targeted towards young couples and families. The goal is to create this shop as an interactive fullstack website that allows customers to browse products, make purchases by credit card and if registered manage a wishlist or see their orderhistory. These goals should be supported by providing a clean and easy to use website that allows seamless navigation and has a low bounce rate.
 
 ## Design process
-- before laying out the design research undertaken
-- how do other stores look
-- what design patterns are used across stores
-- which sites are appealing to me
-- which kind of stores fit to my business idea, e.g. amazon retailer vs. individual online shop
-- the final layout was influenced by the following stores:
+Before laying out the project and creating an initial design market research was done. During this research phase the following questions were also acknowledged: 
+* How do other stores look?
+* What are typical design patterns used across stores?
+* Which site are appealing to me?
+* Which kind of stores fit to my business idea? 
 
+The final layout was influenced by the following sites:
 * [twothirds.com](https://twothirds.com/)
 * [taylorstich.com](https://www.taylorstitch.com/)
 * [manitober.de](https://www.manitober.de/)
