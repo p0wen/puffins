@@ -71,7 +71,10 @@ The final layout was influenced by the following sites:
 The shop is targeted to women and men alike. The typical age of a shopper is estimated to be between 25 and 40 years. Especially couples and small families are targeted with the products. The families usually have 1-2 children in the age of 6 month up to 12 years. All customers have mindset respecting the environment and favoring sustainable products. The income of the target group is an average mid to high household income. Furthermore the target group has a passion for living outdoors and owning sustainable high quality products to use in day to day life.
 
 ## Epics & User Stories
-Before the start of the Project the Epics and User Stories were defined and written out to have complete set of necessary features to get the site going. In total 6 Epics were defined and user stories were broken down into 3 user groups: regular site visitors, registered site visitors and the store manager/owner.
+Before the start of the Project the Epics and User Stories were defined and written out to have complete set of necessary features to get the site going. In total 6 Epics were defined and user stories were broken down into 3 user groups:
+* regular __site visitors__
+* __registered users__
+* the __store manager/owner__.
 
 ### EPIC: Browse Site
 As a __site visitor__, i want to...
