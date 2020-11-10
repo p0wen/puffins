@@ -274,11 +274,39 @@ The structure of the products and checkout app are based on the [Boutique Ado](h
 
 ### Useraccount
 
-
+| Name                    | Type                                                                   |
+|-------------------------|------------------------------------------------------------------------|
+| user                    | OneToOneField(User,  on_delete =models.CASCADE)                        |
+| default_phone_number    | CharField( max_length = 20 ,  null = True ,  blank = True )            |
+| default_street_address1 | CharField( max_length = 80 ,  null = True ,  blank = True )            |
+| default_street_address2 | CharField( max_length = 80 ,  null = True ,  blank = True )            |
+| default_zipcode         | CharField( max_length = 20 ,  null = True ,  blank = True )            |
+| default_town_or_city    | CharField( max_length = 40 ,  null = True ,  blank = True )            |
+| default_country         | CountryField( blank_label = 'Country' ,  null = True ,  blank = True ) |
 
 ### Wishlist
 
+| Name            | Type                                                                                                                            |
+|-----------------|---------------------------------------------------------------------------------------------------------------------------------|
+| user_profile    | OneToOneField(UserAccount,  on_delete =models.CASCADE,                                          null = False ,  blank = False ) |
+| wished_products | ManyToManyField(Product,                                               related_name = 'userwishlists' )                         |
+
 ### FAQs
+
+| Name             | Type                                                                                                                                                            |
+|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CATEGORY_CHOICES | [         ( '1' ,  'General' ),         ( '2' ,  'Return' ),         ( '3' ,  'Pre Order' ),         ( '4' ,  'Delivery' ),         ( '5' ,  'Payment' ),     ] |
+| category         | CharField( max_length = 1 ,  choices =CATEGORY_CHOICES)                                                                                                         |
+| name             | CharField( max_length = 120 ,  null = True ,  blank = False )                                                                                                   |
+| title            | CharField( max_length = 120 ,  null = True ,  blank = False )                                                                                                   |
+| answer           | TextField()                                                                                                                                                     |
+| created_at       | DateTimeField( auto_now_add = True ,  null = False )                                                                                                            |
+| updated_at       | DateTimeField( auto_now = True ,  null = False )                                                                                                                |
+
+
+### Blog 
+
+
 
 ## Features
 
