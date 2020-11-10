@@ -30,7 +30,7 @@ def add_wish(request, product_id):
         else:
             wish.userwishlists.add(user.id)
     else:
-        UserWishlist.objects.create(user_profile=user)
+        UserWishlist.objects.get_or_create(user_profile=user)
         wish.userwishlists.add(user.id)
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
