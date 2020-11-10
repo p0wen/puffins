@@ -85,7 +85,7 @@ nav button:focus {
 }
 
 .button-size {
-  width: 70%;
+  min-width: 70%;
   height: 25%;
   font-family: Open Sans;
   font-style: normal;
@@ -339,7 +339,7 @@ nav button:focus {
 }
 
 .carousel-content-box {
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.25);
     padding: 1em 3em;
 } 
 
