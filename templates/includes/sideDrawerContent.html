@@ -23,6 +23,7 @@
                         <ul class="item-specs">
                             <li class="text-muted"><small>{{ date.time_now }}{{ item.lineitem.product.color | title }} /
                                 {{ item.lineitem.size }}</small></li>
+                            <li class="text-muted"><small>Qty: {{ item.quantity }}</small></li>
                 
                              {% if item.lineitem.product.is_on_sale %}
                             <li>
