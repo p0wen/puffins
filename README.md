@@ -51,9 +51,8 @@ To test the site incl. the checkout process please use the test credit card numb
 # UX
 
 ## Purpose and Aim of the Project
-- ecommerce shop for sustainable clothing especially for families
-- fullstack interactive website that allows customers to make purchases by credit card, manage a wishlist
-- provide a clean and easy to use design to support easy navigation and a low bounce rate
+
+The aim of this project is to create an ecommerce shop for sustainable clothing especially targeted towards young couples and families. The goal is to create this shop as an interactive fullstack website that allows customers to browse products, make purchases by credit card and if registered manage a wishlist or see their orderhistory. These goals should be supported by providing a clean and easy to use website that allows seamless navigation and has a low bounce rate.
 
 ## Design process
 - before laying out the design research undertaken
