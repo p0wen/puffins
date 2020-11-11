@@ -25,7 +25,7 @@ def add_to_cart(request):
             cart[productvariant] = {'qty': 1, 'date_created': now}
         orderd_cart = OrderedDict(sorted(cart.items(), key = lambda x: x[1]['date_created'], reverse=True))
         request.session['cart'] = orderd_cart
-        render_cart = render_to_string('cart/includes/sideDrawerContent.html',
+        render_cart = render_to_string('./includes/sideDrawerContent.html',
                                        request=request)
         return HttpResponse(
             render_cart,
