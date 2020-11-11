@@ -364,15 +364,21 @@
      * Fix Viewport for mobile browser taken from own zengarden project / origin of solution (https://dev.to/admitkard/mobile-issue-with-100vh-height-100-100vh-3-solutions-3nae)
      */
 
+    // Call resize view on page load to have correct vh
+    resizeView();
+
+    // Update vh variable on screen resize 
     window.addEventListener("resize", () => {
     resizeView();
     });
 
+    // Check innerHeight of window to adjust for mobile view with task bars
     function resizeView() {
     let root = document.querySelector(":root")
     root.style.setProperty("--vh", window.innerHeight / 100 + "px");
     }
 
+    
 	</script>
 
 </body>
