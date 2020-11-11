@@ -226,7 +226,8 @@
     <div class="col-lg-6 col-md">
       <h3 class="text-center">Contact Form</h3>
       <hr class="w-25">
-      <form method="POST" action="{% url 'contact' %}">
+      <div id="contactformouter">
+      <form method="POST" id="contactform">
         {% csrf_token %} {{ contact_form|crispy }}
         <div class="text-center mb-2 mt-4">
           <button type="submit" class="btn button-blue rounded-0 w-100">
@@ -252,8 +253,35 @@
           </button>
         </div>
       </form>
+      </div>
     </div>
 
   </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+
+<script>
+
+$('#contactform').on('submit', function(event){
+    event.preventDefault();
+    console.log("i am in the function")
+    var serializedData = $(this).serialize();
+    console.log(serializedData)
+    $.ajax({
+        url : "{% url 'contact' %}", // the endpoint
+        type : "POST", // http method
+        data : serializedData, // data sent with the post request
+        // handle a successful response
+        success : function(html) {
+            $('#contactformouter').html(html)
+        },
+        // handle a non-successful response
+        error : function(xhr,errmsg,err) {
+        }
+    });
+});
+
+</script>
 {% endblock %}
