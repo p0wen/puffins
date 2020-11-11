@@ -16,15 +16,12 @@
                         {% endif %} 
                         </a>                     
                     </div>
-                    <div class="col">
-                    <div class="text-left">
+                    <div class="col d-flex align-items-start flex-column">
                         <p class="item-title card-product-name-small"><a href="{% url 'product_detail' item.lineitem.product.id %}">{{ item.lineitem.product.display_text | title }}</a>
                         </p>
                         <ul class="item-specs">
                             <li class="text-muted"><small>{{ date.time_now }}{{ item.lineitem.product.color | title }} /
                                 {{ item.lineitem.size }}</small></li>
-                            <li class="text-muted"><small>Qty: {{ item.quantity }}</small></li>
-                
                              {% if item.lineitem.product.is_on_sale %}
                             <li>
                                 <p class="my-0 cart-subtitle  card-product-sale-small">Sale</p>
@@ -39,7 +36,27 @@
                             </li>
                             {% endif %}
                         </ul>
-                        </div>
+                        <div class="quantity-control-sm text-muted mt-auto text-center">
+                            <small>
+                                <form class="d-inline text-center" method="POST" action="{% url 'decrease_quantity_by_one' item.productvariant %}">
+                                        <input type="hidden" name="csrfmiddlewaretoken" value="2n3Ws6e4io4nomygUKmnxaNd95qUr9UsKTN7KLiCOWErJqRIbRo1DixrKtH91SYQ">
+                                        <button type="submit" class="btn btn-sm p-0">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"></path>
+                                            </svg>
+                                        </button> 
+                                </form>                                    
+                                <span class="p-0">{{ item.quantity }}</span>
+                                <form class="d-inline" method="POST" action="{% url 'increase_quantity_by_one' item.productvariant %}">
+                                    <input type="hidden" name="csrfmiddlewaretoken" value="2n3Ws6e4io4nomygUKmnxaNd95qUr9UsKTN7KLiCOWErJqRIbRo1DixrKtH91SYQ">
+                                    <button type="submit" class="btn btn-sm p-0">
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </small>
+						</div>
                     </div>
                         
                     <div class="col card-product-price-small d-flex align-items-end flex-column">
@@ -53,11 +70,7 @@
                                             </button>
                                         </form>
                                                                     <span class="mt-auto p-2"> 
-                                {% if item.lineitem.product.is_on_sale or item.lineitem.product.avail_for_pre_order %}
-                                    {{ item.lineitem.product.discount_price }}€
-                                {% else %}
-                                    {{ item.lineitem.product.price }}€
-                                {% endif %}
+                                    {{ item.subtotal }}€
                         </span>
                                         
                         </div>
