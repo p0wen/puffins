@@ -34,19 +34,16 @@
 </head>
 
 <body class="d-flex flex-column">
-	{% if messages %}
-	<div class="message-container"></div>
-	{% endif %}
 	{% block page_header %}
 	{% endblock %}
 	<nav class="navbar navbar-expand-lg fixed-top">
-		<img
+		<a class="navbar-brand" href="{% url 'home' %}"><img
           src="{{ MEDIA_URL }}puffin_icon.png"
           class="d-inline-block align-middle"
           height="50px"
           alt=""
           loading="lazy"
-        />
+        /></a>
 		<a class="navbar-brand" href="{% url 'home' %}">
 			<img
             src="{{ MEDIA_URL }}puffins_logo_light.svg"
@@ -232,7 +229,20 @@
 				</div>
 			</div>
 	</nav>
-
+        <div class="container message-box">
+            {% for message in messages %}
+                {% with message.level as level %}
+                    {% if level == 40 %}
+                        {% include 'includes/toasts/toast_error.html' %}
+                    {% elif level == 30 %}
+                        {% include 'includes/toasts/toast_warning.html' %}
+                    {% else %}
+                        {% include 'includes/toasts/toast_info.html' %}
+                    {% endif %}
+                {% endwith %}
+            {% endfor %}
+        </div>
+    
     <!-- Content Block for Main Content -->
     {% block content %}
     {% endblock %}
