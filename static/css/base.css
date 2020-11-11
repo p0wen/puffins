@@ -460,6 +460,7 @@ footer .separator {
 .card-product-name-small {
     font-family: 'Oswald';
     font-size: 0.7rem;
+    margin-bottom: 0;
 }
 
 .card-product-price, .card-product-sale, .card-product-preorder  {
@@ -469,7 +470,7 @@ footer .separator {
 
 .card-product-price-small, .card-product-sale-small, .card-product-preorder-small  {
     font-family: 'Oswald';
-    font-size: 0.7rem;
+    font-size: 0.6rem;
 }
 
 .card-product-sale {
@@ -599,6 +600,10 @@ footer .separator {
 
 .quantity-control {
     height: 1.5rem;;
+}
+
+.quantity-control-sm {
+    border: solid 0.5px #c9cbce;
 }
 /* Reference to fonts for styling Process
 font-family: 'Fredericka the Great', cursive;

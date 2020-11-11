@@ -15,107 +15,12 @@
     <div class="row cart-items-container">
         <div class="col">
             {% if cart_items %}
-            <div class="table-responsive rounded">
-                        <table class="table table-sm">
-                            <thead class="text-black">
-                                <tr>
-                                    <th scope="col">Item</th>
-                                    <th scope="col"></th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Quantity</th>
-                                    <th scope="col">Subtotal</th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
-                            {% for item in cart_items %}
-                                 <tr>
-                                    <td class="p-3 w-25">
-                                        <img class="img-fluid rounded-0" src="{{ item.lineitem.product.image.url }}">
-                                    </td>
-                                    <td class="py-3">
-                                        <p class="my-0"><strong>{{ item.lineitem.product.display_text | title }}</strong></p>
-                                        <p class="my-0 small text-muted">Size: {{ item.lineitem.size }}</p>
-                                        <p class="my-0 small text-muted">{{ item.lineitem.product.productline.display_text }}</p>
-                                        {% if item.lineitem.product.is_on_sale %}
-                                        <p class="my-0 small cart-subtitle card-product-sale">Sale</p>
-                                        {% elif item.lineitem.product.avail_for_pre_order %}
-                                        <p class="my-0 small cart-subtitle card-product-preorder">Pre-Order</p>
-                                         <p class="my-0 small cart-subtitle card-product-preorder">Dispatch Date: {{ item.lineitem.product.date_of_dispatch }}</p>
-                                        {% endif %}
-                                    </td>
-                                    <td class="py-3">
-                                    {% if item.lineitem.product.is_on_sale or item.lineitem.product.avail_for_pre_order %}
-                                    <p class="my-0">{{ item.lineitem.product.discount_price }}€</p>
-                                    {% else %}
-                                        <p class="my-0">{{ item.lineitem.product.price }}€</p>
-                                    {% endif %}
-                                    </td>
-                                    <td class="py-3">
-                                        <div class="quantity-control">
-                                            <form class="d-inline" method="POST" action="{% url 'decrease_quantity_by_one' item.productvariant %}">
-                                                {% csrf_token %}
-                                                <button type="submit" class="btn btn-sm">
-                                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-                                                    </svg>
-                                                </button>
-                                            </form>
-                                            <span>{{ item.quantity }}</span>
-                                            <form class="d-inline" method="POST" action="{% url 'increase_quantity_by_one' item.productvariant %}">
-                                                {% csrf_token %}
-                                                <button type="submit" class="btn btn-sm">
-                                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                                    </svg>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </td>
-                                    <td class="py-3">
-                                        <p class="my-0">{{ item.subtotal }}€</p>
-                                    </td>
-                                    <td class="py-3 text-right">
-                                        <form method="POST" action="{% url 'remove_from_cart' item.productvariant %}">
-                                            {% csrf_token %}
-                                            <button type="submit" class="btn btn-sm">
-                                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"></path>
-                                                </svg>
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-
-                            <tr>
-                                <td colspan="6" class="pt-5 text-right">
-                                    <h6><strong>Cart Total: {{ total|floatformat:2 }}€</strong></h6>
-                                    <h6>Delivery: {{ delivery|floatformat:2 }}€</h6>
-                                    <h4 class="mt-4"><strong>Grand Total: {{ grand_total|floatformat:2 }}€</strong></h4>
-                                    {% if free_delivery_delta > 0 %}
-                                        <p class="mb-1 text-danger">
-                                            You could get free delivery by spending just <strong>{{ free_delivery_delta }}€</strong> more!
-                                        </p>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="7" class="text-right">
-                                    <a href="{% url 'products' %}" class="btn btn-sm">← Keep Shopping!
-                                    </a>
-                                    <a href="{% url 'checkout' %}" class="ml-5 btn rounded-0 button-blue">
-                                        <span class="">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-                                                <path fill-rule="evenodd" d="M11.354 5.646a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-                                            </svg>
-                                        </span>
-                                        <span> Checkout</span>
-                                    </a>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+                <div class="d-none d-sm-block">
+                    {% include 'cart/includes/cart_desktop.html' %}
+                </div>
+                <div class="d-block d-sm-none">
+                    {% include 'cart/includes/cart_mobile.html' %}
+                </div>
                 {% else %}
                     <p class="lead mb-5">Your bag is empty.</p>
                     <a href="{% url 'products' %}?productline=tshirt&sort=name&direction=asc" class="btn btn-outline-black rounded-0 btn-lg">
