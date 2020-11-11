@@ -286,7 +286,8 @@
 	{% endblock %}
 
 	<script>
-		let menuExtended = false;
+
+    let menuExtended = false;
     let scrollPosition;
 		// Scroll Animation based on 2 sources https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_lightbulb , https://www.youtube.com/watch?v=vE4UuSzR5T0
       window.addEventListener("scroll", function () {
@@ -358,6 +359,20 @@
 
     $(document).on('click', '#overlay', closeSideCart);
     
+
+    /**
+     * Fix Viewport for mobile browser taken from own zengarden project / origin of solution (https://dev.to/admitkard/mobile-issue-with-100vh-height-100-100vh-3-solutions-3nae)
+     */
+
+    window.addEventListener("resize", () => {
+    resizeView();
+    });
+
+    function resizeView() {
+    let root = document.querySelector(":root")
+    root.style.setProperty("--vh", window.innerHeight / 100 + "px");
+    }
+
 	</script>
 
 </body>
