@@ -22,13 +22,12 @@
                     {% include 'cart/includes/cart_mobile.html' %}
                 </div>
                 {% else %}
+                <div class="text-center mb-5">
                     <p class="lead mb-5">Your bag is empty.</p>
-                    <a href="{% url 'products' %}?productline=tshirt&sort=name&direction=asc" class="btn btn-outline-black rounded-0 btn-lg">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="text-uppercase">Keep Shopping</span>
+                    <a href="{% url 'products' %}?productline=tshirt&sort=name&direction=asc" class="btn button-blue rounded-0 btn-lg">
+                        ← Keep Shopping!
                     </a>
+                    </div>
                 {% endif %}
             </div>
         </div>
