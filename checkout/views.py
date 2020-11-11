@@ -73,8 +73,7 @@ def checkout(request):
                 except ProductVariant.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your \
-                        bag wasn't found in our database."
-                        "Please call us for assitance!")
+                        shoppincart wasn't found in our database.")
                     )
                     order.delete()
                     return redirect(reverse('view_cart'))
@@ -82,7 +81,7 @@ def checkout(request):
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
-                Please double check your information.')
+                                    Please double check your information.')
 
     else:
         cart = request.session.get('cart', {})
@@ -161,9 +160,6 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-    messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. A confirmation \
-        email will be sent to {order.email}.')
     if 'cart' in request.session:
         del request.session['cart']
 
