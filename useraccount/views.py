@@ -15,7 +15,6 @@ def profile(request):
         form = UserAccountForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Profile updated successfully')
 
     form = UserAccountForm(instance=profile)
     orders = profile.orders.all()
