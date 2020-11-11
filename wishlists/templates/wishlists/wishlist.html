@@ -64,8 +64,9 @@
                 {% else %}
                 <div class="text-center">
                     <p class="lead mb-5 text-center">Your Wishlist is empty.</p>
-                    <a href="{% url 'products' %}?productline=tshirt&sort=name&direction=asc" class="btn rounded-0 btn-lg">
-                        <span class="text-uppercase text-center">Keep Shopping</span>
+                    <a href="{% url 'products' %}?productline=tshirt&sort=name&direction=asc" class="btn button-blue rounded-0 btn-lg">
+                        <span class="text-uppercase text-center">← Keep Shopping!
+                                    </span>
                     </a>
                 </div>
                 {% endif %}
