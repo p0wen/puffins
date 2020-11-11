@@ -229,6 +229,7 @@
 				</div>
 			</div>
 	</nav>
+    {% if messages %}
         <div class="container message-box">
             {% for message in messages %}
                 {% with message.level as level %}
@@ -242,6 +243,7 @@
                 {% endwith %}
             {% endfor %}
         </div>
+        {% endif %}
     
     <!-- Content Block for Main Content -->
     {% block content %}
