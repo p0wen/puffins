@@ -21,16 +21,17 @@ def view_wishlist(request):
 def add_wish(request, product_id):
     wish = get_object_or_404(Product, pk=product_id)
     user = UserAccount.objects.get(user=request.user)
+    wishlist_user, created = UserWishlist.objects.get_or_create(user_profile=user)
     wishlist = Product.objects.filter(userwishlists__user_profile=user)
-    print(wishlist)
 
-    if wishlist:
-        if wish in wishlist:
-            wish.userwishlists.remove(user.id)
-        else:
-            wish.userwishlists.add(user.id)
+    if created:
+        wish.userwishlists.add(wishlist_user.id)
     else:
-        UserWishlist.objects.get_or_create(user_profile=user)
-        wish.userwishlists.add(user.id)
+        if wish in wishlist:
+            print("i am in the remove ")
+            wish.userwishlists.remove(wishlist_user.id)
+        else:
+            print("i am in the add ")
+            wish.userwishlists.add(wishlist_user.id)
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
