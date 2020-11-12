@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
@@ -39,12 +42,14 @@ def all_products(request):
             category = Category.objects.get(name=category)
         elif 'productline' in request.GET and 'category' not in request.GET:
             productline = request.GET['productline']
-            products = products.filter(productline__name__icontains=productline)
+            products = products.filter(
+                productline__name__icontains=productline)
             productline = ProductLine.objects.get(name=productline)
         elif 'category' in request.GET and 'productline' in request.GET:
             category = request.GET['category']
             productline = request.GET['productline']
-            products = products.filter(category__name__contains=category).filter(productline__name__contains=productline)
+            products = products.filter(category__name__contains=category).filter(
+                productline__name__contains=productline)
             category = Category.objects.get(name=category)
             productline = ProductLine.objects.get(name=productline)
         else:
@@ -58,7 +63,10 @@ def all_products(request):
                     request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(productline__name__icontains=query) | Q(category__name__icontains=query) | Q(description__contains=query)
+            queries = Q(name__icontains=query) |\
+                Q(productline__name__icontains=query) |\
+                Q(category__name__icontains=query) |\
+                Q(description__contains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -78,7 +86,7 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
     product = get_object_or_404(Product, pk=product_id)
     product_variants = ProductVariant.objects.all().filter(
-                                                        product_id=product_id)
+        product_id=product_id)
     on_wishlist = False
     if request.user.is_authenticated:
         user = UserAccount.objects.get(user=request.user)

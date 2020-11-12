@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 from django.db import models
 from django.core.validators import MinValueValidator
 
@@ -35,14 +38,14 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2, validators=[
                                 MinValueValidator(0.01)])
     discount_price = models.DecimalField(max_digits=6, decimal_places=2,
-                                            validators=[MinValueValidator(0.01)],
-                                            blank=True)
+                                         validators=[MinValueValidator(0.01)],
+                                         blank=True)
     is_on_sale = models.BooleanField(default=False)
     avail_for_pre_order = models.BooleanField(default=False)
     date_of_dispatch = models.CharField(max_length=254, blank=True, null=True)
     discontinued = models.BooleanField(default=False)
     image = models.ImageField(null=True, blank=True)
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
+    image_url = models.URLField(max_length=1024,null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     is_featured = models.BooleanField(default=False, null=True, blank=True)
     color = models.CharField(max_length=254, null=True)
@@ -72,6 +75,8 @@ class ProductSize(models.Model):
 
 
 class ProductVariant(models.Model):
+    """ Model for product size and quantity """
+
     product = models.ForeignKey('Product', on_delete=models.CASCADE)
     size = models.ForeignKey('ProductSize', on_delete=models.CASCADE)
     quantity = models.IntegerField(validators=[MinValueValidator(0.0)])
@@ -79,4 +84,5 @@ class ProductVariant(models.Model):
     class Meta:
         unique_together = ["product", "size"]
 
-#@TODO: Add logic to deny double entry for same product with same size
+    def __str__(self):
+        return self.pk
