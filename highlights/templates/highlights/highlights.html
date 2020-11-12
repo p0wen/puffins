@@ -36,7 +36,7 @@
 </div>
 
 
-<div class="container">
+<div class="container flex-fill">
     <div class="row">
     {% for product in featured %}
       <div class="mb-5 col-12">
@@ -57,7 +57,7 @@
         {% endif %}
           </a>
           <div class="pb-0">
-            <p class="mb-0 card-product-name">{{ product.display_text | title }} - <small>{{ product.category.display_text }}<span class="text-muted"> {{product.color}}</span></small></p>
+            <p class="mb-0 card-product-name">{{ product.display_text | title }} - <small>{{ product.category.display_text }}</small></p>
           </div>
           <div class="bg-white pt-0 border-0 text-left">
             <div class="row">
