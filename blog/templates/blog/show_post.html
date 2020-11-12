@@ -1,16 +1,19 @@
-{% extends "base.html" %} {% load static %}
+{% extends "base.html" %}
+{% load static %}
 {% block extra-title %}- {{blogpost.title}} {% endblock %} 
+
 {% block content %}
 
-{# @TODO: add background from backend with  #}
 <div class="shadow-for-nav"></div>
 
 <div class="container flex-fill">
+    <!-- Return to previous Page -->
     <div class="row mt-4 mb-1">
         <div class="col-lg-8 col-sm mx-auto">
             <a href="{% url 'blog' %}"><small>← Go back</small></a>
         </div>
     </div>
+    <!-- Blog Title and Subtitle -->
 	<div class="row mb-5 text-center">
 		<div class="col">
 			<h1>{{blogpost.title}}</h1>
@@ -25,7 +28,7 @@
             <!-- Post Content -->
             <p class="lead">{{blogpost.body}}</p>
             <hr>
-            <!-- Authe/Date -->
+            <!-- Author/Date -->
             <p>Author: {{blogpost.author.user.first_name}}</p>
             <p>Published: {{blogpost.created_at|date:'d. M, Y'}}</p>
         </div>
