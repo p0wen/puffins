@@ -15,15 +15,17 @@ class ContactForm(forms.Form):
     ]
     first_name = forms.CharField(label="", max_length=30,
                                  widget=forms.TextInput(attrs={
-                                  'placeholder': 'First Name'}))
+                                     'placeholder': 'First Name'}))
     last_name = forms.CharField(label="", max_length=30,
                                 widget=forms.TextInput(attrs={
-                                 'placeholder': 'Last Name'}))
-    email = forms.EmailField(label="", max_length=254, widget=forms.TextInput(attrs={
-                                 'placeholder': 'E-Mail'}))
-    category = forms.CharField(label="", widget=forms.Select(choices=CATEGORY_CHOICES))
-    message = forms.CharField(label="", widget=forms.Textarea(attrs={'placeholder': 'Your Message',"rows": 10,}))
+                                    'placeholder': 'Last Name'}))
+    email = forms.EmailField(label="", max_length=254,
+                             widget=forms.TextInput(attrs={
+                                  'placeholder': 'E-Mail'}))
+    category = forms.CharField(
+        label="", widget=forms.Select(choices=CATEGORY_CHOICES))
+    message = forms.CharField(label="", widget=forms.Textarea(
+        attrs={'placeholder': 'Your Message', "rows": 10, }))
 
     class Meta:
         fields = ['first_name', 'last_name', 'email', 'category', 'message']
-

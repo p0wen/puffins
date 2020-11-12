@@ -8,6 +8,12 @@ from .models import FAQ
 
 
 def contact(request):
+    """ contact:\n
+    * if it's a POST request it submits the form
+     and returns json to ajax call\n
+    * if it's a GET request it gets the FAQs form
+     Data base & renders the contact form
+    """
 
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -20,7 +26,8 @@ def contact(request):
             try:
                 send_mail(
                     subject,
-                    f"Message from: {first_name} {last_name}\n Message: \n {message}", 
+                    f"Message from: {first_name}\
+                         {last_name}\n Message: \n {message}",
                     from_email,
                     [settings.DEFAULT_FROM_EMAIL])
             except BadHeaderError:
@@ -57,8 +64,3 @@ def contact(request):
         }
 
         return render(request, template, context)
-
-
-def contact_success(request):
-
-    return render(request, 'contact/contact_success.html')
