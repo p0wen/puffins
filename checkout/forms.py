@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 from django import forms
 from .models import Order
 
@@ -15,6 +18,7 @@ class OrderForm(forms.ModelForm):
         Add placeholders and classes, remove auto-genereated labels
         and set autofocus on first field
         """
+
         super().__init__(*args, **kwargs)
         placeholders = {
             'first_name': 'First Name',
