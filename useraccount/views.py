@@ -6,8 +6,10 @@ from django.contrib import messages
 from .models import UserAccount
 from .forms import UserAccountForm
 from checkout.models import Order
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserAccount, user=request.user)
@@ -16,6 +18,9 @@ def profile(request):
         form = UserAccountForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
+        else:
+            messages.error(request, 'Update failed.\
+                    Please ensure the form is valid.')
 
     form = UserAccountForm(instance=profile)
     orders = profile.orders.all()
@@ -29,7 +34,7 @@ def profile(request):
 
     return render(request, template, context)
 
-
+@login_required
 def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
