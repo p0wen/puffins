@@ -1,9 +1,17 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 from django.shortcuts import render
 from products.models import Product
 from django.db.models.functions import Lower
 
 
 def get_highlights(request):
+    """ get_highlights:
+
+    * gets all active products\n
+    * if sort in GET request, products are sorted accordingly
+    """
     products = Product.objects.filter(is_featured=True)
     sort = None
     direction = None
