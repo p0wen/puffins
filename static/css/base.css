@@ -27,6 +27,16 @@ a {
     text-decoration: none;
 }
 
+/* alert toast */
+
+.toast-box {
+    position: relative;
+    top: 80px;
+    opacity: 0.9;
+    font-size: 0.9rem;
+    overflow-wrap: break-word;
+}
+
 /* individual nav styling */
 
 nav {
