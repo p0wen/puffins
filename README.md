@@ -420,3 +420,4 @@ Special Thanks to...
 * work with many to many fields https://www.revsys.com/tidbits/tips-using-djangos-manytomanyfield/
 * how to build your own blog https://medium.com/swlh/building-your-own-django-blog-part-2-78adbc516992
 * database tables in markdown created with: https://www.tablesgenerator.com/markdown_tables
+* how to create unique slug: https://simpleit.rocks/python/django/generating-slugs-automatically-in-django-easy-solid-approaches/
