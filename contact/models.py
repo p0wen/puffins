@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 from django.db import models
 
 
@@ -9,10 +12,13 @@ class FAQ(models.Model):
         ('4', 'Delivery'),
         ('5', 'Payment'),
     ]
-    category = models.CharField(max_length=1, choices=CATEGORY_CHOICES)
-    name = models.CharField(max_length=120, null=True, blank=False)
-    title = models.CharField(max_length=120, null=True, blank=False)
-    answer = models.TextField()
+    category = models.CharField(
+                max_length=1, choices=CATEGORY_CHOICES)
+    name = models.CharField(
+                max_length=120, null=False, blank=False)
+    title = models.CharField(
+                max_length=120, null=False, blank=False)
+    answer = models.TextField(null=False)
     created_at = models.DateTimeField(auto_now_add=True, null=False)
     updated_at = models.DateTimeField(auto_now=True, null=False)
 

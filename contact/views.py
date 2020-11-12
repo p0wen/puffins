@@ -1,4 +1,8 @@
-from django.shortcuts import render, redirect, HttpResponse
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+from django.shortcuts import (
+    render, HttpResponse)
 from django.template.loader import render_to_string
 from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
