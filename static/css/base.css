@@ -310,7 +310,7 @@ nav button:focus {
 .carousel-item {
   height: calc(95 * var(--vh));
   min-height: 350px;
-  background: no-repeat center center scroll;
+  background: no-repeat top center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
