@@ -77,7 +77,12 @@ class Order(models.Model):
         self.save()
 
     def save(self, *args, **kwargs):
-        self.order_number = self._generate_order_number()
+        """
+        Override the original save method to set the order number
+        if it hasn't been set already.
+        """
+        if not self.order_number:
+            self.order_number = self._generate_order_number()
         super().save(*args, **kwargs)
 
     def __str__(self):
@@ -95,8 +100,12 @@ class OrderLineItem(models.Model):
         max_digits=6, decimal_places=2, null=False, default=0, editable=False)
 
     def save(self, *args, **kwargs):
+        """
+        Override the original save method to set the lineitem total
+        and update the order total.
+        """
         if self.productvariant.product.is_on_sale or\
-          self.productvariant.product.avail_for_pre_order:
+                self.productvariant.product.avail_for_pre_order:
             self.lineitem_total =\
                 self.productvariant.product.discount_price * self.quantity
         else:
@@ -105,5 +114,5 @@ class OrderLineItem(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'ProductID {self.productvariant.product.name} \
-            on order {self.order.order_number}'
+        return f'ProductID {self.productvariant.product.name}\
+             on order {self.order.order_number}'
