@@ -85,4 +85,7 @@ class ProductVariant(models.Model):
         unique_together = ["product", "size"]
 
     def __str__(self):
-        return self.pk
+        size_name = self.size.shirt_size
+        product_name = self.product.display_text
+        category = self.product.category.name
+        return "%s - %s - %s" % (product_name, size_name, category)
