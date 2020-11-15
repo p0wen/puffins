@@ -45,7 +45,7 @@ class Product(models.Model):
     date_of_dispatch = models.CharField(max_length=254, blank=True, null=True)
     discontinued = models.BooleanField(default=False)
     image = models.ImageField(null=True, blank=True)
-    image_url = models.URLField(max_length=1024,null=True, blank=True)
+    image_url = models.URLField(max_length=1024, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     is_featured = models.BooleanField(default=False, null=True, blank=True)
     color = models.CharField(max_length=254, null=True)
