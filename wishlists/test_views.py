@@ -13,8 +13,15 @@ class TestUserWishlistView(TestCase):
         myuser = UserAccount.objects.get(user=1)
         wishlist_user = UserWishlist.objects.create(user_profile=myuser)
         category = Category.objects.create(name='kids', display_text='Kids')
-        productline = ProductLine.objects.create(name='tshirt', display_text='T-Shirts')
-        product = Product.objects.create(category=category, productline=productline, name="lovely", display_text="Lovely Puffin", price="49.99", discount_price=45.00, image="lovelypuffin.png")
+        productline = ProductLine.objects.create(
+            name='tshirt', display_text='T-Shirts')
+        product = Product.objects.create(category=category,
+                                         productline=productline,
+                                         name="lovely",
+                                         display_text="Lovely Puffin",
+                                         price="49.99",
+                                         discount_price=45.00,
+                                         image="lovelypuffin.png")
         product.userwishlists.add(wishlist_user.id)
         self.client.login(username='myuser', password=password)
 
@@ -22,7 +29,3 @@ class TestUserWishlistView(TestCase):
         response = self.client.get('/wishlists/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'wishlists/wishlist.html')
-
-
-
-

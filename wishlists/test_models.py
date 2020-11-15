@@ -16,8 +16,13 @@ class TestUserWishlistModel(TestCase):
         myuser = UserAccount.objects.get(user=1)
         wishlist_user = UserWishlist.objects.create(user_profile=myuser)
         category = Category.objects.create(name='kids', display_text='Kids')
-        productline = ProductLine.objects.create(name='tshirt', display_text='T-Shirts')
-        product = Product.objects.create(category=category, productline=productline, name="lovely", display_text="Lovely Puffin", price="49.99", discount_price=45.00)
+        productline = ProductLine.objects.create(
+            name='tshirt', display_text='T-Shirts')
+        product = Product.objects.create(category=category,
+                                         productline=productline,
+                                         name="lovely",
+                                         display_text="Lovely Puffin",
+                                         price="49.99", discount_price=45.00)
         product.userwishlists.add(wishlist_user.id)
         wishlist = UserWishlist.objects.get(user_profile=myuser)
         self.assertEqual(str(wishlist), "myuser Wishlist")

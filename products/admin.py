@@ -42,6 +42,7 @@ class ProductAdmin(admin.ModelAdmin):
         'is_featured',
         )
 
+
 class ProductSizeAdmin(admin.ModelAdmin):
     list_display = (
         'shirt_size',

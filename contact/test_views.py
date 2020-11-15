@@ -12,4 +12,3 @@ class TestContactView(TestCase):
     def test_contact_page_uses_contact_form(self):
         response = self.client.get('/contact/')
         self.assertIsInstance(response.context['form'], ContactForm)
-

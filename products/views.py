@@ -48,8 +48,8 @@ def all_products(request):
         elif 'category' in request.GET and 'productline' in request.GET:
             category = request.GET['category']
             productline = request.GET['productline']
-            products = products.filter(category__name__contains=category).filter(
-                productline__name__contains=productline)
+            products = products.filter(category__name__contains=category).\
+                filter(productline__name__contains=productline)
             category = Category.objects.get(name=category)
             productline = ProductLine.objects.get(name=productline)
         else:

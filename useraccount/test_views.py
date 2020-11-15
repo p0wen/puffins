@@ -17,4 +17,3 @@ class TestUserAccountView(TestCase):
     def test_get_useraccount_page_fail(self):
         response = self.client.get('/useraccount/')
         self.assertTrue(response.status_code, 500)
-
