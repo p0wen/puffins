@@ -10,4 +10,4 @@ class UserWishlist(models.Model):
                                              related_name='userwishlists')
 
     def __str__(self):
-        return super().__str__()
+        return '{} Wishlist'.format(self.user_profile.user.username)
