@@ -36,10 +36,8 @@ def add_wish(request, product_id):
         wish.userwishlists.add(wishlist_user.id)
     else:
         if wish in wishlist:
-            print("i am in the remove ")
             wish.userwishlists.remove(wishlist_user.id)
         else:
-            print("i am in the add ")
             wish.userwishlists.add(wishlist_user.id)
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
