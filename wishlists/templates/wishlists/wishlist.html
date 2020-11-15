@@ -6,72 +6,77 @@
 <div class="shadow-for-nav"></div>
 
 <div class="container flex-fill">
-    <div class="row header my-5 text-center">
-        <div class="col">
-            <h1>Wishlist</h1>
-            <hr class="separator w-25">
-        </div>
-    </div>
-    <div class="row cart-items-container">
-        <div class="col">
-            {% if wishlist %}
-            <div class="table-responsive rounded-0">
-                        <table class="table table-sm">
-                            <thead class="text-black">
-                                <tr>
-                                    <th scope="col">Item</th>
-                                    <th scope="col"></th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
-                           {% for item in wishlist %}
-                                <tr>
-                                    <td class="p-3 w-25">
-                                    <a href="{% url 'product_detail' item.id %}">
-                                        <img class="img-fluid rounded-0" src="{{ item.image.url }}">
+	<div class="row header my-5 text-center">
+		<div class="col">
+			<h1>Wishlist</h1>
+			<hr class="separator w-25">
+		</div>
+	</div>
+	<div class="row cart-items-container">
+		<div class="col">
+			{% if wishlist %}
+			<div class="table-responsive rounded-0">
+				<table class="table table-sm">
+					<thead class="text-black">
+						<tr>
+							<th scope="col">Item</th>
+							<th scope="col"></th>
+							<th scope="col">Price</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					{% for item in wishlist %}
+					<tr>
+						<td class="p-3 w-25">
+							<a href="{% url 'product_detail' item.id %}">
+								<img class="img-fluid rounded-0" src="{{ item.image.url }}">
                                         </a>
-                                    </td>
-                                    <td class="py-3">
-                                        <p class="my-0"><strong>{{ item.display_text | title }}</strong></p>
-                                        <p class="my-0 small text-muted">{{ item.productline.display_text }}</p>
-                                        {% if item.is_on_sale %}
-                                        <p class="my-0 small cart-subtitle card-sale">Sale</p>
-                                        {% elif item.avail_for_pre_order %}
-                                        <p class="my-0 small cart-subtitle card-preorder">Pre-Order</p>
-                                         <p class="my-0 small cart-subtitle card-preorder">Dispatch Date: {{ item.date_of_dispatch }}</p>
-                                        {% endif %}
-                                    </td>                                    
-                                    <td class="py-3">
-                                        {% if item.is_on_sale or item.avail_for_pre_order %}
-                                            <p class="my-0">{{ item.discount_price }}€</p>
-                                        {% else %}
-                                            <p class="my-0">{{ item.price }}€</p>
-                                        {% endif %}
-                                    </td>
-                                    <td class="py-3 text-right">
-                                    
-                                        <a href="{% url 'add_wish' item.id %}" title="Remove from Wishlist">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" alt = "Close">
-                                                <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"></path>
-                                                </svg>
-                                            </a>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                        </table>
-                    </div>
-                {% else %}
-                <div class="text-center">
-                    <p class="lead mb-5 text-center">Your Wishlist is empty.</p>
-                    <a href="{% url 'products' %}?productline=tshirt&sort=name&direction=asc" class="btn button-blue rounded-0 btn-lg">
-                        <span class="text-uppercase text-center">← Keep Shopping!
+						</td>
+						<td class="py-3">
+							<p class="my-0"><strong>{{ item.display_text | title }}</strong></p>
+							<p class="my-0 small text-muted">{{ item.productline.display_text }}</p>
+							{% if item.is_on_sale %}
+							<p class="my-0 small cart-subtitle card-sale">Sale</p>
+							{% elif item.avail_for_pre_order %}
+							<p class="my-0 small cart-subtitle card-preorder">Pre-Order</p>
+							<p class="my-0 small cart-subtitle card-preorder">Dispatch Date: {{ item.date_of_dispatch }}
+							</p>
+							{% endif %}
+						</td>
+						<td class="py-3">
+							{% if item.is_on_sale or item.avail_for_pre_order %}
+							<p class="my-0">{{ item.discount_price }}€</p>
+							{% else %}
+							<p class="my-0">{{ item.price }}€</p>
+							{% endif %}
+						</td>
+						<td class="py-3 text-right">
+
+							<a href="{% url 'add_wish' item.id %}" title="Remove from Wishlist">
+								<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle-fill"
+									fill="currentColor" xmlns="http://www.w3.org/2000/svg" alt="Close">
+									<path fill-rule="evenodd"
+										d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z">
+									</path>
+								</svg>
+							</a>
+						</td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+			{% else %}
+			<div class="text-center">
+				<p class="lead mb-5 text-center">Your Wishlist is empty.</p>
+				<a href="{% url 'products' %}?productline=tshirt&sort=name&direction=asc"
+					class="btn button-blue rounded-0 btn-lg">
+					<span class="text-uppercase text-center">← Keep Shopping!
                                     </span>
-                    </a>
-                </div>
-                {% endif %}
-            </div>
-        </div>
-    </div>
+				</a>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</div>
 
 {% endblock %}

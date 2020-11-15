@@ -12,7 +12,7 @@
 
 	<!-- Bootstrap CSS -->
 	{% block corecess %}
-    <link rel="icon" href="{% static 'favicon/favicon.ico' %}"/>
+	<link rel="icon" href="{% static 'favicon/favicon.ico' %}" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
 		integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
 	<link
@@ -44,8 +44,8 @@
           alt=""
           loading="lazy"
         /></a>
-		<a class="navbar-brand" href="{% url 'home' %}">
-			<img
+			<a class="navbar-brand" href="{% url 'home' %}">
+				<img
             src="{{ MEDIA_URL }}puffins_logo_light.svg"
             width="115,9"
             height="50px"
@@ -55,7 +55,7 @@
             id="puffinName"
           />
         </a>
-			<button
+				<button
           class="navbar-toggler"
           type="button"
           data-toggle="collapse"
@@ -71,143 +71,143 @@
                 </span>
             </button>
 
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item dropdown position-static">
-						<a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false">
-							SHOP
-						</a>
-						<div class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
-							<div class="row w-100">
-								<div class="col">
-									<a class="dropdown-item categorie-header"
-										href="{% url 'products' %}?category=kids">Kids</a>
-									<hr class="separator categorie-separator d-none d-sm-block" />
-									<a class="dropdown-item"
-										href="{% url 'products' %}?category=kids&productline=tshirt">T-Shirts</a>
-									<a class="dropdown-item"
-										href="{% url 'products' %}?category=kids&productline=sweat">Sweatshirts</a>
-									<a class="dropdown-item"
-										href="{% url 'products' %}?category=kids&productline=body">Bodysuit</a>
-								</div>
-								<div class="col">
-									<a class="dropdown-item categorie-header"
-										href="{% url 'products' %}?category=grown_ups">Grown Ups</a>
-									<hr class="d-none d-sm-block separator categorie-separator" />
-									<a class="dropdown-item"
-										href="{% url 'products' %}?category=grown_ups&productline=tshirt">T-Shirts</a>
-									<a class="dropdown-item"
-										href="{% url 'products' %}?category=grown_ups&productline=sweat">Sweatshirts</a>
-									<a class="dropdown-item"
-										href="{% url 'products' %}?category=grown_ups&productline=accessory">Accessories</a>
-								</div>
-								<div class="col">
-									<a class="dropdown-item categorie-header"
-										href="{% url 'products' %}?sort=name&direction=asc">Partnerlook</a>
-									<hr class="d-none d-sm-block separator categorie-separator" />
-									<a class="dropdown-item"
-										href="{% url 'products' %}?productline=tshirt&sort=name&direction=asc">T-Shirts</a>
-									<a class="dropdown-item"
-										href="{% url 'products' %}?productline=sweat&sort=name&direction=asc">Sweatshirts</a>
-								</div>
-								<div class="col col d-none d-lg-block">
-									<img
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item dropdown position-static">
+							<a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">
+								SHOP
+							</a>
+							<div class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
+								<div class="row w-100">
+									<div class="col">
+										<a class="dropdown-item categorie-header"
+											href="{% url 'products' %}?category=kids">Kids</a>
+										<hr class="separator categorie-separator d-none d-sm-block" />
+										<a class="dropdown-item"
+											href="{% url 'products' %}?category=kids&productline=tshirt">T-Shirts</a>
+										<a class="dropdown-item"
+											href="{% url 'products' %}?category=kids&productline=sweat">Sweatshirts</a>
+										<a class="dropdown-item"
+											href="{% url 'products' %}?category=kids&productline=body">Bodysuit</a>
+									</div>
+									<div class="col">
+										<a class="dropdown-item categorie-header"
+											href="{% url 'products' %}?category=grown_ups">Grown Ups</a>
+										<hr class="d-none d-sm-block separator categorie-separator" />
+										<a class="dropdown-item"
+											href="{% url 'products' %}?category=grown_ups&productline=tshirt">T-Shirts</a>
+										<a class="dropdown-item"
+											href="{% url 'products' %}?category=grown_ups&productline=sweat">Sweatshirts</a>
+										<a class="dropdown-item"
+											href="{% url 'products' %}?category=grown_ups&productline=accessory">Accessories</a>
+									</div>
+									<div class="col">
+										<a class="dropdown-item categorie-header"
+											href="{% url 'products' %}?sort=name&direction=asc">Partnerlook</a>
+										<hr class="d-none d-sm-block separator categorie-separator" />
+										<a class="dropdown-item"
+											href="{% url 'products' %}?productline=tshirt&sort=name&direction=asc">T-Shirts</a>
+										<a class="dropdown-item"
+											href="{% url 'products' %}?productline=sweat&sort=name&direction=asc">Sweatshirts</a>
+									</div>
+									<div class="col col d-none d-lg-block">
+										<img
                       src="{{ MEDIA_URL }}featured_nav_dropdown.jpg"
                       class="feat-nav-drop-img"
                     />
-									<div class="feat-nav-drop-text">
-										<span>
+										<div class="feat-nav-drop-text">
+											<span>
                         GET THE LOOK FOR THE WHOLE FAMILY
                       </span>
-										<a hre="{% url 'products' %}?productline=tshirt&sort=name&direction=asc"
-											class="btn button-size button-white">
-											SHOP
-										</a>
+											<a hre="{% url 'products' %}?productline=tshirt&sort=name&direction=asc"
+												class="btn button-size button-white">
+												SHOP
+											</a>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{% url 'highlights' %}">HIGHLIGHTS</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{% url 'blog' %}">BLOG</a>
-					</li>
-				</ul>
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item">
-						<a class="nav-link" href="{% url 'about' %}">ABOUT</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{% url 'contact' %}">HELP</a>
-					</li>
-					{% if request.user.is_authenticated %}
-					<li class="nav-item">
-						<a class="nav-link" href="{% url 'profile' %}">
-							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-circle"
-								fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z" />
-								<path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-								<path fill-rule="evenodd"
-									d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
-							</svg>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{% url 'wishlist' %}">
-							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart" fill="currentColor"
-								xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd"
-									d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
-							</svg>
-						</a>
-					</li>
-					{% else %}
-					<li class="nav-item">
-						<a class="nav-link" href="{% url 'account_login' %}">
-							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor"
-								xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd"
-									d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-							</svg>
-						</a>
-					</li>
-					{% endif %}
-					<!-- Shopping Cart -->
-					<li class="nav-item">
-						<a id="cart-open" class="nav-link">
-							{% if cart_items %}
-							<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"
-								xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd"
-									d="M2.76132 2.66668L4.006 10.7571C4.01506 10.8239 4.03401 10.8875 4.06132 10.9465C4.14354 11.124 4.30156 11.2593 4.49384 11.3107C4.55258 11.3265 4.61414 11.3344 4.67711 11.3333H11.9999C12.2943 11.3333 12.5539 11.1402 12.6385 10.8582L14.6385 4.19158C14.699 3.98973 14.6606 3.77113 14.5348 3.60206C14.409 3.43298 14.2107 3.33334 13.9999 3.33334H4.2129L3.99364 1.90814C3.98543 1.84855 3.96934 1.79147 3.94646 1.738C3.90493 1.64061 3.84134 1.55626 3.76278 1.49014C3.6899 1.42868 3.60366 1.38256 3.50903 1.35676C3.44948 1.34045 3.38699 1.33228 3.32305 1.33334H1.99992C1.63173 1.33334 1.33325 1.63182 1.33325 2.00001C1.33325 2.3682 1.63173 2.66668 1.99992 2.66668H2.76132ZM5.23854 10L4.41803 4.66668H13.1039L11.5039 10H5.23854Z" />
-								<path fill-rule="evenodd"
-									d="M6.66659 13.3333C6.66659 14.0697 6.06963 14.6667 5.33325 14.6667C4.59687 14.6667 3.99992 14.0697 3.99992 13.3333C3.99992 12.597 4.59687 12 5.33325 12C6.06963 12 6.66659 12.597 6.66659 13.3333Z" />
-								<path fill-rule="evenodd"
-									d="M12.6666 13.3333C12.6666 14.0697 12.0696 14.6667 11.3333 14.6667C10.5969 14.6667 9.99992 14.0697 9.99992 13.3333C9.99992 12.597 10.5969 12 11.3333 12C12.0696 12 12.6666 12.597 12.6666 13.3333Z" />
-								<circle cx="14" cy="4" r="2" fill="#DF101D" />
-							</svg>
-							{% else %}
-							<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart3" fill="currentColor"
-								xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd"
-									d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-							</svg>
-							{% endif %}
-						</a>
-					</li>
-					<!-- Search Drop down -->
-					{% include 'includes/search_dropdown.html' %}
-				</ul>
-			</div>
-			<!-- Side Drawer - Shopping Cart -->
-			<div id="CartSide" class="cart-side-wrap ">
-				<div class="top-cart-dropdown">
-					<div class="cart-header">
-						<span class="cart-title">
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'highlights' %}">HIGHLIGHTS</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'blog' %}">BLOG</a>
+						</li>
+					</ul>
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'about' %}">ABOUT</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'contact' %}">HELP</a>
+						</li>
+						{% if request.user.is_authenticated %}
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'profile' %}">
+								<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-circle"
+									fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z" />
+									<path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+									<path fill-rule="evenodd"
+										d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
+								</svg>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'wishlist' %}">
+								<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart"
+									fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd"
+										d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+								</svg>
+							</a>
+						</li>
+						{% else %}
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'account_login' %}">
+								<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person"
+									fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd"
+										d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+								</svg>
+							</a>
+						</li>
+						{% endif %}
+						<!-- Shopping Cart -->
+						<li class="nav-item">
+							<a id="cart-open" class="nav-link">
+								{% if cart_items %}
+								<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"
+									xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd"
+										d="M2.76132 2.66668L4.006 10.7571C4.01506 10.8239 4.03401 10.8875 4.06132 10.9465C4.14354 11.124 4.30156 11.2593 4.49384 11.3107C4.55258 11.3265 4.61414 11.3344 4.67711 11.3333H11.9999C12.2943 11.3333 12.5539 11.1402 12.6385 10.8582L14.6385 4.19158C14.699 3.98973 14.6606 3.77113 14.5348 3.60206C14.409 3.43298 14.2107 3.33334 13.9999 3.33334H4.2129L3.99364 1.90814C3.98543 1.84855 3.96934 1.79147 3.94646 1.738C3.90493 1.64061 3.84134 1.55626 3.76278 1.49014C3.6899 1.42868 3.60366 1.38256 3.50903 1.35676C3.44948 1.34045 3.38699 1.33228 3.32305 1.33334H1.99992C1.63173 1.33334 1.33325 1.63182 1.33325 2.00001C1.33325 2.3682 1.63173 2.66668 1.99992 2.66668H2.76132ZM5.23854 10L4.41803 4.66668H13.1039L11.5039 10H5.23854Z" />
+									<path fill-rule="evenodd"
+										d="M6.66659 13.3333C6.66659 14.0697 6.06963 14.6667 5.33325 14.6667C4.59687 14.6667 3.99992 14.0697 3.99992 13.3333C3.99992 12.597 4.59687 12 5.33325 12C6.06963 12 6.66659 12.597 6.66659 13.3333Z" />
+									<path fill-rule="evenodd"
+										d="M12.6666 13.3333C12.6666 14.0697 12.0696 14.6667 11.3333 14.6667C10.5969 14.6667 9.99992 14.0697 9.99992 13.3333C9.99992 12.597 10.5969 12 11.3333 12C12.0696 12 12.6666 12.597 12.6666 13.3333Z" />
+									<circle cx="14" cy="4" r="2" fill="#DF101D" />
+								</svg>
+								{% else %}
+								<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart3"
+									fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd"
+										d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+								</svg>
+								{% endif %}
+							</a>
+						</li>
+						<!-- Search Drop down -->
+						{% include 'includes/search_dropdown.html' %}
+					</ul>
+				</div>
+				<!-- Side Drawer - Shopping Cart -->
+				<div id="CartSide" class="cart-side-wrap ">
+					<div class="top-cart-dropdown">
+						<div class="cart-header">
+							<span class="cart-title">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart3" fill="currentColor"
 								xmlns="http://www.w3.org/2000/svg">
 								<path fill-rule="evenodd"
@@ -215,39 +215,39 @@
 							</svg>
 			                Shopping Cart
                         </span>
-						<button onclick="closeSideCart()" class="close-button close-cart">
+							<button onclick="closeSideCart()" class="close-button close-cart">
                             <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                             </svg>
 			            </button>
-					</div>
-					<div id="sideDrawerContent">
+						</div>
+						<div id="sideDrawerContent">
 
-						{% include 'includes/sideDrawerContent.html' %}
+							{% include 'includes/sideDrawerContent.html' %}
 
+						</div>
 					</div>
 				</div>
-			</div>
 	</nav>
-    {% if messages %}
-        <div class="container message-box toast-box">
-            {% for message in messages %}
-                {% with message.level as level %}
-                    {% if level == 40 %}
-                        {% include 'includes/toasts/toast_error.html' %}
-                    {% elif level == 30 %}
-                        {% include 'includes/toasts/toast_warning.html' %}
-                    {% else %}
-                        {% include 'includes/toasts/toast_info.html' %}
-                    {% endif %}
-                {% endwith %}
-            {% endfor %}
-        </div>
-        {% endif %}
-    
-    <!-- Content Block for Main Content -->
-    {% block content %}
-    {% endblock %}
+	{% if messages %}
+	<div class="container message-box toast-box">
+		{% for message in messages %}
+		{% with message.level as level %}
+		{% if level == 40 %}
+		{% include 'includes/toasts/toast_error.html' %}
+		{% elif level == 30 %}
+		{% include 'includes/toasts/toast_warning.html' %}
+		{% else %}
+		{% include 'includes/toasts/toast_info.html' %}
+		{% endif %}
+		{% endwith %}
+		{% endfor %}
+	</div>
+	{% endif %}
+
+	<!-- Content Block for Main Content -->
+	{% block content %}
+	{% endblock %}
 
 	<footer>
 		<div class="container">
@@ -261,8 +261,10 @@
 					<ul class="footer-text">
 						<li><a href="{% url 'products' %}?category=kids&productline=tshirt">Kids - Shirts</a></li>
 						<li><a href="{% url 'products' %}?category=kids&productline=sweat">Kids - Sweats</a></li>
-						<li><a href="{% url 'products' %}?category=grown_ups&productline=tshirt">Grown Ups - Shirts</a></li>
-						<li><a href="{% url 'products' %}?category=grown_ups&productline=sweat">Grown Ups - Sweat</a></li>
+						<li><a href="{% url 'products' %}?category=grown_ups&productline=tshirt">Grown Ups - Shirts</a>
+						</li>
+						<li><a href="{% url 'products' %}?category=grown_ups&productline=sweat">Grown Ups - Sweat</a>
+						</li>
 						<li><a href="{% url 'products' %}?productline=tshirt&sort=name&direction=asc">Partnerlook -
 								Shirts</a></li>
 						<li><a href="{% url 'products' %}?productline=sweat&sort=name&direction=asc">Partnerlook -
@@ -298,8 +300,7 @@
 	{% endblock %}
 
 	<script>
-
-    let menuExtended = false;
+		let menuExtended = false;
     let scrollPosition;
 		// Scroll Animation based on 2 sources https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_lightbulb , https://www.youtube.com/watch?v=vE4UuSzR5T0
       window.addEventListener("scroll", function () {

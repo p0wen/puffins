@@ -1,8 +1,7 @@
 {% extends "base.html" %} {% load static %}
-{% block extra-title %}- Blog {% endblock %} 
+{% block extra-title %}- Blog {% endblock %}
 {% block content %}
 
-{# @TODO: add background from backend with  #}
 <div class="shadow-for-nav"></div>
 
 <div class="container flex-fill">
@@ -12,22 +11,23 @@
 			<hr class="separator w-25">
 		</div>
 	</div>
-    {% for post in blogposts %}
-        <div class="row">
-            <div class="col mt-3">    
-                <div class="card mb-3 rounded-0">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="{{post.slug}}">{{post.title}}</a></h5>
-                        <p class="card-text">{{post.subtitle}}</p>
-                        <p class="card-text"><small class="text-muted">Published: {{post.created_at|date:'d. M, Y'}}</small></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    {% empty %}
-    <div class="container text-center">
-        <p>Sorry, no articles have been written yet.</p>
-    </div>
-    {% endfor %}
+	{% for post in blogposts %}
+	<div class="row">
+		<div class="col mt-3">
+			<div class="card mb-3 rounded-0">
+				<div class="card-body">
+					<h5 class="card-title"><a href="{{post.slug}}">{{post.title}}</a></h5>
+					<p class="card-text">{{post.subtitle}}</p>
+					<p class="card-text"><small class="text-muted">Published: {{post.created_at|date:'d. M, Y'}}</small>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% empty %}
+	<div class="container text-center">
+		<p>Sorry, no articles have been written yet.</p>
+	</div>
+	{% endfor %}
 </div>
 {% endblock %}
