@@ -16,35 +16,7 @@ To test the site incl. the checkout process please use the test credit card numb
 
 # Table of Content
 
-  * [UX](#ux)
-  * [User Stories](#user-stories)
-  * [Wireframes](#wireframes)
-    + [Planned Layout](#planned-layout)
-    + [Final Layout](#final-layout)
-    + [Explanation for differences](#explanation-for-differences)
-    + [Color Scheme](#color-scheme)
-  * [Data Model](#data-model)
-    + [Gear Collection](#gear-collection)
-    + [Categories Collection](#categories-collection)
-    + [Users Collection](#users-collection)
-  * [Features](#features)
-    + [Exisiting Features](#exisiting-features)
-    + [Features Left to Implement](#features-left-to-implement)
-  * [Technologies Used](#technologies-used)
-  * [Testing](#testing)
-    + [Test Cycle](#test-cycle)
-    + [Validator Checks, Audits & Tools](#validator-checks--audits---tools)
-    + [Known Bugs & Issues](#known-bugs---issues)
-  * [Deployment](#deployment)
-    + [Local Deployment](#local-deployment)
-      - [Prerequisites to work with this Site](#prerequisites-to-work-with-this-site)
-      - [Step-by-Step Instructions](#step-by-step-instructions)
-    + [Deployment to Heroku](#deployment-to-heroku)
-  * [Credits](#credits)
-    + [Content](#content)
-    + [Media](#media)
-    + [Acknowledgements](#acknowledgements)
-      - [References](#references)
+INSERT NEW TABLE OF CONTENT
 
 # UX
 
