@@ -3,7 +3,7 @@
 {% endblock %}
 {% block content %}
 
-<div class="collection-header flex-fill">
+<div class="collection-header">
 	<div class="collection-hero">
 		<div class="collection-hero-image"
 			style="background: {% if category.image %}url({{ category.image.url }}){% else %}url('{{ MEDIA_URL }}partnerlook_puffin.png'){% endif %} no-repeat center center">
@@ -11,14 +11,20 @@
 		<div class="collection-hero-container">
 			<h1 class="collection-hero-title container-fluid">
 				<span role="text">
-                    {% if category %} 
+                {% if search_term %}
+                    <span>Search results for:</span>
+                    <hr class="separator w-25">
+                {% elif category %} 
                     <span>{{ category.display_text }}</span>
 				<hr class="separator w-25">
 				{% else %}
 				<span>Partnerlook</span>
 				<hr class="separator w-25">
 				{% endif %}
-				{% if productline %}
+                {% if search_term %}
+				<span>{{ search_term }}</span>
+				</span>
+				{% elif productline %}
 				<span>{{ productline.display_text }}</span>
 				</span>
 				{% endif %}
@@ -48,9 +54,14 @@
 	</div>
 </div>
 
-{% if category %}
+{% if not products %}
+<div class="col-12 text-center flex-fill" >
+    <img class="img-fluid" src="{{ MEDIA_URL }}emptysearch.png" alt="No Products Found"/>
+</div>
 
-<div class="container">
+{% elif category %}
+
+<div class="container flex-fill">
 	<div class="row">
 		{% for product in products %}
 		<div class="mb-5 col-sm-6 col-md-6 col-lg-4 col-xl-4">
