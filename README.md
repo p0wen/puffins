@@ -349,15 +349,53 @@ If registered:
 * Product Details allow user to add/remove product to/from wishlist :white_check_mark:
 
 ## Highlights
-* Product
+* Products a prominently display :white_check_mark:
+* only featured items are rendered :white_check_mark:
+
 ## Cart
+* Cart is present in Side Drawer Container :white_check_mark:
+* Newest Item is always presented on top :white_check_mark:
+* Total inkl. Tax & Shipping :white_check_mark:
+* Checkout straight from Cart Side Drawer  :white_check_mark:
+* Add to cart renders updated cart via Ajax-Request :white_check_mark:
+* Increase/Decrease Quantity request via Ajax within Side Drawer Cart :toolbox:
+* Remove Items from Cart ia Ajax-Request within Side Drawer Cart :toolbox:
+* Reserve requested item & quantity to for 10 Min. to avoid checkouts with unavailable products :toolbox:
+
+If registered: 
+* attach cart to userprofile instead of saving to session :toolbox:
+
 ## Checkout
+* Order summary :white_check_mark:
+* Form to enter shipping address :white_check_mark:
+* Payment via Credit Card :white_check_mark:
+* Users gets order confirmation by mail :white_check_mark:
+* Users receives order updates when order status changes :toolbox:
+* Apple Pay integration :toolbox:
+
+If registered: 
+* Form is prefilled with available user data :white_check_mark:
+* Form data can be saved to userprofile :white_check_mark:
+
 ## Registered Users: Useraccount
+* User can look up saved address information :white_check_mark:
+* User can update address information :white_check_mark:
+* User can see past orderes :white_check_mark:
+* User can enter detail view of past orders :white_check_mark:
+
 ## Registered Users: Wishlist
+* User can add/remove items to personal wishlist from product details :white_check_mark:
+* User can view stored wishlist items :white_check_mark:
+* Users can add items to wishlist from product overview :toolbox:
+* users can add items and size to wishlist :toolbox:
+* users can immediatley transform wishlist into order :toolbox:
 
-
-
-
+## Store Management:
+* ... can create/read/update/delete products in Django-Admin-View :white_check_mark:
+* ... can create/read/update/delete blogposts in Django-Admin-View :white_check_mark:
+* ... can create/read/update/delete FAQs in Django-Admin-View :white_check_mark:
+* ... can create/read/update/delete Users in Django-Admin-View :white_check_mark:
+* ... Order Management system :toolbox:
 
 :white_check_mark: = Implemented
 :toolbox: = Future Development
