@@ -452,7 +452,7 @@ If registered:
 * ... can create/read/update/delete Users in Django-Admin-View :white_check_mark:
 * ... Order Management system :toolbox:
 
-## Newsletter :toolbox:
+## Newsletter
 * User can sign up for newsletter :toolbox:
 * User get a coupon code for newsletter subscription :toolbox:
 * User can manage their subscription :toolbox:
