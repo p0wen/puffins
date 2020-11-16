@@ -664,6 +664,7 @@ Special Thanks to...
 * How to build your own blog [Medium - How to build you own Blog](https://medium.com/swlh/building-your-own-django-blog-part-2-78adbc516992)
 * Database tables in markdown created with: [Tables Generator](https://www.tablesgenerator.com/markdown_tables)
 * How to create unique slug: [SimpleIT Rocks - Automatically slug](https://simpleit.rocks/python/django/generating-slugs-automatically-in-django-easy-solid-approaches)/
+* Assign MEDIA URL for JS Files: [Stack Overflow - Django Static Path](https://stackoverflow.com/questions/27932983/django-static-path-in-javascript-file)
 
 -----
 
