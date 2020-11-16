@@ -459,7 +459,22 @@ validator/)
 
 # Testing
 
+A detailed description about the testing process and results can be found in the TESTING.md. To give a brief overlook of the feature testing this table gives a codensed overview of the tested, features, devices, browsers and results:
 
+| Test Case                     | iPhone Safari | iPhone Chrome | iPhone Edge | iPad Safari | iPad Edge | iPad Brave | Mac  Edge | Mac Safari | Mac Chrome |
+|-------------------------------|:-------------:|:-------------:|:-----------:|:-----------:|:---------:|:----------:|-----------|------------|------------|
+| Test Navbar                   |               |               |             |             |           |            |           |            |            |
+| Footer                        |               |               |             |             |           |            |           |            |            |
+| Landing Page                  |               |               |             |             |           |            |           |            |            |
+| About Page                    |               |               |             |             |           |            |           |            |            |
+| Help / Contact Page           |               |               |             |             |           |            |           |            |            |
+| Shop                          |               |               |             |             |           |            |           |            |            |
+| Highlights                    |               |               |             |             |           |            |           |            |            |
+| Cart                          |               |               |             |             |           |            |           |            |            |
+| Checkout                      |               |               |             |             |           |            |           |            |            |
+| Sign Up                       |               |               |             |             |           |            |           |            |            |
+| Registered Users: Useraccount |               |               |             |             |           |            |           |            |            |
+| Registered Users: Wishlist    |               |               |             |             |           |            |           |            |            |
 
 
 # Deployment
