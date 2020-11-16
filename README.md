@@ -485,63 +485,144 @@ This site is deployed to heroku and the versioning was done with git and the Rep
 
 ### Prerequisites to work with this Site
 
+This project can be used for development with the following tools:
+
+- IDE of Choie (i prefer Gitpod)
+- Python3, PIP & Git should be installed
+
+Furthermore accounts with the following services are used in this project:
+
+- Stripe
+- AWS S3 Storage
+- Gmail
+
 
 ### Step-by-Step Instructions
 
+Official Github Documentation on cloning a repositiory: [Github - Cloning Repos](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
+1. Navigate to Mainpage of the repository
+2. Click on "Code" button
+3. Choose "Clone with HTTPs" & copy URL
+4. Open Terminal
+5. Change the current working directory to prefered location
+6. Type git clone and past copied URL ```git clone https://github.com/p0wen/puffins.git```
+7. Press Enter to create local Clone - Make sure your environment supports python3 -
+8. Type ```pip3 install -r requirements.txt``` into Terminal
+9. Setup the environment variables. This process is differnet depending on the used IDE. Gitpod supports global Environments for the development process. Therefore they were stored in the settings. The following variables are needed:
+    ```
+    DEVELOPMENT=True   
+    STRIPE_PUBLIC_KEY = <YOUR STRIPE_PUBLIC_KEY>
+    STRIPE_SECRET_KEY = <YOUR STRIPE_SECRET_KEY>
+    STRIPE_WH_SECRET = <YOUR STRIPE_WH_SECRET>
+    ```
+10. Migrate the models and create the database by typing the following commands into the terminal:
+    1. ```python3 manage.py makemigrations```  
+    2. ```python3 manage.py migrate```
+11. Import the provided fixtures in the following order (copy&paste if you like): 
+    1. ```python3 manage.py loaddata categories```
+    2. ```python3 manage.py loaddata productline```
+    3. ```python3 manage.py loaddata products```
+    4. ```python3 manage.py loaddata proudctsize```
+    5. ```python3 manage.py loaddata productvariants```
+    6. ```python3 manage.py loaddata blog ```
+    7. ```python3 manage.py loaddata faq ```
+12. Create a superuser for accessing the django admin view with the following command:
+    ```python3 manage.py createsuperuser``` You will be asked for an email address, username and password.
+13. You should be all set and when using the command ```python3 manage.py runserver``` the project should run.
+14. You can access the django admin view by adding ```~/admin``` to the end of your (local) URL.
 
 ## Deployment to Heroku
 
+This project is deployed to Heroku. For the deployment the following steps were/are necessary:
 
+1. Log in to your Heroku account and create a new App.
+2. Install Heroku Add-on Heroku Postgres from the Resources tab. The free ```Hobby Dev``` version is fine. Now click the Provision button to add it to your project.
+3. Create requirements.txt from your project with the help of ```pip3 freeze --local > requirements.txt``` (already provided within the repository)
+4. Create a Procfile ```echo web: gunicorn puffins.wsgi:application > Procfile``` (already provided within the repository)
+5. Commit changes to Git ```git add .``` followed by ```git commit -m "Deploy: Updated Procfile"``` (already provided within the repository)
+6. Set the environment variables in Heroku Settings > Reveal Config Variables
+    The following Variables must be set:
+    ```
+    USE_AWS = TRUE
+    AWS_ACCESS_KEY_ID = <YOUR AWS_ACCESS_KEY_ID>
+    AWS_SECRET_ACCESS_KEY = <YOUR AWS_SECRET_ACCESS_KEY>
+    DATABASE_URL = <YOUR DATABASE_URL> (Set by Heroku Postgres)
+    EMAIL_HOST_USER = <YOUR EMAIL_HOST_USER>
+    EMAIL_HOST_PASSWORD = <YOUR EMAIL_HOST_PASSWORD>
+    DEFAULT_FROM_EMAIL = <YOUR DEFAULT_FROM_EMAIL>
+    STRIPE_PUBLIC_KEY = <YOUR STRIPE_PUBLIC_KEY>
+    STRIPE_SECRET_KEY = <YOUR STRIPE_SECRET_KEY>
+    STRIPE_WH_SECRET = <YOUR STRIPE_WH_SECRET>
+    ```
+7. Extract the DATABASE_URL Value from the Heroku Settings and set it up in your IDE or local .env file. Make sure to keep this DATABASE_URL a secret and definitly don't commit it to Github.
+8. To test if the Postgres database is connected to your IDE you can make use of the command ```python3 manage.py showmigrations```. This should show undone migrations for all models.
+9. Now migrate the models and create the postgres database on heroku by typing the following commands into the terminal:
+    1. ```python3 manage.py makemigrations```  
+    2. ```python3 manage.py migrate```
+10. To setup the data in the database import the provided fixtures in the following order (copy&paste if you like): 
+    1. ```python3 manage.py loaddata categories```
+    2. ```python3 manage.py loaddata productline```
+    3. ```python3 manage.py loaddata products```
+    4. ```python3 manage.py loaddata proudctsize```
+    5. ```python3 manage.py loaddata productvariants```
+    6. ```python3 manage.py loaddata blog ```
+    7. ```python3 manage.py loaddata faq ```
+11. Create a superuser for the Postgres database for accessing the django admin view with the following command:
+    ```python3 manage.py createsuperuser``` You will be asked for an email address, username and password.
+12. Log in to heroku from your terminal ```heroku login```
+13. Add exisitng repository to Heroku heroku ```git:remote -a <your repository>```
+14. Push changes to Heroku ```git push heroku master```
+15. Visit the app url from heroku and check out your great site!
 
 # References, Credits & Acknowledgment
 
 ## Credits
 
-- Logocreated by https://www.polardots.studio/
+- Logocreated by [Polardots Studio](https://www.polardots.studio/)
 
 ## Content & Products
 
-- Written by me - inspired by twothirds.com
-- All Products have been created by myself with Figma
+- Written by me - inspired by [TwoThirds](twothirds.com)
+- All Products have been created by myself with [Figma](www.figma.com)
+- Tutorial on how to create Tshirts with figma [You Tube - Figma T-Shirt Tutorial](https://youtu.be/aSEkEvymFMw)
 
 ## Media
 
 Category Images: 
-* Grown Ups: https://images.unsplash.com/photo-1490718687940-0ecadf414600?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80
-* Kids: https://images.unsplash.com/photo-1490826153516-b55d176cdb9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80
-* Partnerlook: https://unsplash.com/photos/ZHZZhRc_D8U
+* [Grown Ups](https://images.unsplash.com/photo-1490718687940-0ecadf414600?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80)
+* [Kids](https://images.unsplash.com/photo-1490826153516-b55d176cdb9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80)
+* [Partnerlook](https://unsplash.com/photos/ZHZZhRc_D8U)
 
 ## Acknowledgements
 
 Special Thanks to...
 
-* ... https://www.polardots.studio/
+* ... [Polardots Studio](https://www.polardots.studio/)
 * ... my Code-Institute Mentor
 * ... Tutors and Fellow Students of CI 
 
 ## References 
-* read up on making drop down full width https://stackoverflow.com/questions/49659305/how-to-make-a-bootstrap-4-full-width-dropdown-in-navbar
-* horzizontal line readup https://stackoverflow.com/questions/16073323/horizontal-rule-line-beneath-each-h1-heading-in-css
-* tutorial on how to animate scrollbar https://www.youtube.com/watch?v=vE4UuSzR5T0
-* hear animation https://designmodo.com/shopping-cart-ui/
-* how to custome style navbar https://medium.com/coder-grrl/the-guide-to-customising-the-bootstrap-4-navbar-i-wish-id-had-6-months-ago-7bc6ce0e3c71
-* starting point for carousel https://startbootstrap.com/snippets/full-slider/
-* inspiration for a mega menu https://www.w3schools.com/howto/howto_css_mega_menu.asp
-* inspiration for product names https://magoosh.com/english-speaking/english-vocab/positive-adjectives-the-ultimate-list
-* bases for toggling colappsed navbar background: https://stackoverflow.com/questions/32147082/changing-collapsed-navbar-list-background-color
-* how to go back to previous page https://stackoverflow.com/questions/2968425/get-back-to-previous-page
-* how to style crispy forms https://simpleisbetterthancomplex.com/tutorial/2018/11/28/advanced-form-rendering-with-django-crispy-forms.html#custom-fields-placement-with-crispy-forms
-* how to work with ajax and django:
-- https://simpleisbetterthancomplex.com/tutorial/2016/08/29/how-to-work-with-ajax-request-with-django.html
-- https://realpython.com/django-and-ajax-form-submissions/
-* how to avoid duplicates in database of productvariant (product & size) https://stackoverflow.com/questions/3052975/django-models-avoid-duplicates
-* how to handle names https://stackoverflow.com/questions/12340789/split-first-name-and-last-name-using-javascript
-* how to control dates in template: https://ourcodeworld.com/articles/read/555/how-to-format-datetime-objects-in-the-view-and-template-in-django
-* work with many to many fields https://www.revsys.com/tidbits/tips-using-djangos-manytomanyfield/
-* how to build your own blog https://medium.com/swlh/building-your-own-django-blog-part-2-78adbc516992
-* database tables in markdown created with: https://www.tablesgenerator.com/markdown_tables
-* how to create unique slug: https://simpleit.rocks/python/django/generating-slugs-automatically-in-django-easy-solid-approaches/
+* Read up on making drop down full width [Stack Overflow - Fullwidth Dropdown Navbar](https://stackoverflow.com/questions/49659305/how-to-make-a-bootstrap-4-full-width-dropdown-in-navbar)
+* Horzizontal line readup [Stack Overflow - Horzizontal Line](https://stackoverflow.com/questions/16073323/horizontal-rule-line-beneath-each-h1-heading-in-css)
+* Tutorial on how to animate scrollbar [Youtube - Animat Scrollbar](https://www.youtube.com/watch?v=vE4UuSzR5T0)
+* How to custome style navbar [Medium - Bootstrap Custom Navbar ](https://medium.com/coder-grrl/the-guide-to-customising-the-bootstrap-4-navbar-i-wish-id-had-6-months-ago-7bc6ce0e3c71)
+* Starting point for carousel [Start Bootstrap - Full Slider](https://startbootstrap.com/snippets/full-slider/)
+* Inspiration for a mega menu [W3 Schools - Mega Menu](https://www.w3schools.com/howto/howto_css_mega_menu.asp)
+* Inspiration for product names [Magoosh - Positive adjectives](https://magoosh.com/english-speaking/english-vocab/positive-adjectives-the-ultimate-list)
+* Bases for toggling colappsed navbar background: [Stack Overflow - Navbar Toggle](https://stackoverflow.com/questions/32147082/changing-collapsed-navbar-list-background-color)
+* How to go back to previous page [Stack Overflow - JS Back Button](https://stackoverflow.com/questions/2968425/get-back-to-previous-page)
+* How to style crispy forms [Simple is Better Than Complex - Crispy Forms](https://simpleisbetterthancomplex.com/tutorial/2018/11/28/advanced-form-rendering-with-django-crispy-forms.html#custom-fields-placement-with-crispy-forms)
+* How to work with ajax and django:  
+    [Simple is Better Than Complex - Ajax & Django](https://simpleisbetterthancomplex.com/tutorial/2016/08/29/how-to-work-with-ajax-request-with-django.html)  
+    [Real Python - Django & Ajax form submission](https://realpython.com/django-and-ajax-form-submissions/)
+* How to avoid duplicates in database of productvariant (product & size) [Stack Overflow - Avoid Duplicates](https://stackoverflow.com/questions/3052975/django-models-avoid-duplicates)
+* How to handle names [Stack Overflow - Split First / Last Name](https://stackoverflow.com/questions/12340789/split-first-name-and-last-name-using-javascript)
+* How to control dates in template: [Our Code World - How to format date time in view and Template](https://ourcodeworld.com/articles/read/555/how-to-format-datetime-objects-in-the-view-and-template-in-django)
+* Work with many to many fields [Rev Sys - ManyToManyField](https://www.revsys.com/tidbits/tips-using-djangos-manytomanyfield/)
+* How to build your own blog [Medium - How to build you own Blog](https://medium.com/swlh/building-your-own-django-blog-part-2-78adbc516992)
+* Database tables in markdown created with: [Tables Generator](https://www.tablesgenerator.com/markdown_tables)
+* How to create unique slug: [SimpleIT Rocks - Automatically slug](https://simpleit.rocks/python/django/generating-slugs-automatically-in-django-easy-solid-approaches)/
 
 -----
 
