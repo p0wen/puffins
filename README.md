@@ -370,12 +370,22 @@ If registered:
 * Form to enter shipping address :white_check_mark:
 * Payment via Credit Card :white_check_mark:
 * Users gets order confirmation by mail :white_check_mark:
+* general discount codes can be used :toolbox:
+* personalized discount codes can be used :toolbox:
 * Users receives order updates when order status changes :toolbox:
 * Apple Pay integration :toolbox:
 
 If registered: 
 * Form is prefilled with available user data :white_check_mark:
 * Form data can be saved to userprofile :white_check_mark:
+
+## Sign Up & login:
+* Sign up can be undertaken :white_check_mark:
+* Sign up also collected first and last name :white_check_mark:
+* login can be undertaken :white_check_mark:
+* Password reset :white_check_mark:
+* Delete account :toolbox:
++ Sign in with apple or google account :toolbox:
 
 ## Registered Users: Useraccount
 * User can look up saved address information :white_check_mark:
@@ -397,6 +407,8 @@ If registered:
 * ... can create/read/update/delete Users in Django-Admin-View :white_check_mark:
 * ... Order Management system :toolbox:
 
+## Newsletter :toolbox:
+
 :white_check_mark: = Implemented
 :toolbox: = Future Development
 
@@ -406,23 +418,25 @@ If registered:
 - Sqlite3 (https://www.sqlite.org/index.html)
 - postgresSQL (https://www.postgresql.org/)
 ## Languages
-- HTML (https://html.spec.whatwg.org/multipage/)
 - CSS (https://www.w3.org/Style/CSS/)
+- HTML (https://html.spec.whatwg.org/multipage/)
 - Javascript (https://developer.mozilla.org/en-
 US/docs/Web/JavaScript)
 - Python (https://www.python.org/)
-## Libraries
-- Google Fonts (https://fonts.google.com/)
-- jQuery (https://jquery.com/)
+## Frameworks
 - Bootstrap (https://www.bootstrapcdn.com/)
-## Tools
+- Django (https://www.djangoproject.com/)
+- jQuery (https://jquery.com/)
+## Libraries, Tools 
+- Google Fonts (https://fonts.google.com/)
 - Gitpod (https://www.gitpod.io/)
 - Figma (https://www.figma.com/)
 - Boto3
 (https://boto3.amazonaws.com/v1/documentation/api/latest/i
 ndex.html)
 - Coverage (https://coverage.readthedocs.io/en/v4.5.x/)
-- Django (https://www.djangoproject.com/)
+- Dj-Database-URL (https://pypi.org/project/dj-database-url/)
+- Django-Countries (https://pypi.org/project/django-countries/)
 - Django-Heroku (https://pypi.org/project/django-heroku/)
 - Django-Storages (https://django-
 storages.readthedocs.io/en/latest/)
