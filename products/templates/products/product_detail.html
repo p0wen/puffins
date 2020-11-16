@@ -38,7 +38,7 @@
                     {% endif %}
                 </div>
                 <div class="order-container">
-                    <form id="add_to_cart" method="POST">
+                    <form id="add_to_cart" method="POST" data-sent-to-url="{% url 'add_to_cart' %}">
                         {% csrf_token %}
                         {% if product_variants.count > 1 %}
                         <div class="size-container">
@@ -171,30 +171,6 @@
 
 {% block postloadjs %}
 
-<script>
+<script src="{% static 'products/js/products.js' %}"></script>
 
-    $('#add_to_cart').on('submit', function(event){
-        event.preventDefault();
-        addToCart();
-        openSideCart();
-    });
-
-    function addToCart() {
-        productvariant_value = $('#order_item').val()
-        $.ajax({
-            url : "{% url 'add_to_cart' %}", // the endpoint
-            type : "POST", // http method
-            data : { productvariant : productvariant_value }, // data sent with the post request
-            // handle a successful response
-            success : function(html) {
-                $('#sideDrawerContent').html(html)
-            },
-
-            // handle a non-successful response
-            error : function(xhr,errmsg,err) {
-            }
-        });
-    };
-
-</script>
 {% endblock %}
