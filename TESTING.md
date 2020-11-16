@@ -38,8 +38,9 @@
 - travis CI used to support continious integration with heroku and run test suite before deployment
 
 # Validation Services
-
-
+## Validation Tools
+## Responsiveness & Rendering
+## Browser Compatibility
 
 # #Peer-Code-Review
 
@@ -53,5 +54,16 @@
 - adding products to a wishlist if no item was added on a fresh user
 - after editing the cart logic the checkout view broke missing / on the url
 - product images not showing The {{MEDIA_URL}}image.jpg syntax is used for standalone images (i.e. that are not related to a model). But if the image is part of a model instance, then {{ item.image.url }} does the trick.
-- MEDIA files not showing missed the media template
+- Templates not pulled from apps folder
+-> make sure to have the following in settings.py
+```
+import os
+DIRNAME = os.path.abspath(os.path.dirname(__file__))
+
+TEMPLATE_DIRS = (
+    os.path.join(DIRNAME, 'site-templates/'),
+)
+```
 - importing fixtures to postgres db led to some troubles. making sure the charfields are correct  // especially on long descriptions it makes sense to use TextField
+
+

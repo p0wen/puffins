@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/p0wen/puffins.svg?branch=master)](https://travis-ci.org/p0wen/puffins)
+
 # Puffins
 
 [![Puffins](https://thepuffins.s3.eu-central-1.amazonaws.com/github-docs/puffins_amiresponsive.gif)](https://thepuffins.herokuapp.com)
@@ -18,7 +20,7 @@ To test the site incl. the checkout process please use the test credit card numb
 
 INSERT NEW TABLE OF CONTENT
 
-# UX
+# UXD Considerations
 
 ## Purpose and Aim of the Project
 
@@ -146,6 +148,13 @@ Desktop - large screen:
 ### Explanation for differences
 
 
+# Information Architecture 
+
+## application framework
+- django introduction high leve reason for this framework
+
+## database selection
+- For development work to mention use of sqlite3 and for production work, mention use of PostgreSQL
 
 ## Database structure
 
@@ -287,83 +296,156 @@ The structure of the products and checkout app are based on the [Boutique Ado](h
 | content_image_2     | ImageField(null=True, blank=True)                                                   |
 | content_image_url_2 | URLField(max_length=1024, null=True, blank=True)                                    |
 
-## Features
+# Features
+
+## Navbar
+* Logged in and non-logged in users see different options :white_check_mark:
+* Searchbar opens below nav when search icon is clicked :white_check_mark:
+* Fixed to top and transparent :white_check_mark:
+* Changes background and font color on scroll :white_check_mark:
+* Changes background and font color if collapsed on small screens :white_check_mark:
+
+## Footer
+* Logo is displayed :white_check_mark:
+* Quicklinks to products are available :white_check_mark:
+* Contact details are accessabile :white_check_mark:
+* Link to About page is present :white_check_mark:
+* Sign Up for Newsletter subscription :toolbox: = Future Development
+
+## Landing Page
+* Caroussel with image also behind nav :white_check_mark:
+* Random featured products are chosen to be displayed in caroussel :white_check_mark:
+* Images for featured icons are different from the product picture to be even more appealing :toolbox:
+
+## About Page
+* Vision is diplayed :white_check_mark:
+* Short introduction to company is provided :white_check_mark:
+* Images of company founders and founder portrait :toolbox:
+
+## Help / Contact Page
+* FAQ are diplayed :white_check_mark:
+* FAQs are categorized :white_check_mark:
+* Contact form available for User :white_check_mark:
+* Chat Option to provide direct support :toolbox:
+
+## Shop
+* Products can be browsed by Category (e.g. Kids) :white_check_mark:
+* Products can be browsed by Category & Productline (e.g. Kids -> T-Shirt) :white_check_mark:
+* Products can be sorted by...  
+   ...Featured Products :white_check_mark:  
+   ...Price :white_check_mark:
+   ...Color :white_check_mark:  
+   ...Name :white_check_mark:  
+* Products have different labels based on  
+   Normal Product :white_check_mark:  
+   Sale Product :white_check_mark:  
+   Pre-Order Productn:white_check_mark:  
+* Product Details have a Select Option if different sizes are available :white_check_mark:
+* Product Details have only a "Add to Cart" button if unisize item :white_check_mark:
+* Product can be shared on social media :toolbox:
+* Partnerlook Section sorts products by name to display matching items side by side :white_check_mark:
+
+If registered: 
+* Product Details allow user to add/remove product to/from wishlist :white_check_mark:
+
+## Highlights
+* Product
+## Cart
+## Checkout
+## Registered Users: Useraccount
+## Registered Users: Wishlist
 
 
 
-:toolbox: = Future Development
+
 
 :white_check_mark: = Implemented
+:toolbox: = Future Development
 
-:x: = Feature removed
+# Technologies Applied
 
-## Technologies Used
-* Django
-* Python
-* HTML5
-* CSS3
-* JavaScript
-* jQuery
-* Bootstrap 4.5.2
-* Gitpod
-* Git Version Control
-* GitHub
-* Heroku
-* S3 Cloudstorage from AWS 
+## Databases
+- Sqlite3 (https://www.sqlite.org/index.html)
+- postgresSQL (https://www.postgresql.org/)
+## Languages
+- HTML (https://html.spec.whatwg.org/multipage/)
+- CSS (https://www.w3.org/Style/CSS/)
+- Javascript (https://developer.mozilla.org/en-
+US/docs/Web/JavaScript)
+- Python (https://www.python.org/)
+## Libraries
+- Google Fonts (https://fonts.google.com/)
+- jQuery (https://jquery.com/)
+- Bootstrap (https://www.bootstrapcdn.com/)
+## Tools
+- Gitpod (https://www.gitpod.io/)
+- Figma (https://www.figma.com/)
+- Boto3
+(https://boto3.amazonaws.com/v1/documentation/api/latest/i
+ndex.html)
+- Coverage (https://coverage.readthedocs.io/en/v4.5.x/)
+- Django (https://www.djangoproject.com/)
+- Django-Heroku (https://pypi.org/project/django-heroku/)
+- Django-Storages (https://django-
+storages.readthedocs.io/en/latest/)
+- Git (https://git-scm.com/)
+- GitHub (https://github.com/)
+- Gunicorn (https://pypi.org/project/gunicorn/)
+- Jigsaw – CSS Validation (https://jigsaw.w3.org/css-
+validator/)
+- JS Hint (https://jshint.com/)
+- PEP8 (http://pep8online.com/)
+- Pillow (https://pillow.readthedocs.io/en/stable/)
+- PIP (https://pip.pypa.io/en/stable/installing/)
+- Psycopg2 (https://pypi.org/project/psycopg2/)
+- Stripe (https://stripe.com/gb)
+- W3C – HTML Validation (https://validator.w3.org/)
+## Hosting
+- Heroku (https://www.heroku.com/)
+- AWS S3 Bucket (https://aws.amazon.com/)
 
-## Testing
 
-### Validator Checks, Audits & Tools
+# Testing
 
-### Known Bugs & Issues
 
-[ ] Update form for more than 1 item in cart
 
-### Issues handled via development
 
-- Templates not pulled from apps folder
--> make sure to have the following in settings.py
-```
-import os
-DIRNAME = os.path.abspath(os.path.dirname(__file__))
-
-TEMPLATE_DIRS = (
-    os.path.join(DIRNAME, 'site-templates/'),
-)
-```
-
-## Deployment
+# Deployment
 
 This site is deployed to heroku and the versioning was done with git and the Repository is hosted on Github.
 
-### Local Deployment
+## Local Deployment
 
-#### Prerequisites to work with this Site
-
-
-#### Step-by-Step Instructions
+### Prerequisites to work with this Site
 
 
+### Step-by-Step Instructions
 
-### Deployment to Heroku
+
+
+## Deployment to Heroku
+
+
+
+# References, Credits & Acknowledgment
 
 ## Credits
 
 - Logocreated by https://www.polardots.studio/
 
-### Content & Products
+## Content & Products
 
 - Written by me - inspired by twothirds.com
 - All Products have been created by myself with Figma
 
-### Media
+## Media
 
 Category Images: 
 * Grown Ups: https://images.unsplash.com/photo-1490718687940-0ecadf414600?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80
 * Kids: https://images.unsplash.com/photo-1490826153516-b55d176cdb9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80
-* Partnerlook: https://images.unsplash.com/photo-1528686355953-c65738cb43ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1242&q=80
+* Partnerlook: https://unsplash.com/photos/ZHZZhRc_D8U
 
-### Acknowledgements
+## Acknowledgements
 
 Special Thanks to...
 
@@ -371,7 +453,7 @@ Special Thanks to...
 * ... my Code-Institute Mentor
 * ... Tutors and Fellow Students of CI 
 
-### References 
+## References 
 * read up on making drop down full width https://stackoverflow.com/questions/49659305/how-to-make-a-bootstrap-4-full-width-dropdown-in-navbar
 * horzizontal line readup https://stackoverflow.com/questions/16073323/horizontal-rule-line-beneath-each-h1-heading-in-css
 * tutorial on how to animate scrollbar https://www.youtube.com/watch?v=vE4UuSzR5T0
@@ -393,3 +475,7 @@ Special Thanks to...
 * how to build your own blog https://medium.com/swlh/building-your-own-django-blog-part-2-78adbc516992
 * database tables in markdown created with: https://www.tablesgenerator.com/markdown_tables
 * how to create unique slug: https://simpleit.rocks/python/django/generating-slugs-automatically-in-django-easy-solid-approaches/
+
+-----
+
+This is for educational use
