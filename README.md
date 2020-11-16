@@ -12,13 +12,55 @@ This site is the final Milestone Projects that made up the Full Stack Web Develo
 
 To test the site incl. the checkout process please use the test credit card number provided in the [Stripe Documentation](https://stripe.com/docs/testing):
 
-+ __Number__: 4242 4242 4242 424 4242
++ __Number__: 4242 4242 4242 4242 4242
 + __Exp. Date__: Anything (e.g. 02/24)
 + __CVC__: Anything (e.g. 007)
 
 # Table of Content
 
-INSERT NEW TABLE OF CONTENT
+- [Puffins](#puffins)
+- [Table of Content](#table-of-content)
+- [UXD Considerations](#uxd-considerations)
+  * [Purpose and Aim of the Project](#purpose-and-aim-of-the-project)
+  * [Design process](#design-process)
+  * [Target group](#target-group)
+  * [Epics & User Stories](#epics---user-stories)
+  * [Layout, Styling & Wireframes](#layout--styling---wireframes)
+- [Information Architecture](#information-architecture)
+  * [Application Framework](#application-framework)
+  * [Database selection](#database-selection)
+  * [Database structure](#database-structure)
+- [Features](#features)
+  * [Navbar](#navbar)
+  * [Footer](#footer)
+  * [Landing Page](#landing-page)
+  * [About Page](#about-page)
+  * [Help / Contact Page](#help---contact-page)
+  * [Shop](#shop)
+  * [Highlights](#highlights)
+  * [Cart](#cart)
+  * [Checkout](#checkout)
+  * [Sign Up & login:](#sign-up---login-)
+  * [Registered Users: Useraccount](#registered-users--useraccount)
+  * [Registered Users: Wishlist](#registered-users--wishlist)
+  * [Store Management:](#store-management-)
+  * [Newsletter :toolbox:](#newsletter--toolbox-)
+- [Technologies Applied](#technologies-applied)
+  * [Databases](#databases)
+  * [Languages](#languages)
+  * [Frameworks](#frameworks)
+  * [Libraries, Tools](#libraries--tools)
+  * [Hosting](#hosting)
+- [Testing](#testing)
+- [Deployment](#deployment)
+  * [Local Deployment](#local-deployment)
+  * [Deployment to Heroku](#deployment-to-heroku)
+- [References, Credits & Acknowledgment](#references--credits---acknowledgment)
+  * [Credits](#credits)
+  * [Content & Products](#content---products)
+  * [Media](#media)
+  * [Acknowledgements](#acknowledgements)
+  * [References](#references)
 
 # UXD Considerations
 
@@ -143,17 +185,17 @@ Desktop - large screen:
 
 ### Final Layout
 
---> INSERT AM I RESPONSVIE SCREENSHOT
+[![Puffins](https://thepuffins.s3.eu-central-1.amazonaws.com/github-docs/puffins_amiresponsive.gif)]
 
 ### Explanation for differences
 
 
 # Information Architecture 
 
-## application framework
+## Application Framework
 - django introduction high leve reason for this framework
 
-## database selection
+## Database selection
 - For development work to mention use of sqlite3 and for production work, mention use of PostgreSQL
 
 ## Database structure
@@ -297,6 +339,9 @@ The structure of the products and checkout app are based on the [Boutique Ado](h
 | content_image_url_2 | URLField(max_length=1024, null=True, blank=True)                                    |
 
 # Features
+The following features were thought of. 
+:white_check_mark: - Mark Features that made it into the deployed Project
+:toolbox: - Mark Features that are interessting for Future Development
 
 ## Navbar
 * Logged in and non-logged in users see different options :white_check_mark:
@@ -310,7 +355,7 @@ The structure of the products and checkout app are based on the [Boutique Ado](h
 * Quicklinks to products are available :white_check_mark:
 * Contact details are accessabile :white_check_mark:
 * Link to About page is present :white_check_mark:
-* Sign Up for Newsletter subscription :toolbox: = Future Development
+* Sign Up for Newsletter subscription :toolbox:
 
 ## Landing Page
 * Caroussel with image also behind nav :white_check_mark:
@@ -342,8 +387,8 @@ The structure of the products and checkout app are based on the [Boutique Ado](h
    Pre-Order Productn:white_check_mark:  
 * Product Details have a Select Option if different sizes are available :white_check_mark:
 * Product Details have only a "Add to Cart" button if unisize item :white_check_mark:
-* Product can be shared on social media :toolbox:
 * Partnerlook Section sorts products by name to display matching items side by side :white_check_mark:
+* Product can be shared on social media :toolbox:
 
 If registered: 
 * Product Details allow user to add/remove product to/from wishlist :white_check_mark:
@@ -408,11 +453,12 @@ If registered:
 * ... Order Management system :toolbox:
 
 ## Newsletter :toolbox:
-
-:white_check_mark: = Implemented
-:toolbox: = Future Development
+* User can sign up for newsletter :toolbox:
+* User get a coupon code for newsletter subscription :toolbox:
+* User can manage their subscription :toolbox:
 
 # Technologies Applied
+The following technologie were used during the development of the project.
 
 ## Databases
 - Sqlite3 (https://www.sqlite.org/index.html)
@@ -431,20 +477,16 @@ US/docs/Web/JavaScript)
 - Google Fonts (https://fonts.google.com/)
 - Gitpod (https://www.gitpod.io/)
 - Figma (https://www.figma.com/)
-- Boto3
-(https://boto3.amazonaws.com/v1/documentation/api/latest/i
-ndex.html)
+- Boto3 (https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
 - Coverage (https://coverage.readthedocs.io/en/v4.5.x/)
 - Dj-Database-URL (https://pypi.org/project/dj-database-url/)
 - Django-Countries (https://pypi.org/project/django-countries/)
 - Django-Heroku (https://pypi.org/project/django-heroku/)
-- Django-Storages (https://django-
-storages.readthedocs.io/en/latest/)
+- Django-Storages (https://django-storages.readthedocs.io/en/latest/)
 - Git (https://git-scm.com/)
 - GitHub (https://github.com/)
 - Gunicorn (https://pypi.org/project/gunicorn/)
-- Jigsaw – CSS Validation (https://jigsaw.w3.org/css-
-validator/)
+- Jigsaw – CSS Validation (https://jigsaw.w3.org/css-validator/)
 - JS Hint (https://jshint.com/)
 - PEP8 (http://pep8online.com/)
 - Pillow (https://pillow.readthedocs.io/en/stable/)
@@ -452,6 +494,7 @@ validator/)
 - Psycopg2 (https://pypi.org/project/psycopg2/)
 - Stripe (https://stripe.com/gb)
 - W3C – HTML Validation (https://validator.w3.org/)
+- MarkdownTOC (http://ecotrust-canada.github.io/markdown-toc/')
 ## Hosting
 - Heroku (https://www.heroku.com/)
 - AWS S3 Bucket (https://aws.amazon.com/)
@@ -459,7 +502,7 @@ validator/)
 
 # Testing
 
-A detailed description about the testing process and results can be found in the TESTING.md. To give a brief overlook of the feature testing this table gives a codensed overview of the tested, features, devices, browsers and results:
+A detailed description about the testing process and results can be found in the [TESTING.md](https://github.com/p0wen/puffins/blob/master/TESTING.md). To give a brief overlook of the feature testing this table gives a codensed overview of the tested, features, devices, browsers and results:
 
 | Test Case                     | iPhone Safari | iPhone Chrome | iPhone Edge | iPad Safari | iPad Edge | iPad Brave | Mac  Edge | Mac Safari | Mac Chrome |
 |-------------------------------|:-------------:|:-------------:|:-----------:|:-----------:|:---------:|:----------:|-----------|------------|------------|
@@ -481,9 +524,8 @@ A detailed description about the testing process and results can be found in the
 
 This site is deployed to heroku and the versioning was done with git and the Repository is hosted on Github.
 
-## Local Deployment
 
-### Prerequisites to work with this Site
+## Prerequisites to work with this Site
 
 This project can be used for development with the following tools:
 
@@ -496,8 +538,7 @@ Furthermore accounts with the following services are used in this project:
 - AWS S3 Storage
 - Gmail
 
-
-### Step-by-Step Instructions
+## Local Deployment: Step-by-Step Instructions
 
 Official Github Documentation on cloning a repositiory: [Github - Cloning Repos](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
@@ -532,11 +573,11 @@ Official Github Documentation on cloning a repositiory: [Github - Cloning Repos]
 13. You should be all set and when using the command ```python3 manage.py runserver``` the project should run.
 14. You can access the django admin view by adding ```~/admin``` to the end of your (local) URL.
 
-## Deployment to Heroku
+## Deployment to Heroku: Step-by-Step Instructions
 
 This project is deployed to Heroku. For the deployment the following steps were/are necessary:
 
-1. Log in to your Heroku account and create a new App.
+1. Create/Log in to your Heroku account and create a new App.
 2. Install Heroku Add-on Heroku Postgres from the Resources tab. The free ```Hobby Dev``` version is fine. Now click the Provision button to add it to your project.
 3. Create requirements.txt from your project with the help of ```pip3 freeze --local > requirements.txt``` (already provided within the repository)
 4. Create a Procfile ```echo web: gunicorn puffins.wsgi:application > Procfile``` (already provided within the repository)
