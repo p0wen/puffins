@@ -6,6 +6,10 @@
 - project was posted into #peer-code-review group from Code Institute to gather feedback
 - interessting bugs were documented during development as a reference
 
+# Table of Content
+
+--> INSERT TABLE OF CONTENT
+
 # Manual Test Cycles
 
 ## 1. Test Navbar
@@ -29,7 +33,7 @@
    Userprofile-icon  
    Cart-icon  
    Search-icon  
-4. Click Userprofile-icon and sign in
+4. Click Userprofile-icon and login with user: puffin1 - pw: 1niffup!
 5. Check that navbar icons changed and the follow are present  
    Useraccount-icon  
    Wishlist-icon  
@@ -100,103 +104,371 @@
 3. Click on About in Footer
 4. Check that same information is present as in Test 4.1
 
-## Help / Contact Page
-* FAQ are diplayed :white_check_mark:
-* FAQs are categorized :white_check_mark:
-* Contact form available for User :white_check_mark:
-* Chat Option to provide direct support :toolbox:
+## 5. Help / Contact Page
 
-## Shop
-* Products can be browsed by Category (e.g. Kids) :white_check_mark:
-* Products can be browsed by Category & Productline (e.g. Kids -> T-Shirt) :white_check_mark:
-* Products can be sorted by...  
-   ...Featured Products :white_check_mark:  
-   ...Price :white_check_mark:
-   ...Color :white_check_mark:  
-   ...Name :white_check_mark:  
-* Products have different labels based on  
-   Normal Product :white_check_mark:  
-   Sale Product :white_check_mark:  
-   Pre-Order Productn:white_check_mark:  
-* Product Details have a Select Option if different sizes are available :white_check_mark:
-* Product Details have only a "Add to Cart" button if unisize item :white_check_mark:
-* Product can be shared on social media :toolbox:
-* Partnerlook Section sorts products by name to display matching items side by side :white_check_mark:
+### Contact Page through Navbar
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on HELP in Navigation
+4. Check that  
+   FAQs are diplayed  
+   FAQs are categorized  
+   Contact form available
 
-If registered: 
-* Product Details allow user to add/remove product to/from wishlist :white_check_mark:
+### Contact Page - Submit Form
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on HELP in Navigation
+4. Fill out Form
+5. Submit Form
+6. A success message should be presented instead of the form
 
-## Highlights
-* Products a prominently display :white_check_mark:
-* only featured items are rendered :white_check_mark:
+### Contact Page - Submit Form prefilled
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Login with user: puffin1 - pw: 1niffup!
+4. Check that Form is prefilled (puffin1@byom.de, Huffin, Puffin)
 
-## Cart
-* Cart is present in Side Drawer Container :white_check_mark:
-* Newest Item is always presented on top :white_check_mark:
-* Total inkl. Tax & Shipping :white_check_mark:
-* Checkout straight from Cart Side Drawer  :white_check_mark:
-* Add to cart renders updated cart via Ajax-Request :white_check_mark:
-* Increase/Decrease Quantity request via Ajax within Side Drawer Cart :toolbox:
-* Remove Items from Cart ia Ajax-Request within Side Drawer Cart :toolbox:
-* Reserve requested item & quantity to for 10 Min. to avoid checkouts with unavailable products :toolbox:
+## 6. Shop
 
-If registered: 
-* attach cart to userprofile instead of saving to session :toolbox:
+### Shop Categories
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on SHOP
+4. Click Kids or Grown Ups
+5. Check that products are displayed and the page title shows the Category
 
-## Checkout
-* Order summary :white_check_mark:
-* Form to enter shipping address :white_check_mark:
-* Payment via Credit Card :white_check_mark:
-* Users gets order confirmation by mail :white_check_mark:
-* general discount codes can be used :toolbox:
-* personalized discount codes can be used :toolbox:
-* Users receives order updates when order status changes :toolbox:
-* Apple Pay integration :toolbox:
+### Shop Productline
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on SHOP
+4. Click Kids - T-Shirt or Grown Ups - Sweatshirts
+5. Check that only productline items are displayed and the page title shows the Category & Productline
 
-If registered: 
-* Form is prefilled with available user data :white_check_mark:
-* Form data can be saved to userprofile :white_check_mark:
+### Shop Partnerlook
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on SHOP
+4. Click Partnerlook
+5. Check that matching products are displayed next to eachother and the page title states "Partnerlook" with the subtitle "T-Shirt & Sweatshirt"
 
-## Sign Up & login:
-* Sign up can be undertaken :white_check_mark:
-* Sign up also collected first and last name :white_check_mark:
-* login can be undertaken :white_check_mark:
-* Password reset :white_check_mark:
-* Delete account :toolbox:
-+ Sign in with apple or google account :toolbox:
+### Sort Products 
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on SHOP
+4. Click Kids - T-Shirt or Grown Ups - Sweatshirts
+5. Toggle the Sort switch through all options and check that sorting works accordingly  
+    ...Featured Products  
+    ...Price
+    ...Color
+    ...Name 
 
-## Registered Users: Useraccount
-* User can look up saved address information :white_check_mark:
-* User can update address information :white_check_mark:
-* User can see past orderes :white_check_mark:
-* User can enter detail view of past orders :white_check_mark:
+### Sort Products 
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on SHOP
+4. Click Kids - T-Shirt or Grown Ups - Sweatshirts
+5. Check different card design for regular, sale(red) and pre-order(blue) items
+
+### Get Product Details
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on SHOP
+4. Click Kids - T-Shirt or Grown Ups - Sweatshirts
+5. Choose any product by clicking the image
+6. New page should open
+7. Page should contain  
+   Product image  
+   Descripton  
+   Size Options
+   Add to Cart Button  
+   Material information  
+   Return & Delivery Information
+
+### Get Product Details
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Login with user: puffin1 - pw: 1niffup!
+4. Click on SHOP
+5. Click Kids - T-Shirt or Grown Ups - Sweatshirts
+5. Choose any product by clicking the image
+6. Heart below Add to Cart-Button should be visible
+
+## 7. Highlights
+
+### Get Highlights
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on HIGHLIGHTS
+4. Only one Product per row should be shown
+
+
+## 8. Cart
+
+### Check empty Cart
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on Cart-Icon
+4. Side Drawer Cart should open
+5. Placeholder "Nothing in Cart" should be displayed 
+
+### Add item to Cart
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on SHOP
+4. Click Kids - T-Shirt or Grown Ups - Sweatshirts
+5. Choose any product by clicking the image
+6. Add Item to Cart
+7. Side Drawer Cart should open
+8. Chosen Product should be inside the cart view
+
+### Open Fullpage Cart
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on SHOP
+4. Click Kids - T-Shirt or Grown Ups - Sweatshirts
+5. Choose any product by clicking the image
+6. Add Item to Cart
+7. Side Drawer Cart should open
+8. Click below checkout button on Go to Cart
+9. Fullpage Cart should open
+
+### Add two items to Cart and check Position
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on SHOP
+4. Click Kids - T-Shirt or Grown Ups - Sweatshirts
+5. Choose any product by clicking the image
+6. Add Item to Cart
+7. Side Drawer Cart should open
+8. Continue shopping by clicking on the grey overlay or on to the Close button in the top right
+9. Cart should Close
+10. Choose another product
+11. Add Item to Cart
+12. Side Drawer Cart should and last added item should be on top
+
+### Checkout from Side Drawer Cart
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on SHOP
+4. Click Kids - T-Shirt or Grown Ups - Sweatshirts
+5. Choose any product by clicking the image
+6. Add Item to Cart
+7. Side Drawer Cart should open
+8. Press Checkout Button
+9. Checkout Page should open
+
+### Checkout from Fullpage Cart
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on SHOP
+4. Click Kids - T-Shirt or Grown Ups - Sweatshirts
+5. Choose any product by clicking the image
+6. Add Item to Cart
+7. Side Drawer Cart should open
+8. Click below checkout button on Go to Cart
+9. Fullpage Cart should open
+10. Press Checkout Button
+11. Checkout Page should open
+
+### Increase Quantity in Side Drawer Cart
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on SHOP
+4. Click Kids - T-Shirt or Grown Ups - Sweatshirts
+5. Choose any product by clicking the image
+6. Add Item to Cart
+7. Side Drawer Cart should open
+8. Press "+" Button in Side Drawer Cart
+9. Should be redirect to Fullpage Cart
+10. Quantity should be increased by 1
+
+### Decrease Quantity in Side Drawer Cart
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on SHOP
+4. Click Kids - T-Shirt or Grown Ups - Sweatshirts
+5. Choose any product by clicking the image
+6. Add Item to Cart
+7. Side Drawer Cart should open
+8. Press "-" Button in Side Drawer Cart
+9. Should be redirect to Fullpage Cart
+10. Quantity should be decreased by 1
+
+### Remove Item(s) in Side Drawer Cart
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on SHOP
+4. Click Kids - T-Shirt or Grown Ups - Sweatshirts
+5. Choose any product by clicking the image
+6. Add Item to Cart
+7. Side Drawer Cart should open
+8. Press "x" Button in Side Drawer Cart
+9. Should be redirect to Fullpage Cart
+10. Product should be removed from Cart
+
+### Increase Quantity in Fullpage Cart
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on SHOP
+4. Click Kids - T-Shirt or Grown Ups - Sweatshirts
+5. Choose any product by clicking the image
+6. Add Item to Cart
+7. Side Drawer Cart should open
+8. Click below checkout button on Go to Cart
+9. Should be redirect to Fullpage Cart
+10. Press "+" Button
+11. Page should be reloaded and quantity increased by one
+
+### Decrease Quantity in Fullpage Cart
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on SHOP
+4. Click Kids - T-Shirt or Grown Ups - Sweatshirts
+5. Choose any product by clicking the image
+6. Add Item to Cart
+7. Side Drawer Cart should open
+8. Click below checkout button on Go to Cart
+9. Should be redirect to Fullpage Cart
+10. Press "-" Button
+11. Page should be reloaded and quantity decreased by one
+
+### Remove Item(s) in Fullpage Cart
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on SHOP
+4. Click Kids - T-Shirt or Grown Ups - Sweatshirts
+5. Choose any product by clicking the image
+6. Add Item to Cart
+7. Side Drawer Cart should open
+8. Click below checkout button on Go to Cart
+9. Should be redirect to Fullpage Cart
+10. Press "x" Button
+11. Page should be reloaded and item should be removed from cart
+
+## 9. Checkout
+
+### Checkout AnonymousUser
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click on SHOP
+4. Click Kids - T-Shirt or Grown Ups - Sweatshirts
+5. Choose any product by clicking the image
+6. Add Item to Cart
+7. Side Drawer Cart should open
+8. Click Checkout-Button
+9. Should be redirected to checkout page
+10. Form for address details & Order Summary should be displayed
+11. Fill in form & use test credit card (4242 4242 4242 4242)
+12. Submit order
+13. Loading animation should be displayed
+14. Checkout success page should be shown
+
+### Checkout registered user
+
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click Userprofile-icon and login with user: puffin1 - pw: 1niffup!
+4. Click on SHOP
+5. Click Kids - T-Shirt or Grown Ups - Sweatshirts
+6. Choose any product by clicking the image
+7. Add Item to Cart
+8. Side Drawer Cart should open
+9. Click Checkout-Button
+10. Should be redirected to checkout page
+10. Form for address details should be prefilled & Order Summary should be displayed
+11. add test credit card (4242 4242 4242 4242)
+12. Submit order
+13. Loading animation should be displayed
+14. Checkout success page should be shown
+
+## 10. Sign Up:
+
+### Sign Up
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click Userprofile-icon
+4. Choose Sign Ups
+5. Fill out the Form
+6. Check if confirmation mail was received
+7. Confirm email
+8. Login with credentials
+
+## 11. Registered Users: Useraccount
+
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click Userprofile-icon and login with user: puffin1 - pw: 1niffup!
+4. Click on UserAccount-icon
+5. Should see Form 
+6. Should see Order History
 
 ## Registered Users: Wishlist
-* User can add/remove items to personal wishlist from product details :white_check_mark:
-* User can view stored wishlist items :white_check_mark:
-* Users can add items to wishlist from product overview :toolbox:
-* users can add items and size to wishlist :toolbox:
-* users can immediatley transform wishlist into order :toolbox:
 
-## Store Management:
-* ... can create/read/update/delete products in Django-Admin-View :white_check_mark:
-* ... can create/read/update/delete blogposts in Django-Admin-View :white_check_mark:
-* ... can create/read/update/delete FAQs in Django-Admin-View :white_check_mark:
-* ... can create/read/update/delete Users in Django-Admin-View :white_check_mark:
-* ... Order Management system :toolbox:
+### Show empty wishlist
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click Userprofile-icon and login with user: puffin1 - pw: 1niffup!
+4. Click on Heart-icon
+5. Should show empty wishlist
+
+### Add product to wishlist
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Login with user: puffin1 - pw: 1niffup!
+4. Click on SHOP
+5. Click Kids - T-Shirt or Grown Ups - Sweatshirts
+5. Choose any product by clicking the image
+6. Click Heart below Add to Cart-Button
+7. Heart should change from outline to filled
+
+### Show wishlist
+1. Open Browser
+2. Open [Puffins Page](https://thepuffins.herokuapp.com)
+3. Click Userprofile-icon and login with user: puffin1 - pw: 1niffup!
+4. Click on Heart-icon
+5. Should show wishlist with one liked item
+
+## 12. Store Management:
+
+### create/read/update/delete products
+### create/read/update/delete blogposts 
+### create/read/update/delete FAQs
+### create/read/update/delete Users
 
 
 # User Testing
 
-- heroku link was shared with friends and family
-- following feedback was collected
-- following bugs were identified
+Besides running through the extensive test cycles documented above the URL from the Heroku deployment was shared with friends and family. The following feedback was collected:
+
+- "Great products"
+- "Beautiful design"
+- "I wish i could increase/decrease quantity within the sidedrawer cart"
+- "Footer looks a little too full"
+
+Following Bugs were identified:
+- Side Drawer Cart on iPhone not scrollable
+- Quantity not shown in Side Drawer Cart
+- Buttons on Carrousel
+- Cart Mobile Fullpage not in view
+- Info Toast behind Navbar
+
 
 # Automatic Tests & Continious Integration
 
-- basic automatic tests were created to support the testing and development prodedure
-- just an initial start, further tests should be written to complete 100% test coverage
-- travis CI used to support continious integration with heroku and run test suite before deployment
+A basic set of test using the Django TestCase integration were created to support the testing and development process and gain practical knowledge in this field. Test were written for the following apps:
+
+- About (Views) - 100% Coverage
+- Blog (Models & Views) - 100% Coverage
+- Contact (Forms 100%, Models 100%, Views 54%)
+- Useraccount (Forms 81%, Models 100%, Views 65%)
+- Wishlist (Models 100% & Views 58%)
+
+More test need to be written to reach a 100% test coverage. Furthermore, [Travis CI](https://travis-ci.org/github/p0wen/puffins) used to allow continious integration patterns in combination with Heroku. Travis CI is an open source software for continious integration.
+
+Build Status:
+
+[![Build Status](https://travis-ci.org/p0wen/puffins.svg?branch=master)](https://travis-ci.org/p0wen/puffins)
 
 # Validation Services
 ## Validation Tools
