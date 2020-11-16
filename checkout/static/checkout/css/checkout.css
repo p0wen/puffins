@@ -68,14 +68,9 @@
     animation:  loading-spinner 3s ease-in-out infinite;
 }
 
+
 .loading-spinner img {
     height: 75px
-}
-
-.loading-text {
-    position: absolute;
-    top: 56%;
-    left: 47%;
 }
 
 @keyframes loading-spinner {
