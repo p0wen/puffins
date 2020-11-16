@@ -19,17 +19,7 @@
 		href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Open+Sans&family=Oswald&family=Sacramento&display=swap"
 		rel="stylesheet" />
 	<link rel="stylesheet" href="{% static 'css/base.css' %}" />
-	{% endblock %} {% block extracss %} {% endblock %} {% block corejs %}
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"
-		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-	</script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
-	</script>
-	<script src="https://js.stripe.com/v3/"></script>
-	<script src="{% static 'js/main.js' %}"></script>
-	{% endblock %} {% block extrajs %} {% endblock %}
-
+	{% endblock %} {% block extracss %} {% endblock %} 
 	<title>Puffins {% block extra-title %}{% endblock %}</title>
 </head>
 
@@ -296,104 +286,21 @@
 		</div>
 	</footer>
 
-	{% block postloadjs %}
-	{% endblock %}
-
-	<script>
-		let menuExtended = false;
-    let scrollPosition;
-		// Scroll Animation based on 2 sources https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_lightbulb , https://www.youtube.com/watch?v=vE4UuSzR5T0
-      window.addEventListener("scroll", function () {
-        let navbar = document.querySelector("nav");
-        document.getElementById("#puffinName");
-        scrollPosition = window.scrollY > 0;
-        if (scrollPosition) {
-            if ($("nav").hasClass("scrolling-active")) {
-                // do nothing
-            } else {
-                $("nav").addClass("scrolling-active");
-                $("#puffinName").attr('src',"{{ MEDIA_URL }}puffins_logo_dark.svg");
-            }
-        } else {
-            if ($("nav").hasClass("scrolling-active") && menuExtended) {
-                // do nothing
-            } else {
-                $("nav").removeClass("scrolling-active");
-                $("#puffinName").attr('src',"{{ MEDIA_URL }}puffins_logo_light.svg");
-        }
-        }
-        });
-
-        
-    // Takes Care of Navigation when collapsed and not scrolled adapted form here : https://stackoverflow.com/questions/32147082/changing-collapsed-navbar-list-background-color
-
-    $(".navbar-toggler").click(function () {
-
-    if (!scrollPosition & !menuExtended) {
-        $("nav").addClass("scrolling-active");
-        $("#puffinName").attr('src',"{{ MEDIA_URL }}puffins_logo_dark.svg");
-        menuExtended = true;
-    } else if (scrollPosition && menuExtended) {
-                menuExtended = false;
-    } else if (scrollPosition && !menuExtended) {
-         $("nav").addClass("scrolling-active");
-        $("#puffinName").attr('src',"{{ MEDIA_URL }}puffins_logo_dark.svg");
-        menuExtended = true;
-    } else if (!scrollPosition && menuExtended) {
-        $("nav").removeClass("scrolling-active", menuExtended);
-        $("#puffinName").attr('src',"{{ MEDIA_URL }}puffins_logo_light.svg");
-        menuExtended = false;
-    } else {
-
-    }
-    });
-     
-    function goBack() {
-       window.history.back();
-    }
-
-    // Control for SideCartDrawer with Shopping Cart
-
-     function closeSideCart() {
-        $('#overlay').remove();
-        $("#CartSide").removeClass("open");
-        $("body").removeAttr('style')
-    }
-
-    function openSideCart() {
-        $('body').append('<div id="overlay" class="overlay show z10"></div>');
-        $("#CartSide").addClass("open");
-        $("body").attr('style', 'overflow: hidden; padding-right: 0px;')
-    }
-
-    $("#cart-open").click(function() {
-        openSideCart();
-    });  
-
-    $(document).on('click', '#overlay', closeSideCart);
-    
-
-    /**
-     * Fix Viewport for mobile browser taken from own zengarden project / origin of solution (https://dev.to/admitkard/mobile-issue-with-100vh-height-100-100vh-3-solutions-3nae)
-     */
-
-    // Call resize view on page load to have correct vh
-    resizeView();
-
-    // Update vh variable on screen resize 
-    window.addEventListener("resize", () => {
-    resizeView();
-    });
-
-    // Check innerHeight of window to adjust for mobile view with task bars
-    function resizeView() {
-    let root = document.querySelector(":root")
-    root.style.setProperty("--vh", window.innerHeight / 100 + "px");
-    }
-
-    
+    <!-- Load JS Files -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/main_jquery.js' %}"></script>
+    <script>
+        // Pass MEDIA URL to jQuery for Nav Scroll/Toggle Layout Control 
+        var url_puffin_dark = "{{ MEDIA_URL }}puffins_logo_dark.svg";
+        var url_puffin_light = "{{ MEDIA_URL }}puffins_logo_light.svg";
 	</script>
-
+    {% block postloadjs %}
+	{% endblock %}
 </body>
 
 </html>
