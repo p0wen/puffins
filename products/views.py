@@ -41,17 +41,17 @@ def all_products(request):
             products = products.filter(category__name__icontains=category)
             category = Category.objects.get(name=category)
         elif 'productline' in request.GET and 'category' not in request.GET:
-            productline = request.GET['productline']
+            productline = request.GET['productline'].split(',')
             products = products.filter(
-                productline__name__icontains=productline)
-            productline = ProductLine.objects.get(name=productline)
+                productline__name__in=productline)
+            productline = ProductLine.objects.filter(name__in=productline)
         elif 'category' in request.GET and 'productline' in request.GET:
             category = request.GET['category']
             productline = request.GET['productline']
             products = products.filter(category__name__contains=category).\
                 filter(productline__name__contains=productline)
             category = Category.objects.get(name=category)
-            productline = ProductLine.objects.get(name=productline)
+            productline = ProductLine.objects.filter(name=productline)
         else:
             products = Product.objects.all().filter(discontinued=False)
 
