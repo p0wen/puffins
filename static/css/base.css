@@ -31,11 +31,13 @@ a {
 /* alert toast */
 
 .toast-box {
-    position: relative;
+    position: absolute;
     top: 80px;
     opacity: 0.9;
     font-size: 0.9rem;
     overflow-wrap: break-word;
+    z-index: 132131;
+    align-self: center;
 }
 
 /* individual nav styling */

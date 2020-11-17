@@ -220,16 +220,14 @@
 				</div>
 	</nav>
 	{% if messages %}
-	<div class="container message-box toast-box">
+	<div class="container toast-box">
 		{% for message in messages %}
 		{% with message.level as level %}
 		{% if level == 40 %}
 		{% include 'includes/toasts/toast_error.html' %}
 		{% elif level == 30 %}
 		{% include 'includes/toasts/toast_warning.html' %}
-		{% else %}
-		{% include 'includes/toasts/toast_info.html' %}
-		{% endif %}
+        {% endif %}
 		{% endwith %}
 		{% endfor %}
 	</div>
