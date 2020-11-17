@@ -48,7 +48,7 @@ nav {
 }
 
 nav button:focus {
-  color: #f9a829;
+  color: #ff9e16;
   outline: none;
 }
 
@@ -86,7 +86,7 @@ nav button:focus {
 }
 
 .scrolling-active .nav-link::after {
-  background-color: #313131;
+  background-color: #000000;
 }
 
 .scrolling-active button {
@@ -114,13 +114,8 @@ nav button:focus {
   color: #ffffff;
 }
 
-.button-dark {
-  border: 0.1875em solid #294b93;
-  color: #294b93;
-}
-
 .button-blue {
-  background: #294b93;
+  background: #3468dd;
   color: #ffffff;
 }
 
@@ -132,7 +127,7 @@ nav button:focus {
 
 .button-blue:focus {
   outline: 0;
-  box-shadow: 0 0 0 0.1rem #294b93;
+  box-shadow: 0 0 0 0.1rem #3468dd;
 }
 
 .feat-nav-drop-text {
@@ -273,13 +268,11 @@ nav button:focus {
     margin: 0;
 }
 
-
-
 .cart-side-wrap .product-box {
     display: flex;
     position: relative;
     padding: 0 28px 18px;
-    border-bottom: 1px solid #d8d8d8;
+    border-bottom: 1px solid #bebcbb;
 }
 
 .cart-side-wrap .cart-footer {
@@ -346,12 +339,12 @@ nav button:focus {
   width: 0.5em;
   height: 0.5em;
   border-radius: 50%;
-  background-color: #f9a829;
+  background-color: #ff9e16;
 }
 
 .separator {
   width: 33%;
-  border: 1.15879px solid #f9a829;
+  border: 1.15879px solid #ff9e16;
   filter: blur(1.15879px);
 }
 
@@ -381,7 +374,7 @@ nav button:focus {
 footer {
   width: 100%;
   height: 100%;
-  background: #22396f;
+  background: #1b335c;
   color: #fff;
 }
 
@@ -411,12 +404,12 @@ footer {
 
 .footer-copyright {
   font-size: 0.6rem;
-  color: #9d9d9c;
+  color: #bebcbb;
 }
 
 footer .separator {
     width: 100%;
-    border: 0.2px solid #d39e00;
+    border: 0.2px solid #ff9e16;
     filter: blur(1px);
 }
 
@@ -429,11 +422,11 @@ footer .separator {
 }
 
 .form-control:focus {
-  color: #495057;
+  color: #000;
   background-color: #fff;
-  border-color: #f9a829;
+  border-color: #ff9e16;
   outline: 0;
-  box-shadow: 0 0 0 0.01rem #d39e00;
+  box-shadow: 0 0 0 0.01rem #ff9e16;
 }
 
 /* Product Card */
@@ -471,19 +464,19 @@ footer .separator {
 }
 
 .card-product-sale {
- color: #DF101D;
+ color: #bb0900;
 }
 
 .card-product-preorder {
- color: #22396F;
+ color: #3468dd;
 }
 
 .card-product-sale-small {
- color: #DF101D;
+ color: #bb0900;
 }
 
 .card-product-preorder-small {
- color: #22396F;
+ color: #3468dd;
 }
 
 .wishlist-button svg {
@@ -563,7 +556,7 @@ footer .separator {
 }
 
 .original-price {
- color: #AFAFAF;
+ color: #bebcbb;
 }
 
 .design-feedback {
@@ -576,7 +569,7 @@ footer .separator {
 }
 
 .product-details-container hr {
-    border-top: 1px solid #294B93;
+    border-top: 1px solid #1b335c;
 }
 
 .delivery-return-collpase {
@@ -585,7 +578,7 @@ footer .separator {
     background-color: transparent;
 }
  .delivery-return-collpase:hover{
-    color: #22386f;
+    color: #1b335c;
     text-decoration: underline;
  }
 
@@ -600,7 +593,7 @@ footer .separator {
 }
 
 .quantity-control-sm {
-    border: solid 0.5px #c9cbce;
+    border: solid 0.5px #bebcbb;
 }
 
 /* AllAuth Forms - Botique Ado  */
@@ -609,7 +602,7 @@ footer .separator {
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d; /* text-secondary */
+    color: #757270; /* text-secondary */
 }
 
 .allauth-form-inner-content input {
@@ -622,7 +615,7 @@ footer .separator {
 }
 
 .allauth-form-inner-content input::placeholder {
-    color: #aab7c4;
+    color: #bebcbb;
 }
 
 .allauth-form-inner-content button,
@@ -637,8 +630,8 @@ footer .separator {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #294b93;
-    border: 1px solid #294b93;
+    background-color: #3468dd;
+    border: 1px solid #3468dd;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -650,13 +643,13 @@ footer .separator {
 
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover {	
-  color: #294b93;
+  color: #3468dd;
   text-decoration: none;
   background: #fff;
 }
 
 .allauth-form-inner-content a {
-	color: #294b93; /* text-info */
+	color: #3468dd; /* text-info */
 }
 /* User Account */
 .order-history {
