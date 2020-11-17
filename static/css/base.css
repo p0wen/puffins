@@ -79,6 +79,8 @@ nav button:focus {
 .scrolling-active {
   background: #fff;
   border: solid 1px white;
+  max-height: calc(100 * var(--vh) - 1.5em);
+  overflow-y: auto;
 }
 
 .scrolling-active .nav-item .nav-link {
