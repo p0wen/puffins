@@ -93,7 +93,7 @@
                 <span class="text-uppercase">← Back to Profile</span>
             </a>
             {% else %}
-            <a href="{% url 'products' %}" class="btn button-blue rounded-0 my-2">
+            <a href="{% url 'products' %}?productline=sweat,tshirt&sort=name&direction=asc" class="btn button-blue rounded-0 my-2">
                 <span class="text-uppercase">Now check out the latest deals!</span>
             </a>
             {% endif %}
