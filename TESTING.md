@@ -1,10 +1,6 @@
 # Introduction
 
-- different testing approaches where followed
-- manueal testing, user testing, automatic Tests
-- furthermore code ran through validation services to spot any irregularities
-- project was posted into #peer-code-review group from Code Institute to gather feedback
-- interessting bugs were documented during development as a reference
+For this project different testing approaches where pursued. Core Testing method for The Puffins was manual testing and user testing. Additionally Testcases based on Django TestCase where introduced to this project to support the development process. In addition to testing the code ran through specific validation services to spot any irregularities or syntax errors. On top of that the project was posted to Code Institutes private #peer-code-review Slack Group to gather some more feedback from students and alumnis. The following documentation provides an detailed overview of the defined testcases, the automatic testing setup, validation service results and insights to challenging bugs that were encoutered during the development of this project.
 
 # Table of Content
 
@@ -33,7 +29,7 @@
    Userprofile-icon  
    Cart-icon  
    Search-icon  
-4. Click Userprofile-icon and login with user: puffin1 - pw: 1niffup!
+4. Click Userprofile-icon and login with 
 5. Check that navbar icons changed and the follow are present  
    Useraccount-icon  
    Wishlist-icon  
@@ -126,7 +122,7 @@
 ### Contact Page - Submit Form prefilled
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
-3. Login with user: puffin1 - pw: 1niffup!
+3. Login with 
 4. Check that Form is prefilled (puffin1@byom.de, Huffin, Puffin)
 
 ## 6. Shop
@@ -188,7 +184,7 @@
 ### Get Product Details
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
-3. Login with user: puffin1 - pw: 1niffup!
+3. Login with 
 4. Click on SHOP
 5. Click Kids - T-Shirt or Grown Ups - Sweatshirts
 5. Choose any product by clicking the image
@@ -368,7 +364,7 @@
 
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
-3. Click Userprofile-icon and login with user: puffin1 - pw: 1niffup!
+3. Click Userprofile-icon and login with 
 4. Click on SHOP
 5. Click Kids - T-Shirt or Grown Ups - Sweatshirts
 6. Choose any product by clicking the image
@@ -398,7 +394,7 @@
 
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
-3. Click Userprofile-icon and login with user: puffin1 - pw: 1niffup!
+3. Click Userprofile-icon and login with 
 4. Click on UserAccount-icon
 5. Should see Form 
 6. Should see Order History
@@ -408,14 +404,14 @@
 ### Show empty wishlist
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
-3. Click Userprofile-icon and login with user: puffin1 - pw: 1niffup!
+3. Click Userprofile-icon and login with 
 4. Click on Heart-icon
 5. Should show empty wishlist
 
 ### Add product to wishlist
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
-3. Login with user: puffin1 - pw: 1niffup!
+3. Login with 
 4. Click on SHOP
 5. Click Kids - T-Shirt or Grown Ups - Sweatshirts
 5. Choose any product by clicking the image
@@ -425,7 +421,7 @@
 ### Show wishlist
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
-3. Click Userprofile-icon and login with user: puffin1 - pw: 1niffup!
+3. Click Userprofile-icon and login with 
 4. Click on Heart-icon
 5. Should show wishlist with one liked item
 
