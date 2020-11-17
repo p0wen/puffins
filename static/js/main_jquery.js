@@ -30,13 +30,13 @@ $(document).ready(function () {
       $("nav").addClass("scrolling-active");
       $("#puffinName").attr("src", url_puffin_dark);
       menuExtended = true;
-    } else if (scrollPosition && menuExtended) {
+    } else if (scrollPosition & menuExtended) {
       menuExtended = false;
-    } else if (scrollPosition && !menuExtended) {
+    } else if (scrollPosition & !menuExtended) {
       $("nav").addClass("scrolling-active");
       $("#puffinName").attr("src", url_puffin_dark);
       menuExtended = true;
-    } else if (!scrollPosition && menuExtended) {
+    } else if (!scrollPosition & menuExtended) {
       $("nav").removeClass("scrolling-active", menuExtended);
       $("#puffinName").attr("src", url_puffin_light);
       menuExtended = false;
