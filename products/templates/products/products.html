@@ -9,28 +9,25 @@
 			style="background: {% if category.image %}url({{ category.image.url }}){% else %}url('{{ MEDIA_URL }}partnerlook_puffin.png'){% endif %} no-repeat center center">
 		</div>
 		<div class="collection-hero-container">
-			<h1 class="collection-hero-title container-fluid">
-				<span role="text">
+			<div class="collection-hero-title container-fluid">
                 {% if search_term %}
-                    <span>Search results for:</span>
+                    <h1>Search results for:</h1>
                     <hr class="separator w-25">
                 {% elif category %} 
-                    <span>{{ category.display_text }}</span>
+                    <h1>{{ category.display_text }}</h1>
 				<hr class="separator w-25">
 				{% else %}
-				<span>Partnerlook</span>
+				    <h1>Partnerlook</h1>
 				<hr class="separator w-25">
 				{% endif %}
                 {% if search_term %}
-				<span>{{ search_term }}</span>
-				</span>
+				    <h1>{{ search_term }}</h1> 
 				{% elif productline %}
                 {% for line in productline %}
-				<span>{% cycle '' ' & ' %}{{ line.display_text }} </span>
-				</span>
+				    <h1>{% cycle '' ' & ' %}{{ line.display_text }}</h1>
                 {% endfor %}
 				{% endif %}
-			</h1>
+			</div>
 		</div>
 	</div>
 </div>
