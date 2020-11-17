@@ -27,7 +27,7 @@
         </div>
 
         <div class="col-md-5 col-lg-5 col-sm">
-            <div class="product-details-container mb-5 mt-md-4">
+            <div class="product-details-container mt-md-4">
                 <h1 class="product-details-title">{{ product.display_text | title }}</h1>
                 <div class="price-container">
                     {% if product.is_on_sale or product.avail_for_pre_order %}
@@ -44,26 +44,26 @@
                         <div class="size-container">
                             <div class="form-group">
                                 <select class="form-control rounded-0" id="order_item" name="productvariant">
-                        {% for variant in product_variants %}
-                            {% if variant.quantity == 0 %}
-                                <option value="{{ variant.id }}" disabeld>{{ variant.size }}</option>
-                            {% else %}
-                                <option value="{{ variant.id }}">{{ variant.size }}</option>
-                            {% endif %}
-                        {% endfor %}
-                        </select>
+                                    {% for variant in product_variants %}
+                                        {% if variant.quantity == 0 %}
+                                            <option value="{{ variant.id }}" disabeld>{{ variant.size }}</option>
+                                        {% else %}
+                                            <option value="{{ variant.id }}">{{ variant.size }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
                             </div>
                             <div class="add-2-cart-container">
                                 <button type="submit" class="btn btn button-blue rounded-0">ADD TO CART</button>
                             </div>
-                            {% else %}
-                            {% for variant in product_variants %}
-                            <div class="add-2-cart-container">
-                                <button type="submit" class="btn button-blue rounded-0" id="order_item" name="productvariant" value="{{ variant.id }}">ADD TO CART</button>
-                            </div>
-                            {% endfor %}
-                            {% endif %}
                         </div>
+                        {% else %}
+                        {% for variant in product_variants %}
+                        <div class="add-2-cart-container">
+                            <button type="submit" class="btn button-blue rounded-0" id="order_item" name="productvariant" value="{{ variant.id }}">ADD TO CART</button>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
                     </form>
                 </div>
                 {% if request.user.is_authenticated %}
