@@ -198,7 +198,6 @@ For this project different testing approaches where pursued. Core Testing method
 3. Click on HIGHLIGHTS
 4. Only one Product per row should be shown
 
-
 ## 8. Cart
 
 ### Check empty Cart
@@ -443,12 +442,11 @@ Besides running through the extensive test cycles documented above the URL from 
 - "Footer looks a little too full"
 
 Following Bugs were identified:
-- Side Drawer Cart on iPhone not scrollable
-- Quantity not shown in Side Drawer Cart
-- Buttons on Carrousel
-- Cart Mobile Fullpage not in view
-- Info Toast behind Navbar
-
+- Side Drawer Cart on iPhone not scrollable :white_check_mark:
+- Quantity not shown in Side Drawer Cart :white_check_mark:
+- Buttons on Carrousel not inline with button box :white_check_mark:
+- Cart Mobile Fullpage not in view :white_check_mark:
+- Info Toast behind Navbar :white_check_mark:
 
 # Automatic Tests & Continious Integration
 
@@ -467,6 +465,7 @@ Build Status:
 [![Build Status](https://travis-ci.org/p0wen/puffins.svg?branch=master)](https://travis-ci.org/p0wen/puffins)
 
 # Validation Services
+
 ## Validation Tools
 ## Responsiveness & Rendering
 ## Browser Compatibility
