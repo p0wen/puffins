@@ -185,7 +185,7 @@ Desktop - large screen:
 
 ### Final Layout
 
-[![Puffins](https://thepuffins.s3.eu-central-1.amazonaws.com/github-docs/puffins_amiresponsive.gif)]
+![Puffins](https://thepuffins.s3.eu-central-1.amazonaws.com/github-docs/puffins_amiresponsive.gif)
 
 ### Explanation for differences
 
