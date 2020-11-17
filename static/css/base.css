@@ -25,6 +25,7 @@ svg {
 a {
     color: #000000;
     text-decoration: none;
+    cursor: pointer;
 }
 
 /* alert toast */
@@ -379,25 +380,6 @@ footer {
   color: #fff;
 }
 
-.footer-newsletter-button {
-  color: #f9a829;
-  background-color: #fff;
-  border: 1px solid #ced4da;
-  border-left: none;
-}
-
-.footer-newsletter-button:hover {
-  color: #fff;
-  background-color: #f9a829;
-  border: 1px solid #ced4da;
-  border-left: none;
-}
-
-.footer-newsletter-button:focus {
-  outline: 0;
-  box-shadow: 0 0 0 0.05rem #f9a82978;
-}
-
 .footer-text {
   font-size: 0.7rem;
   color: #fff;
@@ -615,16 +597,8 @@ footer .separator {
 .quantity-control-sm {
     border: solid 0.5px #c9cbce;
 }
-/* Reference to fonts for styling Process
-font-family: 'Fredericka the Great', cursive;
-font-family: 'Open Sans', sans-serif;
-font-family: 'Oswald', sans-serif;
-font-family: 'Sacramento', cursive;
-*/
 
-
-/* AllAuth Forms */
-
+/* AllAuth Forms - Botique Ado  */
 
 /* Allauth form formatting */
 
@@ -658,8 +632,8 @@ font-family: 'Sacramento', cursive;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #000;
-    border: 1px solid #000;
+    background-color: #294b93;
+    border: 1px solid #294b93;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -671,13 +645,13 @@ font-family: 'Sacramento', cursive;
 
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover {	
-	color: #fff;
-    background-color: #222;
-    border-color: #222;
+  color: #294b93;
+  text-decoration: none;
+  background: #fff;
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+	color: #294b93; /* text-info */
 }
 
 @media only screen and (max-width: 749px) {
