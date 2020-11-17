@@ -72,6 +72,15 @@ nav button:focus {
   color: white;
 }
 
+.icon-puffin {
+    height: 50px
+}
+
+.icon-puffins-text {
+    width: 115,9px;
+    height: 50px;
+}
+
 /* Navbar Scrolling */
 
 .scrolling-active {

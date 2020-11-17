@@ -1,81 +1,81 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block content %}
 <div class="behind-nav-carousel flex-fill">
-	<div id="productCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-		<ol class="carousel-indicators">
-			{% for item in featured %}
-			<li data-target="#productCarousel" data-slide-to="{% cycle 1 2 3 4 %}"
-				class="{% cycle 'active' '' '' '' %}"></li>
-			{% endfor %}
-		</ol>
-		<div class="carousel-inner" role="listbox">
-			{% for item in featured %}
-			<div class="carousel-item {% cycle 'active' '' '' '' %}"
-				style="background-image: url('{{item.image.url}}')">
-				<div class="carousel-caption w-50 ml-auto mr-auto carousel-content-box mb-3">
-					<h4>{{item.display_text | title}}</h4>
-					<hr class="separator">
-					<p class="text-truncate"><small>{{item.description}}</small></p>
-					<a href="{% url 'product_detail' item.id %}" class="btn button-size button-blue">
-						SHOP
-					</a>
-				</div>
-			</div>
-			{% endfor %}
-			<a class="carousel-control-prev" href="#productCarousel" role="button" data-slide="prev">
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="carousel-control-next" href="#productCarousel" role="button" data-slide="next">
-				<span class="sr-only">Next</span>
-			</a>
-		</div>
-	</div>
-
-	<section class="py-5">
-		<div class="container">
-			<div class="container text-center">
-				<h1 class="display-4">The Puffins</h1>
-				<hr class="my-5">
-				<p class="lead">We at Puffins are dedicated to provide beautiful, uniting and sustainable products to
-					individuals, love birds and families.</p>
-				<hr class="text-center w-50 my-5">
-			</div>
-			<div class="row mt-5">
-				<div class="col-md-6 col-sm-12">
-					<a href=""><img src="{{ MEDIA_URL }}promotion-1.png" class="img-fluid"></a>
-				</div>
-				<div class="col-md-6 col-sm-12">
-					<h4>Get matching shirts for your whole family and demonstrate your united spirt!</h4>
-					<a href="{% url 'products' %}?productline=tshirt&sort=name&direction=asc"
-						class="w-100 mt-5 btn button-blue rounded-0">T-Shirts</a>
-				</div>
-				<div class="d-md-none d-sm">
-					<hr>
-				</div>
-			</div>
-			<div class="row mt-5">
-				<div class="col-md-6 col-sm-12 order-md-2">
-					<img src="{{ MEDIA_URL }}promotion-2.png" class="img-fluid">
-                 </div>
-					<div class="col-md-6 col-sm-12 order-1">
-						<h4>Stay warm during the colder days with our matching sweaters for your whole family.</h4>
-						<a href="{% url 'products' %}?productline=sweat&sort=name&direction=asc"
-							class="w-100 mt-5 btn button-blue rounded-0">Sweatshirts</a>
-					</div>
-				</div>
-				<div class="row mt-5">
-					<div class="col-md-6 col-sm-12">
-						<img src="{{ MEDIA_URL }}promotion-3.png" class="img-fluid">
-                    </div>
-						<div class="col-md-6 col-sm-12">
-							<h4>Update your morning or your shopping trip with one of our super practical accessories!
-							</h4>
-							<a href="{% url 'products' %}?category=grown_ups&productline=accessory"
-								class="w-100 mt-5 btn button-blue rounded-0">Accessories</a>
-						</div>
-					</div>
-				</div>
-	</section>
+    <div id="productCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {% for item in featured %}
+        <li data-target="#productCarousel" data-slide-to="{% cycle 1 2 3 4 %}"
+            class="{% cycle 'active' '' '' '' %}"></li>
+        {% endfor %}
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        {% for item in featured %}
+        <div class="carousel-item {% cycle 'active' '' '' '' %}"
+            style="background-image: url('{{item.image.url}}')">
+            <div class="carousel-caption w-50 ml-auto mr-auto carousel-content-box mb-3">
+                <h4>{{item.display_text | title}}</h4>
+                <hr class="separator">
+                <p class="text-truncate"><small>{{item.description}}</small></p>
+                <a href="{% url 'product_detail' item.id %}" class="btn button-size button-blue">
+                SHOP
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+        <a class="carousel-control-prev" href="#productCarousel" role="button" data-slide="prev">
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#productCarousel" role="button" data-slide="next">
+        <span class="sr-only">Next</span>
+        </a>
+    </div>
+    </div>
+</div>
+<section class="py-5">
+   <div class="container">
+      <div class="container text-center">
+         <h1 class="display-4">The Puffins</h1>
+         <hr class="my-5">
+         <p class="lead">We at Puffins are dedicated to provide beautiful, uniting and sustainable products to
+            individuals, love birds and families.
+         </p>
+         <hr class="text-center w-50 my-5">
+      </div>
+      <div class="row mt-5">
+         <div class="col-md-6 col-sm-12">
+            <a href=""><img src="{{ MEDIA_URL }}promotion-1.png" class="img-fluid" alt="Puffin Looking into Camera"></a>
+         </div>
+         <div class="col-md-6 col-sm-12">
+            <h4>Get matching shirts for your whole family and demonstrate your united spirt!</h4>
+            <a href="{% url 'products' %}?productline=tshirt&sort=name&direction=asc"
+               class="w-100 mt-5 btn button-blue rounded-0">T-Shirts</a>
+         </div>
+         <div class="d-md-none d-sm">
+            <hr>
+         </div>
+      </div>
+      <div class="row mt-5">
+         <div class="col-md-6 col-sm-12 order-md-2">
+            <img src="{{ MEDIA_URL }}promotion-2.png" class="img-fluid" alt="Puffins on Cliff">
+         </div>
+         <div class="col-md-6 col-sm-12 order-1">
+            <h4>Stay warm during the colder days with our matching sweaters for your whole family.</h4>
+            <a href="{% url 'products' %}?productline=sweat&sort=name&direction=asc"
+               class="w-100 mt-5 btn button-blue rounded-0">Sweatshirts</a>
+         </div>
+      </div>
+      <div class="row mt-5">
+         <div class="col-md-6 col-sm-12">
+            <img src="{{ MEDIA_URL }}promotion-3.png" class="img-fluid" alt="Puffin Couple">
+         </div>
+         <div class="col-md-6 col-sm-12">
+            <h4>Update your morning or your shopping trip with one of our super practical accessories!
+            </h4>
+            <a href="{% url 'products' %}?category=grown_ups&productline=accessory"
+               class="w-100 mt-5 btn button-blue rounded-0">Accessories</a>
+         </div>
+      </div>
+   </div>
+</section>
 {% endblock %}
