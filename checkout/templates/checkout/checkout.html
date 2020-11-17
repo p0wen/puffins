@@ -71,7 +71,7 @@
 				{% csrf_token %}
 				<h3>Contact Information</h3>
 				{% if not user.is_authenticated %}
-				<div class="text-muted form-subtitle"><small>Already have an account? <a href="#">Log in</a></small>
+				<div class="text-muted form-subtitle"><small>Already have an account? <a href="{% url 'account_login' %}">Log in</a> or <a href="{% url 'account_signup' %}">Sign up</a> for a personal account!</small>
 				</div>
 				{% endif %}
 				{{ order_form.email | as_crispy_field }}
