@@ -467,9 +467,28 @@ Build Status:
 # Validation Services
 
 ## Validation Tools
+### [W3C Markup Validation Service](https://validator.w3.org)
+All pages incl. sub-pages were processed through the [W3C Markup Validation Service](https://validator.w3.org). The validation revealed some missing ```alt=""``` statements, stray ```<div>```'s and conventions regarding the use of ```<span>``` in combination with ```<hr>```. The findings were all resolved and no more issues were found by the [W3C Markup Validation Service](https://validator.w3.org).
+### [W3C Markup Validation Service](https://jigsaw.w3.org/css-validator/)
+The whole css file ran through the [W3C Markup Validation Service](https://jigsaw.w3.org/css-validator/). After taking care of some minor errors and cleaning up the css 5 Errors are still reported. These Errors were accepted since they mark the use of the javascript injected dynamic ```--vh``` variable in combination with the ```calc()``` operation. Furthermore 18 Warnings were accepted. The 10 of the 18 warnings also relate to the dynmic height view-height variable. And the other 8 warnings inform about same colors on 2 classes ```.allauth-form-inner-content button``` and ```.allauth-form-inner-content input[type="submit"]``` which was also accepted in this case.
+### [JS Hint](https://jshint.com)
+All *.js files were checked with the service of [JS Hint](https://jshint.com). By using this service some bugs like wrong use of ```&&``` in if functions and missing `;` were identified and solved.
+### [PEP8 Online](http://pep8online.com)
+All *.py files were checked with the service of [PEP8 Online](http://pep8online.com). The files looked all good and no error was reported.
 ## Responsiveness & Rendering
-## Browser Compatibility
+The site was created with the mobile first approach in mind. The following devices / device sizes were used for testing the responsiveness:
+* iPhone 11 Pro 
+* iPad 10,2"
+* MacBook Pro 13"
 
+## Browser Compatibility
+The site was tested on the following Browsers:
+* [Apple Safari](https://www.apple.com/safari/) 
+* [Google Chrome](https://www.google.com/chrome/)
+* [Brave Broser](https://brave.com/)
+* [Microsoft Edge](https://www.microsoft.com/edge)
+
+On all browsers full site compatibility was identified based on the test cases.
 # #Peer-Code-Review
 
 
