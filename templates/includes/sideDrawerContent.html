@@ -97,7 +97,7 @@
 		<div class="no-items">
 			<p>It appears that your cart is currently empty!</p>
 			<img src="{{ MEDIA_URL }}thankyou.png" class="img-fluid p-5" alt="">
-			<a href="{% url 'products' %}" class="btn btn button-blue rounded-0" rel="nofollow">Continue Shopping</a>
+			<a href="{% url 'products' %}?productline=sweat,tshirt&sort=name&direction=asc" class="btn btn button-blue rounded-0" rel="nofollow">Continue Shopping</a>
 		</div>
 		{% endif %}
 	</div>
