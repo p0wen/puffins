@@ -139,18 +139,18 @@
 		</div>
 	</div>
 </div>
-</div>
+
 <div id="loading-overlay">
 	<div class="loading-spinner">
 		<img src="{{ MEDIA_URL }}puffin_icon.png" />
     </div>
-	</div>
+</div>
 
-	{% endblock %}
+{% endblock %}
 
-	{% block postloadjs %}
-	{{ block.super }}
-	{{ stripe_public_key|json_script:"id_stripe_public_key" }}
-	{{ client_secret|json_script:"id_client_secret" }}
-	<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
-	{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{% endblock %}
