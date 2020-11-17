@@ -6,7 +6,7 @@
 {% endblock %}
 
 
-{% block extra-title %}- Congratulations!{% endblock %}
+{% block extra-title %}  -  {% if from_profile %}Order History{% else %}Congratulations!{% endif %}{% endblock %}
 {% block content %}
 <div class="shadow-for-nav"></div>
 
@@ -15,13 +15,17 @@
 <div class="container mb-5 flex-fill">
 	<div class="row header my-2 text-center">
 		<div class="col">
+            {% if from_profile %}
+            <h1>Order History</h1>
+            {% else %}
 			<h1>Thank you, {{ order.first_name | title }}!</h1>
+            {% endif %}
 			<hr class="separator w-25">
 		</div>
 	</div>
 	<div class="row">
 		<div class="col">
-			<p class="text-center">Your order was successful. A confirmation email will be sent to
+			<p class="text-center">Your order was successful. A confirmation email  {% if from_profile %}was{% else %}will be{% endif %} sent to
 				<strong>{{ order.email }}</strong>.</p>
 		</div>
 	</div>
