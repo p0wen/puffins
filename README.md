@@ -504,22 +504,20 @@ US/docs/Web/JavaScript)
 
 A detailed description about the testing process and results can be found in the [TESTING.md](https://github.com/p0wen/puffins/blob/master/TESTING.md). To give a brief overlook of the feature testing this table gives a codensed overview of the tested, features, devices, browsers and results:
 
-| Test Case                     | iPhone Safari | iPhone Chrome | iPhone Edge | iPad Safari | iPad Edge | iPad Brave | Mac  Edge | Mac Safari | Mac Chrome |
-|-------------------------------|:-------------:|:-------------:|:-----------:|:-----------:|:---------:|:----------:|-----------|------------|------------|
-| Test Navbar                   |               |               |             |             |           |            |           |            |            |
-| Footer                        |               |               |             |             |           |            |           |            |            |
-| Landing Page                  |               |               |             |             |           |            |           |            |            |
-| About Page                    |               |               |             |             |           |            |           |            |            |
-| Help / Contact Page           |               |               |             |             |           |            |           |            |            |
-| Shop                          |               |               |             |             |           |            |           |            |            |
-| Highlights                    |               |               |             |             |           |            |           |            |            |
-| Cart                          |               |               |             |             |           |            |           |            |            |
-| Checkout                      |               |               |             |             |           |            |           |            |            |
-| Sign Up                       |               |               |             |             |           |            |           |            |            |
-| Registered Users: Useraccount |               |               |             |             |           |            |           |            |            |
-| Registered Users: Wishlist    |               |               |             |             |           |            |           |            |            |
-
-
+| Test Case                     |    iPhone Safari   |    iPhone Chrome   |     iPhone Edge    |     iPad Safari    |      iPad Edge     |     iPad Brave     | Mac  Edge          | Mac Safari         | Mac Chrome         |
+|-------------------------------|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|--------------------|--------------------|--------------------|
+| Test Navbar                   | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Footer                        | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Landing Page                  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| About Page                    | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Help / Contact Page           | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Shop                          | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Highlights                    | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Cart                          | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Checkout                      | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Sign Up                       | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Registered Users: Useraccount | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Registered Users: Wishlist    | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 # Deployment
 
 This site is deployed to heroku and the versioning was done with git and the Repository is hosted on Github.
