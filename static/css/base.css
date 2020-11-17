@@ -205,6 +205,9 @@ nav button:focus {
     position: relative;
     padding: 40px 0 0;
     text-align: center;
+    height: calc(100* var(--vh) - 100px);
+    overflow: hidden;
+    overflow-y: auto;
 }
 
 .cart-side-wrap .has-items {
