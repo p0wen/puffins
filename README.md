@@ -190,16 +190,13 @@ Desktop - large screen:
 # Information Architecture 
 
 ## Application Framework
-- django introduction high leve reason for this framework
+The project brief required to base the project on the [Django](https://www.djangoproject.com/) application framework - "The web framework for perfectionists with deadlines". Django is an open source python web framework that takes away the burdens of regular web development and allows developers to quickly build a secure, scalable and state-of-the art app.
 
 ## Database selection
-- For development work to mention use of sqlite3 and for production work, mention use of PostgreSQL
-
-## Database structure
 
 During development the built-in SQLite3 database from django is used. However, for the deployment to Heroku a switch to postgressql was undertaken.
 [Django’s authentication system](https://docs.djangoproject.com/en/3.1/ref/contrib/auth/) in combination with [django-allauth](https://django-allauth.readthedocs.io/en/latest/overview.html) is used to manage users and permissions.
-The structure of the products and checkout app are based on the [Boutique Ado](https://github.com/ckz8780/boutique_ado_v1) project from Code Institute.
+The structure of the products and checkout app are based on the [Boutique Ado](https://github.com/ckz8780/boutique_ado_v1) project from Code Institute and customized to the specific project needs.
 
 ### Categories
 
@@ -639,6 +636,7 @@ Special Thanks to...
 * ... Tutors and Fellow Students of CI 
 
 ## References 
+* Project was developed by following the [Code Institute](www.codeinstitute.net) Boutique Ado-Poject lessons and was extended and modified to personal needs
 * Read up on making drop down full width [Stack Overflow - Fullwidth Dropdown Navbar](https://stackoverflow.com/questions/49659305/how-to-make-a-bootstrap-4-full-width-dropdown-in-navbar)
 * Horzizontal line readup [Stack Overflow - Horzizontal Line](https://stackoverflow.com/questions/16073323/horizontal-rule-line-beneath-each-h1-heading-in-css)
 * Tutorial on how to animate scrollbar [Youtube - Animat Scrollbar](https://www.youtube.com/watch?v=vE4UuSzR5T0)
