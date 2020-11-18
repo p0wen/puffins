@@ -187,9 +187,6 @@ Desktop - large screen:
 
 ![Puffins](https://thepuffins.s3.eu-central-1.amazonaws.com/github-docs/puffins_amiresponsive.gif)
 
-### Explanation for differences
-
-
 # Information Architecture 
 
 ## Application Framework
@@ -664,6 +661,7 @@ Special Thanks to...
 * How to create unique slug: [SimpleIT Rocks - Automatically slug](https://simpleit.rocks/python/django/generating-slugs-automatically-in-django-easy-solid-approaches)/
 * Assign MEDIA URL for JS Files: [Stack Overflow - Django Static Path](https://stackoverflow.com/questions/27932983/django-static-path-in-javascript-file)
 
------
+
+# Fair use disclaimer
 
 This is for educational use
