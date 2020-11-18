@@ -4,19 +4,48 @@ For this project different testing approaches where pursued. Core Testing method
 
 # Table of Content
 
---> INSERT TABLE OF CONTENT
+- [Introduction](#introduction)
+- [Table of Content](#table-of-content)
+- [Manual Test Cycles](#manual-test-cycles)
+  * [1. Test Navbar](#1-test-navbar)
+  * [2. Footer](#2-footer)
+  * [3. Landing Page](#3-landing-page)
+  * [4. About Page](#4-about-page)
+  * [5. Help / Contact Page](#5-help---contact-page)
+  * [6. Shop](#6-shop)
+  * [7. Highlights](#7-highlights)
+  * [8. Cart](#8-cart)
+  * [9. Checkout](#9-checkout)
+  * [10. Sign Up:](#10-sign-up-)
+  * [11. Registered Users: Useraccount](#11-registered-users--useraccount)
+  * [12. Registered Users: Wishlist](#registered-users--wishlist)
+  * [13. Store Management:](#12-store-management-)
+    + [Product Management](#product-management)
+    + [Order Management](#order-management)
+    + [Blog Management](#blog-management)
+- [User Testing](#user-testing)
+- [Automatic Tests & Continious Integration](#automatic-tests---continious-integration)
+- [Validation Services](#validation-services)
+  * [Validation Tools](#validation-tools)
+  * [Responsiveness & Rendering](#responsiveness---rendering)
+  * [Browser Compatibility](#browser-compatibility)
+- [Peer-Code-Review](#peer-code-review)
+- [Bug-Log from Development](#bug-log-from-development)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 # Manual Test Cycles
 
-## 1. Test Navbar
+## 1. Test Navbar :white_check_mark:
 
-### General Functionalities
+### General Functionalities :white_check_mark:
 
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click every nav item
 
-### Logged in and non-logged in users see different options
+### Logged in and non-logged in users see different options :white_check_mark:
 
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
@@ -36,7 +65,7 @@ For this project different testing approaches where pursued. Core Testing method
    Cart-icon  
    Search-icon  
 
-### Searchbar opens below nav when search icon is clicked
+### Searchbar opens below nav when search icon is clicked :white_check_mark:
 
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
@@ -49,13 +78,13 @@ For this project different testing approaches where pursued. Core Testing method
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Don't scroll check that nav is transparent
 
-### Changes background and font color on scroll 
+### Changes background and font color on scroll  :white_check_mark:
 
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Scroll and check that nav background changes to white and font to black
 
-### Changes background and font color if collapsed on small screens
+### Changes background and font color if collapsed on small screens :white_check_mark:
 
 1. Open Browser on medium screen
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
@@ -63,7 +92,7 @@ For this project different testing approaches where pursued. Core Testing method
 4. Click collapse button
 5. Check that nav background changes to white and font to black
 
-## 2. Footer
+## 2. Footer :white_check_mark:
 
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
@@ -74,7 +103,7 @@ For this project different testing approaches where pursued. Core Testing method
    Contact details are accessabile 
    Link to About page is present
 
-## 3. Landing Page
+## 3. Landing Page :white_check_mark
 
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
@@ -83,9 +112,9 @@ For this project different testing approaches where pursued. Core Testing method
    Check that no more than 4 random Products are displayed  
    Product details can be accessed by clicking the SHOP Button 
 
-## 4. About Page
+## 4. About Page :white_check_mark:
 
-### About Page through Navbar
+### About Page through Navbar :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on About in Navigation
@@ -93,16 +122,16 @@ For this project different testing approaches where pursued. Core Testing method
    Vision is diplayed  
    Short introduction to company is provided
 
-### About Page through Navbar
+### About Page through Navbar :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Scroll to bottom of page
 3. Click on About in Footer
 4. Check that same information is present as in Test 4.1
 
-## 5. Help / Contact Page
+## 5. Help / Contact Page :white_check_mark:
 
-### Contact Page through Navbar
+### Contact Page through Navbar :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on HELP in Navigation
@@ -111,7 +140,7 @@ For this project different testing approaches where pursued. Core Testing method
    FAQs are categorized  
    Contact form available
 
-### Contact Page - Submit Form
+### Contact Page - Submit Form :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on HELP in Navigation
@@ -119,54 +148,56 @@ For this project different testing approaches where pursued. Core Testing method
 5. Submit Form
 6. A success message should be presented instead of the form
 
-### Contact Page - Submit Form prefilled
+### Contact Page - Submit Form prefilled :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Login with 
 4. Check that Form is prefilled (puffin1@byom.de, Huffin, Puffin)
 
-## 6. Shop
+## 6. Shop 
 
-### Shop Categories
+### Shop Categories :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on SHOP
 4. Click Kids or Grown Ups
 5. Check that products are displayed and the page title shows the Category
 
-### Shop Productline
+### Shop Productline :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on SHOP
 4. Click Kids - T-Shirt or Grown Ups - Sweatshirts
 5. Check that only productline items are displayed and the page title shows the Category & Productline
 
-### Shop Partnerlook
+### Shop Partnerlook :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on SHOP
 4. Click Partnerlook
 5. Check that matching products are displayed next to eachother and the page title states "Partnerlook" with the subtitle "T-Shirt & Sweatshirt"
 
-### Sort Products 
+### Sort Products (3 :white_check_mark: / 1 :beetle:)
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on SHOP
 4. Click Kids - T-Shirt or Grown Ups - Sweatshirts
 5. Toggle the Sort switch through all options and check that sorting works accordingly  
-    ...Featured Products  
-    ...Price
-    ...Color
-    ...Name 
+    ...Featured Products :white_check_mark:  
+    ...Price :beetle:  
+    ...Color :white_check_mark:  
+    ...Name :white_check_mark:  
 
-### Sort Products 
+    Finding: Sorting by Price works. However due to the datamodel holding an attribut discount_price and normal price the sorting does not take discount_prices into consideration. This should be fixed by either adjusting the model or finding a way to handle it via a function on the get request.
+
+### Check Product types :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on SHOP
 4. Click Kids - T-Shirt or Grown Ups - Sweatshirts
 5. Check different card design for regular, sale(red) and pre-order(blue) items
 
-### Get Product Details
+### Non-logged-in user: Get Product Details :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on SHOP
@@ -181,33 +212,33 @@ For this project different testing approaches where pursued. Core Testing method
    Material information  
    Return & Delivery Information
 
-### Get Product Details
+### Logged-in-user: Get Product Details :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
-3. Login with 
+3. Login with puffin1@byom.de pw: testuser1
 4. Click on SHOP
 5. Click Kids - T-Shirt or Grown Ups - Sweatshirts
 5. Choose any product by clicking the image
 6. Heart below Add to Cart-Button should be visible
 
-## 7. Highlights
+## 7. Highlights :white_check_mark:
 
-### Get Highlights
+### Get Highlights :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on HIGHLIGHTS
 4. Only one Product per row should be shown
 
-## 8. Cart
+## 8. Cart :white_check_mark:
 
-### Check empty Cart
+### Check empty Cart :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on Cart-Icon
 4. Side Drawer Cart should open
 5. Placeholder "Nothing in Cart" should be displayed 
 
-### Add item to Cart
+### Add item to Cart :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on SHOP
@@ -217,7 +248,7 @@ For this project different testing approaches where pursued. Core Testing method
 7. Side Drawer Cart should open
 8. Chosen Product should be inside the cart view
 
-### Open Fullpage Cart
+### Open Fullpage Cart :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on SHOP
@@ -228,7 +259,7 @@ For this project different testing approaches where pursued. Core Testing method
 8. Click below checkout button on Go to Cart
 9. Fullpage Cart should open
 
-### Add two items to Cart and check Position
+### Add two items to Cart and check Position :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on SHOP
@@ -242,7 +273,7 @@ For this project different testing approaches where pursued. Core Testing method
 11. Add Item to Cart
 12. Side Drawer Cart should and last added item should be on top
 
-### Checkout from Side Drawer Cart
+### Checkout from Side Drawer Cart :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on SHOP
@@ -253,7 +284,7 @@ For this project different testing approaches where pursued. Core Testing method
 8. Press Checkout Button
 9. Checkout Page should open
 
-### Checkout from Fullpage Cart
+### Checkout from Fullpage Cart :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on SHOP
@@ -266,7 +297,7 @@ For this project different testing approaches where pursued. Core Testing method
 10. Press Checkout Button
 11. Checkout Page should open
 
-### Increase Quantity in Side Drawer Cart
+### Increase Quantity in Side Drawer Cart :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on SHOP
@@ -278,7 +309,7 @@ For this project different testing approaches where pursued. Core Testing method
 9. Should be redirect to Fullpage Cart
 10. Quantity should be increased by 1
 
-### Decrease Quantity in Side Drawer Cart
+### Decrease Quantity in Side Drawer Cart :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on SHOP
@@ -290,7 +321,7 @@ For this project different testing approaches where pursued. Core Testing method
 9. Should be redirect to Fullpage Cart
 10. Quantity should be decreased by 1
 
-### Remove Item(s) in Side Drawer Cart
+### Remove Item(s) in Side Drawer Cart :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on SHOP
@@ -302,7 +333,7 @@ For this project different testing approaches where pursued. Core Testing method
 9. Should be redirect to Fullpage Cart
 10. Product should be removed from Cart
 
-### Increase Quantity in Fullpage Cart
+### Increase Quantity in Fullpage Cart :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on SHOP
@@ -315,7 +346,7 @@ For this project different testing approaches where pursued. Core Testing method
 10. Press "+" Button
 11. Page should be reloaded and quantity increased by one
 
-### Decrease Quantity in Fullpage Cart
+### Decrease Quantity in Fullpage Cart :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on SHOP
@@ -328,7 +359,7 @@ For this project different testing approaches where pursued. Core Testing method
 10. Press "-" Button
 11. Page should be reloaded and quantity decreased by one
 
-### Remove Item(s) in Fullpage Cart
+### Remove Item(s) in Fullpage Cart :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on SHOP
@@ -341,9 +372,9 @@ For this project different testing approaches where pursued. Core Testing method
 10. Press "x" Button
 11. Page should be reloaded and item should be removed from cart
 
-## 9. Checkout
+## 9. Checkout :white_check_mark:
 
-### Checkout AnonymousUser
+### Checkout AnonymousUser :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click on SHOP
@@ -359,11 +390,11 @@ For this project different testing approaches where pursued. Core Testing method
 13. Loading animation should be displayed
 14. Checkout success page should be shown
 
-### Checkout registered user
+### Checkout registered user :white_check_mark:
 
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
-3. Click Userprofile-icon and login with 
+3. Click Userprofile-icon and login with puffin1@byom.de pw: testuser1
 4. Click on SHOP
 5. Click Kids - T-Shirt or Grown Ups - Sweatshirts
 6. Choose any product by clicking the image
@@ -377,9 +408,9 @@ For this project different testing approaches where pursued. Core Testing method
 13. Loading animation should be displayed
 14. Checkout success page should be shown
 
-## 10. Sign Up:
+## 10. Sign Up :white_check_mark:
 
-### Sign Up
+### Sign Up :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click Userprofile-icon
@@ -389,7 +420,7 @@ For this project different testing approaches where pursued. Core Testing method
 7. Confirm email
 8. Login with credentials
 
-## 11. Registered Users: Useraccount
+## 11. Registered Users: Useraccount :white_check_mark:
 
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
@@ -398,16 +429,16 @@ For this project different testing approaches where pursued. Core Testing method
 5. Should see Form 
 6. Should see Order History
 
-## Registered Users: Wishlist
+## Registered Users: Wishlist :white_check_mark:
 
-### Show empty wishlist
+### Show empty wishlist :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click Userprofile-icon and login with 
 4. Click on Heart-icon
 5. Should show empty wishlist
 
-### Add product to wishlist
+### Add product to wishlist :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Login with 
@@ -417,20 +448,35 @@ For this project different testing approaches where pursued. Core Testing method
 6. Click Heart below Add to Cart-Button
 7. Heart should change from outline to filled
 
-### Show wishlist
+### Show wishlist :white_check_mark:
 1. Open Browser
 2. Open [Puffins Page](https://thepuffins.herokuapp.com)
 3. Click Userprofile-icon and login with 
 4. Click on Heart-icon
 5. Should show wishlist with one liked item
 
-## 12. Store Management:
+## 12. Store Management :white_check_mark:
 
-### create/read/update/delete products
-### create/read/update/delete blogposts 
-### create/read/update/delete FAQs
-### create/read/update/delete Users
+### Product Management :white_check_mark:
 
+#### Create Product :white_check_mark
+#### Read Product :white_check_mark
+#### Update Product :white_check_mark
+#### Delete Product :white_check_mark
+
+### Order Management :white_check_mark:
+
+#### Create Order :white_check_mark
+#### Read Order :white_check_mark
+#### Update Order :white_check_mark
+#### Delete Order :white_check_mark
+
+### Blog Management :white_check_mark:
+
+#### Create Post :white_check_mark
+#### Read Post :white_check_mark
+#### Update Post :white_check_mark
+#### Delete Post :white_check_mark
 
 # User Testing
 
@@ -438,15 +484,18 @@ Besides running through the extensive test cycles documented above the URL from 
 
 - "Great products"
 - "Beautiful design"
-- "I wish i could increase/decrease quantity within the sidedrawer cart"
 - "Footer looks a little too full"
 
-Following Bugs were identified:
-- Side Drawer Cart on iPhone not scrollable :white_check_mark:
-- Quantity not shown in Side Drawer Cart :white_check_mark:
-- Buttons on Carrousel not inline with button box :white_check_mark:
-- Cart Mobile Fullpage not in view :white_check_mark:
-- Info Toast behind Navbar :white_check_mark:
+Following Improvements/Features/Bugs were identified:
+- Feature request: I wish i could increase/decrease quantity within the sidedrawer cart :white_check_mark:
+- Improvement: Cart on Mobile view hidden. As an idea for a later release the logo and text logo would move to the center. Moving the Burger-Menu to the left side of the screen and adding the cart symbol to the right top corner. :toolbox:
+- Bug: Side Drawer Cart on iPhone not scrollable :white_check_mark:
+- Bug: Quantity not shown in Side Drawer Cart :white_check_mark:
+- Bug: Buttons on Carrousel not inline with button box :white_check_mark:
+- Bug: Cart Mobile Fullpage not in view :white_check_mark:
+- Bug: Info Toast behind Navbar :white_check_mark:
+- Bug:Adding a Product to the cart and using the back button in browser or the implemented backbutton does not refresh the page. Therefor the cart does not signal that the user has something in the cart. Couple of solutions found on Stackoverflow were tested but none could solve the issue. This bug is still pending and should be fixed in the next release. :toolbox:
+- 
 
 # Automatic Tests & Continious Integration
 
@@ -489,28 +538,28 @@ The site was tested on the following Browsers:
 * [Microsoft Edge](https://www.microsoft.com/edge)
 
 On all browsers full site compatibility was identified based on the test cases.
-# #Peer-Code-Review
 
+# Peer-Code-Review
 
+The project was peer-reviewed by students from code institute. Feedback was given on the readme files and the code. 
 
 # Bug-Log from Development
 
-- following bugs were tackled during development
-- updating userprofile even if checkbox is unchecked
-- webhooks for orders without the optional streetaddressline2 filled out are failing. therefore customers who dont provide a line2 street adress are not receiving their order confirmation (solution: set null=true on street_address2)
-- adding products to a wishlist if no item was added on a fresh user
-- after editing the cart logic the checkout view broke missing / on the url
-- product images not showing The {{MEDIA_URL}}image.jpg syntax is used for standalone images (i.e. that are not related to a model). But if the image is part of a model instance, then {{ item.image.url }} does the trick.
-- Templates not pulled from apps folder
--> make sure to have the following in settings.py
-```
-import os
-DIRNAME = os.path.abspath(os.path.dirname(__file__))
+The following bugs were identified and mainly fixed during development:
+1. Updating userprofile even if checkbox is unchecked on Checkout form:  
 
-TEMPLATE_DIRS = (
-    os.path.join(DIRNAME, 'site-templates/'),
-)
-```
-- importing fixtures to postgres db led to some troubles. making sure the charfields are correct  // especially on long descriptions it makes sense to use TextField
+   This issue was identified during the extensive testing protocoll and took a while to solve. The problem was that the used JavaScript call to check if the checkbox is checked or unchecked always returned true. Furthermore, the python code didn't identify the javascript `true`/`false` response as `True` or `False`. Therefore the functions did not process the given information as intended. The following lines were introduce to make the function work as intended:
+   ```
+   stripe_elements.js
+   var saveInfo = $('#id-save-info').is(':checked');
+   ```
+   ```
+   webhook_handler.py
+   if save_info == "true":
+   ```
+2. Webhooks for orders without the optional streetaddressline2 filled out were failing. Therefore customers who didn't provide a line2 street address were not receiving their order confirmation. The problem laid in the model definition. By allowing null to be true on street_address2 the webhooks were processed without problems.
+3. Adding products to a wishlist if no item was added before on a fresh user failed in the beginning. The solution was to use the get_or_create method and check if the object was created or already existed.  
+4. Product images were not displayed when using the {{MEDIA_URL}} template tag. This was solved by extensivly checking the settings.py and by realizing that the ```django.template.context_processors.media``` was missing in the templates setup. 
+5. Importing fixtures to postgres db led to some troubles. This was solved by making sure the charfields are set correct and that especially on long descriptions it makes sense to use TextField.
 
 
