@@ -49,12 +49,14 @@
               class="h-100"
               src="{{ product.image.url }}"
               alt="{{ product.display_text }}"
+              loading="lazy"
             />
         {% else %}
 					<img
               class=""
               src="{MEDIA_URL }}noimage.png"
               alt="{{ product.display_text }}"
+              loading="lazy"
             />
         {% endif %}
           </a>

@@ -55,7 +55,7 @@
 
 {% if not products %}
 <div class="col-12 text-center flex-fill" >
-    <img class="img-fluid" src="{{ MEDIA_URL }}emptysearch.png" alt="No Products Found"/>
+    <img class="img-fluid" src="{{ MEDIA_URL }}emptysearch.png" alt="No Products Found" loading="lazy"/>
 </div>
 
 {% elif category %}
@@ -71,12 +71,14 @@
               class=""
               src="{{ product.image.url }}"
               alt="{{ product.display_text }}"
+              loading="lazy"
             />
         {% else %}
 					<img
               class=""
               src="{MEDIA_URL }}noimage.png"
               alt="{{ product.display_text }}"
+              loading="lazy"
             />
         {% endif %}
           </a>
@@ -144,12 +146,14 @@
               class=""
               src="{{ product.image.url }}"
               alt="{{ product.display_text }}"
+              loading="lazy"
             />
         {% else %}
 					<img
               class=""
               src="{MEDIA_URL }}noimage.png"
               alt="{{ product.display_text }}"
+              loading="lazy"
             />
         {% endif %}
           </a>

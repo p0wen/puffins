@@ -15,12 +15,14 @@
               class="card-img-top img-fluid rounded-0"
               src="{{ product.image.url }}"
               alt="{{ product.display_text }}"
+              loading="lazy"
             />
             {% else %}
 				<img
               class="card-img-top img-fluid rounded-0"
               src="{MEDIA_URL }}noimage.png"
               alt="{{ product.display_text }}"
+              loading="lazy"
             />
             {% endif %}
 			</div>

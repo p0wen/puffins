@@ -28,6 +28,7 @@
             src="{{ MEDIA_URL }}puffin_icon.png"
             class="d-inline-block align-middle icon-puffin"
             alt="Puffin Icon"
+            loading="lazy"
             /></a>
          <a class="navbar-brand" href="{% url 'home' %}">
          <img
@@ -35,6 +36,7 @@
             class="d-inline-block align-top icon-puffins-text"
             alt="Puffins Text Logo"
             id="puffinName"
+            loading="lazy"
             />
          </a>
          <button
@@ -97,6 +99,7 @@
                               src="{{ MEDIA_URL }}featured_nav_dropdown.jpg"
                               class="feat-nav-drop-img"
                               alt="Featured Products Image"
+                              loading="lazy"
                               />
                            <div class="feat-nav-drop-text">
                               <span>
@@ -230,7 +233,8 @@
             <div class="row">
                <div class="col-md mb-2">
                   <span class="text-center d-block" style="">
-                  <img src="{{ MEDIA_URL }}puffins_logo_light.svg" class="d-inline-block align-top icon-puffins-text" alt="" loading="lazy" id="puffinNameFooter"></span>
+                  <a href="{% url 'home' %}">
+                  <img src="{{ MEDIA_URL }}puffins_logo_light.svg" class="d-inline-block align-top icon-puffins-text" alt="" loading="lazy" id="puffinNameFooter"></a></span>
                </div>
                <div class="col-sm text-center d-block mt-3 mb-2">
                   <span class="footer-header">Quick Links</span>

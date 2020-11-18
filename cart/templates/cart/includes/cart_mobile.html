@@ -17,9 +17,9 @@
 				<div class="col">
 					<a class="img-link" href="{% url 'product_detail' item.lineitem.product.id %}">
 						{% if item.lineitem.product.image %}
-						<img class="w-100" src="{{ item.lineitem.product.image.url }}" alt="{{ item.lineitem.product.display_text | title }}">
+						<img class="w-100" src="{{ item.lineitem.product.image.url }}" alt="{{ item.lineitem.product.display_text | title }}" loading="lazy">
                         {% else %}
-						<img class="w-100" src="{{ MEDIA_URL }}/noimage.png" alt="{{ item.lineitem.product.display_text | title }}">
+						<img class="w-100" src="{{ MEDIA_URL }}/noimage.png" alt="{{ item.lineitem.product.display_text | title }}" loading="lazy">
                         {% endif %}
                         </a>
 				</div>

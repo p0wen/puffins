@@ -9,9 +9,9 @@
             <div class="col">
                <a class="img-link" href="{% url 'product_detail' item.lineitem.product.id %}">
                {% if item.lineitem.product.image %}
-               <img class="w-100" src="{{ item.lineitem.product.image.url }}" alt="{{ item.lineitem.product.display_text | title }}">
+               <img class="w-100" src="{{ item.lineitem.product.image.url }}" alt="{{ item.lineitem.product.display_text | title }}" loading="lazy">
                {% else %}
-               <img class="w-100" src="{{ MEDIA_URL }}/noimage.png" alt="{{ item.lineitem.product.display_text | title }}">
+               <img class="w-100" src="{{ MEDIA_URL }}/noimage.png" alt="{{ item.lineitem.product.display_text | title }}" loading="lazy">
                {% endif %}
                </a>
             </div>
@@ -91,7 +91,7 @@
 {% else %}
 <div class="no-items">
    <p>It appears that your cart is currently empty!</p>
-   <img src="{{ MEDIA_URL }}thankyou.png" class="img-fluid p-5" alt="">
+   <img src="{{ MEDIA_URL }}thankyou.png" class="img-fluid p-5" alt="Thank you" loading="lazy">
    <a href="{% url 'products' %}?productline=sweat,tshirt&sort=name&direction=asc" class="btn btn button-blue rounded-0" rel="nofollow">Continue Shopping</a>
 </div>
 {% endif %}
