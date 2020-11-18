@@ -13,7 +13,7 @@
         {% for item in featured %}
         <div class="carousel-item {% cycle 'active' '' '' '' %}"
             style="background-image: url('{{item.image.url}}')">
-            <div class="carousel-caption w-50 ml-auto mr-auto carousel-content-box mb-3">
+            <div class="carousel-caption ml-auto mr-auto carousel-content-box mb-3">
                 <h4>{{item.display_text | title}}</h4>
                 <hr class="separator">
                 <p class="text-truncate"><small>{{item.description}}</small></p>
