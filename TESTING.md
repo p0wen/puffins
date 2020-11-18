@@ -20,9 +20,6 @@ For this project different testing approaches where pursued. Core Testing method
   * [11. Registered Users: Useraccount](#11-registered-users--useraccount)
   * [12. Registered Users: Wishlist](#registered-users--wishlist)
   * [13. Store Management:](#12-store-management-)
-    + [Product Management](#product-management)
-    + [Order Management](#order-management)
-    + [Blog Management](#blog-management)
 - [User Testing](#user-testing)
 - [Automatic Tests & Continious Integration](#automatic-tests---continious-integration)
 - [Validation Services](#validation-services)
@@ -32,7 +29,6 @@ For this project different testing approaches where pursued. Core Testing method
 - [Peer-Code-Review](#peer-code-review)
 - [Bug-Log from Development](#bug-log-from-development)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
 # Manual Test Cycles
