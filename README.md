@@ -64,12 +64,6 @@ To test the site incl. the checkout process please use the test credit card numb
   * [References](#references)
 - [Fair use disclaimer](#fair-use-disclaimer)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-
 # UXD Considerations
 
 ## Purpose and Aim of the Project
