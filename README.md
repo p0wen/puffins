@@ -12,7 +12,7 @@ This site is the final Milestone Projects that made up the Full Stack Web Develo
 
 To test the site incl. the checkout process please use the test credit card number provided in the [Stripe Documentation](https://stripe.com/docs/testing):
 
-+ __Number__: 4242 4242 4242 4242 4242
++ __Number__: 4242 4242 4242 4242
 + __Exp. Date__: Anything (e.g. 02/24)
 + __CVC__: Anything (e.g. 007)
 
@@ -628,7 +628,7 @@ This project is deployed to Heroku. For the deployment the following steps were/
 Category Images: 
 * [Grown Ups](https://images.unsplash.com/photo-1490718687940-0ecadf414600?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80)
 * [Kids](https://images.unsplash.com/photo-1490826153516-b55d176cdb9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80)
-* [Partnerlook](https://unsplash.com/photos/ZHZZhRc_D8U)
+* [Partnerlook](https://unsplash.com/photos/pFGskZBc2rg)
 
 ## Acknowledgements
 
