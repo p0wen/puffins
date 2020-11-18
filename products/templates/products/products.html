@@ -21,10 +21,10 @@
 				<hr class="separator w-25">
 				{% endif %}
                 {% if search_term %}
-				    <h1>{{ search_term }}</h1> 
+				    <h3>{{ search_term }}</h3> 
 				{% elif productline %}
                 {% for line in productline %}
-				    <h1>{% cycle '' ' & ' %}{{ line.display_text }}</h1>
+				    <h3>{% cycle '' ' & ' %}{{ line.display_text }}s</h3>
                 {% endfor %}
 				{% endif %}
 			</div>
