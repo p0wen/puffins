@@ -459,24 +459,24 @@ For this project different testing approaches where pursued. Core Testing method
 
 ### Product Management :white_check_mark:
 
-#### Create Product :white_check_mark
-#### Read Product :white_check_mark
-#### Update Product :white_check_mark
-#### Delete Product :white_check_mark
+#### Create Product :white_check_mark:
+#### Read Product :white_check_mark:
+#### Update Product :white_check_mark:
+#### Delete Product :white_check_mark:
 
 ### Order Management :white_check_mark:
 
-#### Create Order :white_check_mark
-#### Read Order :white_check_mark
-#### Update Order :white_check_mark
-#### Delete Order :white_check_mark
+#### Create Order :white_check_mark:
+#### Read Order :white_check_mark:
+#### Update Order :white_check_mark:
+#### Delete Order :white_check_mark:
 
 ### Blog Management :white_check_mark:
 
-#### Create Post :white_check_mark
-#### Read Post :white_check_mark
-#### Update Post :white_check_mark
-#### Delete Post :white_check_mark
+#### Create Post :white_check_mark:
+#### Read Post :white_check_mark:
+#### Update Post :white_check_mark:
+#### Delete Post :white_check_mark:
 
 # User Testing
 
@@ -487,15 +487,16 @@ Besides running through the extensive test cycles documented above the URL from 
 - "Footer looks a little too full"
 
 Following Improvements/Features/Bugs were identified:
-- Feature request: I wish i could increase/decrease quantity within the sidedrawer cart :white_check_mark:
-- Improvement: Cart on Mobile view hidden. As an idea for a later release the logo and text logo would move to the center. Moving the Burger-Menu to the left side of the screen and adding the cart symbol to the right top corner. :toolbox:
-- Bug: Side Drawer Cart on iPhone not scrollable :white_check_mark:
-- Bug: Quantity not shown in Side Drawer Cart :white_check_mark:
-- Bug: Buttons on Carrousel not inline with button box :white_check_mark:
-- Bug: Cart Mobile Fullpage not in view :white_check_mark:
-- Bug: Info Toast behind Navbar :white_check_mark:
-- Bug:Adding a Product to the cart and using the back button in browser or the implemented backbutton does not refresh the page. Therefor the cart does not signal that the user has something in the cart. Couple of solutions found on Stackoverflow were tested but none could solve the issue. This bug is still pending and should be fixed in the next release. :toolbox:
-- 
+* Feature Requests  
+  * Feature request: I wish i could increase/decrease quantity within the sidedrawer cart :white_check_mark:
+* Improvement
+    * Cart on Mobile view hidden. As an idea for a later release the logo and text logo would move to the center. Moving the Burger-Menu to the left side of the screen and adding the cart symbol to the right top corner. :toolbox:
+* Bugs
+    * Quantity not shown in Side Drawer Cart :white_check_mark:
+    * Buttons on Carrousel not inline with button box :white_check_mark:
+    * Cart Mobile Fullpage not in view :white_check_mark:
+    * Info Toast behind Navbar :white_check_mark:
+    * Adding a Product to the cart and using the back button in browser or the implemented backbutton does not refresh the page. Therefor the cart does not signal that the user has something in the cart. Couple of solutions found on Stackoverflow were tested but none could solve the issue. This bug is still pending and should be fixed in the next release. :toolbox:
 
 # Automatic Tests & Continious Integration
 
@@ -557,9 +558,9 @@ The following bugs were identified and mainly fixed during development:
    webhook_handler.py
    if save_info == "true":
    ```
-2. Webhooks for orders without the optional streetaddressline2 filled out were failing. Therefore customers who didn't provide a line2 street address were not receiving their order confirmation. The problem laid in the model definition. By allowing null to be true on street_address2 the webhooks were processed without problems.
-3. Adding products to a wishlist if no item was added before on a fresh user failed in the beginning. The solution was to use the get_or_create method and check if the object was created or already existed.  
-4. Product images were not displayed when using the {{MEDIA_URL}} template tag. This was solved by extensivly checking the settings.py and by realizing that the ```django.template.context_processors.media``` was missing in the templates setup. 
+2. Webhooks for orders  without the optional streetaddressline2 filled out were failing. Therefore customers who didn't provide a line2 street address were not receiving their order confirmation. The problem laid in the model definition. By allowing `null` to be `true` on `street_address2` the webhooks were processed without problems.
+3. Adding products to a wishlist if no item was added before on a fresh user failed in the beginning. The solution was to use the `get_or_create` method and check if the object was created or already existed.  
+4. Product images were not displayed when using the `{{MEDIA_URL}}` template tag. This was solved by extensivly checking the settings.py and by realizing that the ```django.template.context_processors.media``` was missing in the templates setup. 
 5. Importing fixtures to postgres db led to some troubles. This was solved by making sure the charfields are set correct and that especially on long descriptions it makes sense to use TextField.
 
 
