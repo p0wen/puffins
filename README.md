@@ -28,8 +28,8 @@ To test the site incl. the checkout process please use the test credit card numb
   * [Layout, Styling & Wireframes](#layout--styling---wireframes)
 - [Information Architecture](#information-architecture)
   * [Application Framework](#application-framework)
-  * [Database selection](#database-selection)
-  * [Database structure](#database-structure)
+  * [Database Selection](#database-selection)
+  * [Data Models](#data-models)
 - [Features](#features)
   * [Navbar](#navbar)
   * [Footer](#footer)
@@ -40,11 +40,11 @@ To test the site incl. the checkout process please use the test credit card numb
   * [Highlights](#highlights)
   * [Cart](#cart)
   * [Checkout](#checkout)
-  * [Sign Up & login](#sign-up---login-)
+  * [Sign Up & login:](#sign-up---login-)
   * [Registered Users: Useraccount](#registered-users--useraccount)
   * [Registered Users: Wishlist](#registered-users--wishlist)
-  * [Store Management](#store-management-)
-  * [Newsletter](#newsletter--toolbox-)
+  * [Store Management:](#store-management-)
+  * [Newsletter](#newsletter)
 - [Technologies Applied](#technologies-applied)
   * [Databases](#databases)
   * [Languages](#languages)
@@ -53,14 +53,22 @@ To test the site incl. the checkout process please use the test credit card numb
   * [Hosting](#hosting)
 - [Testing](#testing)
 - [Deployment](#deployment)
-  * [Local Deployment](#local-deployment)
-  * [Deployment to Heroku](#deployment-to-heroku)
+  * [Prerequisites to work with this Site](#prerequisites-to-work-with-this-site)
+  * [Local Deployment: Step-by-Step Instructions](#local-deployment--step-by-step-instructions)
+  * [Deployment to Heroku: Step-by-Step Instructions](#deployment-to-heroku--step-by-step-instructions)
 - [References, Credits & Acknowledgment](#references--credits---acknowledgment)
   * [Credits](#credits)
   * [Content & Products](#content---products)
   * [Media](#media)
   * [Acknowledgements](#acknowledgements)
   * [References](#references)
+- [Fair use disclaimer](#fair-use-disclaimer)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 # UXD Considerations
 
@@ -192,11 +200,12 @@ Desktop - large screen:
 ## Application Framework
 The project brief required to base the project on the [Django](https://www.djangoproject.com/) application framework - "The web framework for perfectionists with deadlines". Django is an open source python web framework that takes away the burdens of regular web development and allows developers to quickly build a secure, scalable and state-of-the art app.
 
-## Database selection
+## Database Selection
 
 During development the built-in SQLite3 database from django is used. However, for the deployment to Heroku a switch to postgressql was undertaken.
 [Django’s authentication system](https://docs.djangoproject.com/en/3.1/ref/contrib/auth/) in combination with [django-allauth](https://django-allauth.readthedocs.io/en/latest/overview.html) is used to manage users and permissions.
 The structure of the products and checkout app are based on the [Boutique Ado](https://github.com/ckz8780/boutique_ado_v1) project from Code Institute and customized to the specific project needs.
+## Data Models
 
 ### Categories
 
