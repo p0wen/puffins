@@ -16,6 +16,8 @@ To test the site incl. the checkout process please use the test credit card numb
 + __Exp. Date__: Anything (e.g. 02/24)
 + __CVC__: Anything (e.g. 007)
 
+Visit the deployed site: [__puffins__](https://thepuffins.herokuapp.com)
+
 # Table of Content
 
 - [Puffins](#puffins)
@@ -458,43 +460,45 @@ If registered:
 The following technologie were used during the development of the project.
 
 ## Databases
-- Sqlite3 (https://www.sqlite.org/index.html)
-- postgresSQL (https://www.postgresql.org/)
+- [Sqlite3](https://www.sqlite.org/index.html)
+- [postgresSQL](https://www.postgresql.org/)
 ## Languages
-- CSS (https://www.w3.org/Style/CSS/)
-- HTML (https://html.spec.whatwg.org/multipage/)
-- Javascript (https://developer.mozilla.org/en-
+- [CSS](https://www.w3.org/Style/CSS/)
+- [HTML](https://html.spec.whatwg.org/multipage/)
+- [Javascript](https://developer.mozilla.org/en-
 US/docs/Web/JavaScript)
-- Python (https://www.python.org/)
+- [Python](https://www.python.org/)
 ## Frameworks
-- Bootstrap (https://www.bootstrapcdn.com/)
-- Django (https://www.djangoproject.com/)
-- jQuery (https://jquery.com/)
+- [Bootstrap](https://www.bootstrapcdn.com/)
+- [Django](https://www.djangoproject.com/)
+- [jQuery](https://jquery.com/)
 ## Libraries, Tools 
-- Google Fonts (https://fonts.google.com/)
-- Gitpod (https://www.gitpod.io/)
-- Figma (https://www.figma.com/)
-- Boto3 (https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
-- Coverage (https://coverage.readthedocs.io/en/v4.5.x/)
-- Dj-Database-URL (https://pypi.org/project/dj-database-url/)
-- Django-Countries (https://pypi.org/project/django-countries/)
-- Django-Heroku (https://pypi.org/project/django-heroku/)
-- Django-Storages (https://django-storages.readthedocs.io/en/latest/)
-- Git (https://git-scm.com/)
-- GitHub (https://github.com/)
-- Gunicorn (https://pypi.org/project/gunicorn/)
-- Jigsaw – CSS Validation (https://jigsaw.w3.org/css-validator/)
-- JS Hint (https://jshint.com/)
-- PEP8 (http://pep8online.com/)
-- Pillow (https://pillow.readthedocs.io/en/stable/)
-- PIP (https://pip.pypa.io/en/stable/installing/)
-- Psycopg2 (https://pypi.org/project/psycopg2/)
-- Stripe (https://stripe.com/gb)
-- W3C – HTML Validation (https://validator.w3.org/)
-- MarkdownTOC (http://ecotrust-canada.github.io/markdown-toc/')
+- [Google Fonts](https://fonts.google.com/)
+- [Gitpod](https://www.gitpod.io/)
+- [Figma](https://www.figma.com/)
+- [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
+- [Coverage](https://coverage.readthedocs.io/en/v4.5.x/)
+- [Dj-Database-URL](https://pypi.org/project/dj-database-url/)
+- [Django-Countries](https://pypi.org/project/django-countries/)
+- [Django-Heroku](https://pypi.org/project/django-heroku/)
+- [Django-Storages](https://django-storages.readthedocs.io/en/latest/)
+- [Git](https://git-scm.com/)
+- [GitHub](https://github.com/)
+- [Gunicorn](https://pypi.org/project/gunicorn/)
+- [Jigsaw – CSS Validation](https://jigsaw.w3.org/css-validator/)
+- [JS Hint](https://jshint.com/)
+- [PEP8](http://pep8online.com/)
+- [Pillow](https://pillow.readthedocs.io/en/stable/)
+- [PIP](https://pip.pypa.io/en/stable/installing/)
+- [Psycopg2](https://pypi.org/project/psycopg2/)
+- [Stripe](https://stripe.com/gb)
+- [W3C – HTML Validation](https://validator.w3.org/)
+- [MarkdownTOC](http://ecotrust-canada.github.io/markdown-toc/')
 ## Hosting
-- Heroku (https://www.heroku.com/)
-- AWS S3 Bucket (https://aws.amazon.com/)
+- [Heroku](https://www.heroku.com/)
+- [AWS S3 Bucket](https://aws.amazon.com/)
+
+
 
 
 # Testing
@@ -529,9 +533,9 @@ This project can be used for development with the following tools:
 
 Furthermore accounts with the following services are used in this project:
 
-- Stripe
-- AWS S3 Storage
-- Gmail
+- [Stripe](https://stripe.com/gb)
+- [AWS S3 Bucket](https://aws.amazon.com/)
+- [Gmail](www.gmail.com)
 
 ## Local Deployment: Step-by-Step Instructions
 
@@ -609,7 +613,8 @@ This project is deployed to Heroku. For the deployment the following steps were/
 12. Log in to heroku from your terminal ```heroku login```
 13. Add exisitng repository to Heroku heroku ```git:remote -a <your repository>```
 14. Push changes to Heroku ```git push heroku master```
-15. Visit the app url from heroku and check out your great site!
+15. Now go to your S3 account. There bucket should already contain a folder called ```static```. To upload the product images create a new folder called ```media```. And add the files to this folder. Make sure to grant public read access to these objects. 
+15. Finally, visit the app url from heroku and check out your great site!
 
 # References, Credits & Acknowledgment
 
@@ -636,7 +641,8 @@ Special Thanks to...
 
 * ... [Polardots Studio](https://www.polardots.studio/)
 * ... my Code-Institute Mentor
-* ... Tutors and Fellow Students of CI 
+* ... the Tutor-Crew from [Code Institute](www.codeinstitute.net)
+* ... @Spagettileg for his in-depth review and feedback
 
 ## References 
 * Project was developed by following the [Code Institute](www.codeinstitute.net) Boutique Ado-Poject lessons and was extended and modified to personal needs
