@@ -11,7 +11,7 @@ from useraccount.models import UserAccount
 
 @login_required
 def view_wishlist(request):
-    """ A view to return the shopping cart """
+    """ A view to return the wishlist """
     user = UserAccount.objects.get(user=request.user)
     wishlist = Product.objects.filter(userwishlists__user_profile=user)
     context = {
