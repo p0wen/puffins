@@ -37,7 +37,10 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
-    """ A view to return the checkout page """
+    """
+    A view to return the checkout page.
+    Based on the Botique Ado CI Project and modified to fit this project.
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -147,6 +150,7 @@ def checkout(request):
 def checkout_success(request, order_number):
     """
     Handle successful checkouts
+    Based on the Botique Ado CI Project and modified to fit this project.
     """
 
     save_info = request.session.get('save_info')
