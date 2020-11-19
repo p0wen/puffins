@@ -153,7 +153,7 @@ The whole figma project can be accessed here:
 
 The puffins logo was created by [polardots](https://www.polardots.studio/). It shows a vector style puffin stand upright and is signaling joy to the world!
 
-![Puffins Logo](https://thepuffins.s3.amazonaws.com/media/puffin_icon.png)
+<img src="https://thepuffins.s3.amazonaws.com/media/puffin_icon.png" height="150" />
 
 The puffins text logo was created by me with [Figma](www.figma.com).
 
@@ -176,15 +176,15 @@ Components were created in [Figma](www.figma.com):
 The whole figma project can be accessed here:
 [Puffins - Wireframes](https://www.figma.com/file/MhxXXrKoRhGyWMhX1cug2U/puffins?node-id=0%3A1)
 
-Mobile:
+##### Mobile:
 
 ![Puffins - Mobile](https://thepuffins.s3.eu-central-1.amazonaws.com/github-docs/puffins_mobile.png)
 
-Medium - width screen:
+##### Tablet/Medium-width screen:
 
 ![Puffins - Mobile](https://thepuffins.s3.eu-central-1.amazonaws.com/github-docs/puffins_medium.png)
 
-Desktop - large screen:
+##### Desktop - large screen:
 ![Puffins - Mobile](https://thepuffins.s3.eu-central-1.amazonaws.com/github-docs/puffins_large.png)
 
 ### Final Layout
