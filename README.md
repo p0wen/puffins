@@ -465,8 +465,7 @@ The following technologie were used during the development of the project.
 ## Languages
 - [CSS](https://www.w3.org/Style/CSS/)
 - [HTML](https://html.spec.whatwg.org/multipage/)
-- [Javascript](https://developer.mozilla.org/en-
-US/docs/Web/JavaScript)
+- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [Python](https://www.python.org/)
 ## Frameworks
 - [Bootstrap](https://www.bootstrapcdn.com/)
@@ -642,7 +641,7 @@ Special Thanks to...
 * ... [Polardots Studio](https://www.polardots.studio/)
 * ... my Code-Institute Mentor
 * ... the Tutor-Crew from [Code Institute](www.codeinstitute.net)
-* ... [@Spagettileg](https://github.com/Spagettileg) for his in-depth review and feedback on the finished project
+* ... [PaulF_alumni](https://github.com/Spagettileg) for his in-depth review and feedback on the finished project
 
 ## References 
 * Project was developed by following the [Code Institute](www.codeinstitute.net) Boutique Ado-Poject lessons and was extended and modified to personal needs
