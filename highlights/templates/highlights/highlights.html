@@ -17,7 +17,7 @@
 		</div>
 	</div>
 </div>
-
+<!-- Sorting of Products -->
 <div class="container">
 	<div class="row mb-3">
 		<div class="col">
@@ -37,7 +37,7 @@
 	</div>
 </div>
 
-
+<!-- Rendering Products -->
 <div class="container flex-fill">
 	<div class="row">
 		{% for product in featured %}
@@ -118,7 +118,7 @@
 {% block postloadjs %}
 
 <script>
-	//** Based on CI-Boutique Addo Project **// 
+	// Based on CI-Boutique Addo Project
     $('#SortBy').change(function(){
         var selector = $(this);
         var currentUrl = new URL(window.location);
