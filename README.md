@@ -338,9 +338,10 @@ The structure of the products and checkout app are based on the [Boutique Ado](h
 | content_image_url_2 | URLField(max_length=1024, null=True, blank=True)                                    |
 
 # Features
-The following features were thought of. 
-:white_check_mark: - Mark Features that made it into the deployed Project
-:toolbox: - Mark Features that are interessting for Future Development
+The following features were thought of.  
+
+:white_check_mark =Features that made it into the deployed Project  
+:toolbox: = Features that are interessting for Future Development
 
 ## Navbar
 * Logged in and non-logged in users see different options :white_check_mark:
