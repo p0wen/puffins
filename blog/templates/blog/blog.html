@@ -11,6 +11,7 @@
 			<hr class="separator w-25">
 		</div>
 	</div>
+    <!-- Blog Setup based on https://medium.com/swlh/building-your-own-django-blog-part-2-78adbc516992 -->
 	{% for post in blogposts %}
 	<div class="row">
 		<div class="col mt-3">
@@ -26,7 +27,7 @@
 	</div>
 	{% empty %}
 	<div class="container text-center">
-		<p>Sorry, no articles have been written yet.</p>
+		<p>Mighty Puffin Sorry! No articles have been published yet.</p>
 	</div>
 	{% endfor %}
 </div>
